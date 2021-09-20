@@ -1,104 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Ubiot page test</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/jpg" href="https://pbs.twimg.com/profile_images/971755977488912384/Sm39bJfl_400x400.jpg">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body>
+  <title>Ubiot control test</title>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
-  </div>
+  <head>
+    <script src="./js/scripts.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+    <script type="text/javascript">
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
-  </div>
-</div>
+    // Initialize the Amazon Cognito credentials provider
+    AWS.config.region = 'eu-central-1'; // Region
+    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'eu-central-1:00abeafd-83d3-4ccb-9ba5-c5fc5b31af03',
+    });
 
-<!-- Header -->
-<header class="w3-container w3-blue w3-center" style="padding:160px 16px">
-  <h1 class="w3-margin w3-jumbo">START PAGE</h1>
-  <p class="w3-xlarge">Ready?</p>
-  <a href="https://tei.auth.eu-central-1.amazoncognito.com/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=code&scope=email+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net/control.html" class="w3-button w3-black w3-padding-large w3-large w3-margin-top" target="_blank">Login</a>
-</header>
+      var state = "00"
+      var dynamodb = new AWS.DynamoDB();
+      var newer = String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10)
+      var docClient = new AWS.DynamoDB.DocumentClient();
+      
+      function scanData() {
+        // console.log("Scanning data..." + "\n");
+    
+        var params = {
+            TableName: "teiDB",
+            ProjectionExpression: "#id, date_time, thing_name, thing_status",
+            FilterExpression: "#id between :start_id and :end_id",
+            ExpressionAttributeNames: {
+                "#id": "id_number",
+            },
+            ExpressionAttributeValues: {
+                ":start_id": String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10),
+                ":end_id": "2600000000"
+            }
+        };
+    
+        docClient.scan(params, onScan);
+    
+        function onScan(err, data) {
+            if (err) {
+                document.getElementById('textarea').innerHTML += "Unable to scan the table: " + "\n" + JSON.stringify(err, undefined, 2);
+            }
+            
+            else {
+                // Print all the movies
+                data.Items.forEach(function(each) {
+                // console.log(each.date_time + ": " + each.id_number + ": " + each.thing_status + ": " + each.thing_name + ": " + "\n");
+                if (each.id_number > newer) {
+                    newer = each.id_number
+                    state = each.thing_status
+                }
+              });
+            }
+          }
+      }  
+    </script>
+  </head>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/jpg" href="https://pbs.twimg.com/profile_images/971755977488912384/Sm39bJfl_400x400.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <body>
+
+    <!-- Header -->
+    <header class="w3-container w3-blue w3-center">
+      <h1 class="w3-big">Ubiot control test</h1>
+      <a class="w3-right" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">Log out</a>
+    </header>
+
+    <!-- First Grid -->
+    <div class="w3-light-grey w3-container">
+      <div class="w3-content">
+        <div class="w3-third w3-center">
+          <br>
+        </div>
+
+        <div class="w3-twothird">
+          <h2> Try on/off switching!</h2>
+          
+          <input type="image" alt="ON" src="https://cdn.pixabay.com/photo/2016/06/01/07/41/green-1428507_960_720.png"
+            width="150" height="150" onclick="invokeON()"></input>
+
+          <input type="image" alt="OFF" src="https://cdn.picpng.com/button/red-button-button-icon-back-web-56577.png"
+            width="150" height="150" onclick="invokeOFF()"></input>
+
+          <input id="scanData" type="button" value="Update" onclick="updateImage();"/>
+
+          <div>
+            <input type="image" id="img" src="./images/off.png"
+              width="150" height="150"></input>
+          </div>
+
+        </div>
+      </div>
     </div>
 
-    <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-blue"></i>
-    </div>
-  </div>
-</div>
-
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-blue w3-margin-right"></i>
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-8">
+        <h1 class="w3-margin w3-xlarge">Keep working!</h1>
     </div>
 
-    <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-center w3-opacity">  
+      <div class="w3-xlarge w3-padding-8">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
     </div>
-  </div>
-</div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
-
-</body>
+  </body>
 </html>
