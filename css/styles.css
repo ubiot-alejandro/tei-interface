@@ -294,7 +294,36 @@ width: auto;
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
-  height: 575px;
+  height: 400px;
+  margin: auto;
+  margin-bottom: 20%;
+  margin-top: 5%;
+  width: 25%;
+  border: 3px solid rgb(0, 77, 93);
+  padding: 30px;
+  background-color: white;
+  text-align: center;
+}
+
+#izquierda {
+  float: inline-start;
+  text-align: center;
+  position: relative;
+}
+
+#derecha {
+  float: inline-end;
+  text-align: center;
+  position: relative;
+}
+
+#derecha1 {
+  float: inline-end;
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+  height: auto;
+  width: auto;
 }
 
 
@@ -953,10 +982,6 @@ input:focus ~ .highlight {
 .w3-twothird {
   height: auto;
   width: auto;
-}
-
-.w3-light-grey {
-  background-color: white;
 }
 
 /* Ripples animation */

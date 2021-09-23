@@ -115,12 +115,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
 
-  <body>
+  <body style="background-color: white;">
 
     <!-- Barra de logo e iconos -->
     <nav class="navbar container-fluid navbar-expand-md navbar-light">
       <div class="container-fluid">
-        <a href="index.html"><img src="imagenes/logos/logoTeitrasparente.png" id="logo1"></a>
+        <a href="https://testagropezim2.s3.us-east-1.amazonaws.com/index.html"><img src="imagenes/logos/logoTeitrasparente.png" id="logo1"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -129,7 +129,7 @@
           <ul class="navbar-nav ml-auto">
     
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="nosotros.html">
+              <a class="nav-link active" aria-current="page" href="https://testagropezim2.s3.us-east-1.amazonaws.com/nosotros.html">
                 <img src="images/nosotros.jpg" class="hidden-xs btn_nosotros">
                 <label class="visible-xs" align-content="center" onclick="location.href='nosotros.html';">
                   <h2><span class="label label-default">Nosotros</span></h2>
@@ -171,34 +171,56 @@
     
     </nav>
 
-    <a class="w3-right" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">Log out</a>
+    <div class="container-fluid" id="cabecera">
+      
+      <div class="linea_divisora1"></div>
+    
+      <div class="linea_divisora2"></div>
+      
+      <div class="linea_divisora3"></div>
+      
+    </div><br>
+
+    <a style="background-color: white; margin-right: 15px; margin-top: -10px;" class="w3-right" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">Log out</a>
 
     <!-- First Grid -->
     <hgroup>
-      <h1 style="color: rgb(0, 77, 93);">Tablero Eléctrico Inteligente</h1>
+      <h1 style="background-color: white; color: rgb(0, 77, 93);">Tablero Eléctrico Inteligente</h1>
     </hgroup>
 
-    <div class="w3-light-grey w3-container">
+    <div style="background-color: white;" class="w3-light-grey w3-container">
       <div class="w3-content">
-        <div class="w3-third w3-center">
-          <br>
-        </div>
-        <div class="w3-twothird">
-          <input type="image" alt="ON" src="https://cdn.pixabay.com/photo/2016/06/01/07/41/green-1428507_960_720.png"
-            width="100" height="100" onclick="invokeON()"></input>
 
-          <input type="image" alt="OFF" src="https://cdn.picpng.com/button/red-button-button-icon-back-web-56577.png"
-            width="100" height="100" onclick="invokeOFF()"></input>
+        <div class="w3-twothird">
+          <input id="izquierda" type="image" alt="OFF" src="https://cdn.picpng.com/button/red-button-button-icon-back-web-56577.png" onclick="invokeOFF()">Apagar</input>
 
           <!-- <input id="scanData" type="button" value="Update" onclick="updateImage();"/> -->
-
-          <div>
-            <input type="image" id="img" src="images/off.png"
-              width="150" height="150"></input>
-          </div>
-
         </div>
+
+        <!-- <div class="w3-third w3-center">
+          <br>
+        </div> -->
+
+        <div class="w3-twothird">
+        <input id="derecha" type="image" alt="ON" src="https://cdn.pixabay.com/photo/2016/06/01/07/41/green-1428507_960_720.png" onclick="invokeON()">Prender</input>
+        </div>
+
+
       </div>
+      
+      <div class="w3-third w3-center">
+        <br>
+      </div>
+      
+      <div class="w3-third w3-center">
+        <br>
+      </div>
+
+      <div>
+        <input style="margin-top: 30px;" type="image" id="derecha1" src="images/off.png"
+          width="150px" height="150px"></input>
+      </div>
+
     </div>
 
     <footer class="bg-light text-center text-md-start">
