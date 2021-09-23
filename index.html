@@ -121,7 +121,6 @@
     <nav class="navbar container-fluid navbar-expand-md navbar-light">
       <div class="container-fluid">
         <a href="index.html"><img src="imagenes/logos/logoTeitrasparente.png" id="logo1"></a>
-        <a class="w3-right" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">Log out</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -169,25 +168,29 @@
           </ul>
         </div>
       </div>
-        </nav>
+    
+    </nav>
+
+    <a class="w3-right" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">Log out</a>
 
     <!-- First Grid -->
+    <hgroup>
+      <h1 style="color: rgb(0, 77, 93);">Tablero Eléctrico Inteligente</h1>
+    </hgroup>
+
     <div class="w3-light-grey w3-container">
       <div class="w3-content">
         <div class="w3-third w3-center">
           <br>
         </div>
-
         <div class="w3-twothird">
-          <h2> Try on/off switching!</h2>
-          
           <input type="image" alt="ON" src="https://cdn.pixabay.com/photo/2016/06/01/07/41/green-1428507_960_720.png"
             width="100" height="100" onclick="invokeON()"></input>
 
           <input type="image" alt="OFF" src="https://cdn.picpng.com/button/red-button-button-icon-back-web-56577.png"
             width="100" height="100" onclick="invokeOFF()"></input>
 
-          <input id="scanData" type="button" value="Update" onclick="updateImage();"/>
+          <!-- <input id="scanData" type="button" value="Update" onclick="updateImage();"/> -->
 
           <div>
             <input type="image" id="img" src="images/off.png"
@@ -198,28 +201,10 @@
       </div>
     </div>
 
-    <div class="w3-container w3-black w3-center w3-opacity w3-padding-8">
-        <h1 class="w3-margin w3-xlarge">Keep working!</h1>
-    </div>
-
     <footer class="bg-light text-center text-md-start">
       <div class="text-center p-3 base">
         Agropezim Group C.A. RIF: J-404095969 Venezuela, <br> San Felipe - Estado Yaracuy. Todos los Derechos Reservados 2014.
       </div>
     </footer>
-
-    <!-- Footer -->
-    <!-- <footer class="w3-container w3-padding-16 w3-center w3-opacity">  
-      <div class="w3-xlarge w3-padding-8">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    </footer> -->
-
   </body>
 </html>
