@@ -294,36 +294,36 @@ width: auto;
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
-  height: 400px;
+  height: 200px;
   margin: auto;
-  margin-bottom: 20%;
-  margin-top: 5%;
-  width: 25%;
-  border: 3px solid rgb(0, 77, 93);
+  margin-bottom: 20px;
+  margin-top: 1%;
+  width: 40%;
   padding: 30px;
-  background-color: white;
   text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 #izquierda {
-  float: inline-start;
   text-align: center;
   position: relative;
+  margin: 9%;
 }
 
 #derecha {
-  float: inline-end;
   text-align: center;
   position: relative;
+  margin: 9%;
 }
 
 #derecha1 {
-  float: inline-end;
-  text-align: center;
-  position: relative;
-  margin-top: 20px;
-  height: auto;
-  width: auto;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 104px;
+  width: 100px;
 }
 
 
@@ -978,10 +978,10 @@ input:focus ~ .highlight {
 
 /* Interfaz de control */
 
-
 .w3-twothird {
-  height: auto;
-  width: auto;
+  height: 120px;
+  width: 100px;
+  padding: 10%;
 }
 
 /* Ripples animation */
@@ -1031,6 +1031,45 @@ footer img:focus , footer a:focus { outline: none; }
                                 /* Responsive Styles */
 
 /*responsividad mayor que */
+
+@media (max-height: 664) {
+/* Tablero eléctrico Sumergible */
+
+.w3-light-grey {
+  height: 400px;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 1%;
+  width: 40%;
+  padding: 30px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#izquierda {
+  text-align: center;
+  position: relative;
+  margin: 9%;
+}
+
+#derecha {
+  text-align: center;
+  position: relative;
+  margin: 9%;
+}
+
+#derecha1 {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 104px;
+  width: 100px;
+}
+
+}
+
 @media (min-width: 1200px) {
 
 .hidden-xs {

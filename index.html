@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>Ubiot control test</title>
+  <title>Tablero Inteligente</title>
 
   <head>
      <!-- agregado el meta charset UTF-8 para los carácteres como las tildes y la letra ñ -->
@@ -185,43 +185,30 @@
 
     <!-- First Grid -->
     <hgroup>
-      <h1 style="background-color: white; color: rgb(0, 77, 93);">Tablero Eléctrico Inteligente</h1>
+      <h1 style="background-color: white; color: rgb(0, 77, 93);">BIENVENIDO A SU TABLERO INTELIGENTE</h1>
     </hgroup>
 
-    <div style="background-color: white;" class="w3-light-grey w3-container">
+    <div class="w3-light-grey w3-container">
+      
       <div class="w3-content">
-
         <div class="w3-twothird">
-          <input id="izquierda" type="image" alt="OFF" src="https://cdn.picpng.com/button/red-button-button-icon-back-web-56577.png" onclick="invokeOFF()">Apagar</input>
-
-          <!-- <input id="scanData" type="button" value="Update" onclick="updateImage();"/> -->
+          <input id="derecha" type="image" alt="ON" src="https://cdn.pixabay.com/photo/2016/06/01/07/41/green-1428507_960_720.png" onclick="invokeON()">ON</input>
         </div>
+      </div>
 
-        <!-- <div class="w3-third w3-center">
-          <br>
-        </div> -->
-
+      <div class="w3-content">
         <div class="w3-twothird">
-        <input id="derecha" type="image" alt="ON" src="https://cdn.pixabay.com/photo/2016/06/01/07/41/green-1428507_960_720.png" onclick="invokeON()">Prender</input>
+          <input id="izquierda" type="image" alt="OFF" src="https://cdn.picpng.com/button/red-button-button-icon-back-web-56577.png" onclick="invokeOFF()">OFF</input>
         </div>
-
-
       </div>
-      
-      <div class="w3-third w3-center">
-        <br>
-      </div>
-      
-      <div class="w3-third w3-center">
-        <br>
-      </div>
-
-      <div>
-        <input style="margin-top: 30px;" type="image" id="derecha1" src="images/off.png"
-          width="150px" height="150px"></input>
-      </div>
-
     </div>
+
+    <div>
+      <input type="image" id="derecha1" src="images/off.png"
+        width="50px" height="50px"></input>
+    </div>
+
+    <!-- <input id="scanData" type="button" value="Update" onclick="updateImage();"/> -->
 
     <footer class="bg-light text-center text-md-start">
       <div class="text-center p-3 base">
