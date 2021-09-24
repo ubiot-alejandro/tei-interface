@@ -65,7 +65,7 @@
     IdentityPoolId: 'eu-central-1:00abeafd-83d3-4ccb-9ba5-c5fc5b31af03',
     });
 
-      var state = "00"
+      var state = "NaN"
       var dynamodb = new AWS.DynamoDB();
       var newer = String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10)
       var docClient = new AWS.DynamoDB.DocumentClient();
@@ -75,17 +75,19 @@
     
         var params = {
             TableName: "teiDB",
-            ProjectionExpression: "#id, date_time, thing_name, thing_status",
-            FilterExpression: "#id between :start_id and :end_id",
+            ProjectionExpression: "#id, date_time, #thing, thing_status",
+            FilterExpression: "#id between :start_id and :end_id AND #thing = :thing",
             ExpressionAttributeNames: {
                 "#id": "id_number",
+                "#thing": "thing_name"
             },
             ExpressionAttributeValues: {
                 ":start_id": String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10),
-                ":end_id": "2600000000"
+                ":end_id": "2600000000",
+                ":thing": clientID
             }
         };
-    
+            
         docClient.scan(params, onScan);
     
         function onScan(err, data) {
@@ -204,7 +206,7 @@
     </div>
 
     <div>
-      <input type="image" id="derecha1" src="images/off.png"
+      <input type="image" id="derecha1" src="images/loading.gif"
         width="50px" height="50px"></input>
     </div>
 

@@ -23,7 +23,7 @@ function invokeON() {
         'Authorization' : auth
       }
     })
-    .then(data=>{return data.json})
+    .then(data=> data.json())
     .then(res=>{console.log(res)});
 }
 
@@ -43,8 +43,28 @@ function invokeOFF() {
         'Authorization' : auth
       }
     })
-    .then(data=>{return data.json})
+    .then(data=> data.json())
     .then(res=>{console.log(res)});
+}
+
+function getId() {
+    
+  let token = window.location.href
+
+  let auth = "Bearer " + token.split('&')[1].split('=')[1]
+
+  let url="https://tei.auth.eu-central-1.amazoncognito.com/oauth2/userInfo";
+    
+  fetch(url, {
+    mode: 'cors',
+    method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : auth
+    }
+  })
+  .then(data=> data.json())
+  .then(res=>{ clientID = res["sub"] });
 }
 
 function updateImage() {
@@ -54,7 +74,7 @@ function updateImage() {
 
     if ( state == "01") {
         image.src="../images/on.png";
-    } else {
+    } else if ( state == "00") {
         image.src="../images/off.png";
     }
 }
@@ -66,7 +86,12 @@ function handleError(evt) {
 
     if (evt.message == `Uncaught TypeError: Cannot read properties of undefined (reading 'split')`) {
 
-      alert("Por favor inicie sesion antes...")
+      //alert("Por favor inicie sesion antes...")
+      window.location.href = "https://tei.auth.eu-central-1.amazoncognito.com/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net";
+
+    } else if (evt.message == `Script error.`) {
+
+      //alert("Por favor inicie sesion antes...")
       window.location.href = "https://tei.auth.eu-central-1.amazoncognito.com/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net";
 
     }
@@ -77,3 +102,5 @@ function handleError(evt) {
 setInterval(updateImage, 1000);
 
 window.addEventListener("error", handleError, true);
+
+getId()
