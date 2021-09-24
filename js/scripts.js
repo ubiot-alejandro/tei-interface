@@ -48,7 +48,7 @@ function invokeOFF() {
 }
 
 function updateImage() {
-  var image = document.getElementById("img");
+  var image = document.getElementById("derecha1");
   scanData();
   console.log(state);
 
