@@ -13,7 +13,7 @@ function invokeON() {
 
   let auth = token.split('&')[1].split('=')[1]
 
-  let url="https://vdawi12xzl.execute-api.eu-central-1.amazonaws.com/default/on-function";
+  let url="https://vdawi12xzl.execute-api.eu-central-1.amazonaws.com/default/on-function" + "?id=" + clientID;
     
     fetch(url, {
       mode: 'cors',
@@ -33,7 +33,7 @@ function invokeOFF() {
 
   let auth = token.split('&')[1].split('=')[1]
   
-  let url="https://8hf8zi8mvd.execute-api.eu-central-1.amazonaws.com/default/off-function";
+  let url="https://8hf8zi8mvd.execute-api.eu-central-1.amazonaws.com/default/off-function" + "?id=" + clientID;
     
     fetch(url, {
       mode: 'cors',
