@@ -73,9 +73,9 @@ function updateImage() {
   console.log(state);
 
     if ( state == "01") {
-        image.src="../images/on.png";
+        image.src="../imagenes/iconos/valvulaAbierta.png";
     } else if ( state == "00") {
-        image.src="../images/off.png";
+        image.src="../imagenes/iconos/valvulaCerrada.png";
     }
 }
 
