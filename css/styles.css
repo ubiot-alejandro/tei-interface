@@ -294,21 +294,26 @@ width: auto;
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
-  height: 280px;
+  height: 300px;
   margin: auto;
-  /* margin-bottom: 10px;
-  margin-top: 1%; */
+  margin-bottom: 2%;
+  margin-top: 1%;
   width: 50%;
   text-align: center;
   align-items: center;
   display: flex;
   justify-content: center;
+  background-color:rgb(167, 164, 164);
+}
+
+.w3-content {
+  padding: 5%;
 }
 
 #izquierda {
   text-align: center;
   position: relative;
-  margin: 9%;
+  margin: 10%;
   border: none;
   background-color: transparent;
 }
@@ -316,17 +321,15 @@ width: auto;
 #derecha {
   text-align: center;
   position: relative;
-  margin: 9%;
+  margin: 10%;
   border: none;
   background-color: transparent;
 }
 
 #derecha1 {
   margin: auto;
-  margin-top: 2%;
-  margin-bottom: 10px;
-  height: 100px;
-  width: 100px;
+  height: 10%;
+  width: 15%;
   border: none;
   background-color: transparent;
 }
@@ -795,9 +798,8 @@ body {
 
 hgroup { 
 	text-align:center;
-	margin-top: 1em;
+	margin-top: 0.3em;
   font-size: large;
-
 }
 
 h1, h3 { font-weight: 300; }
@@ -1067,14 +1069,6 @@ footer img:focus , footer a:focus { outline: none; }
   margin: 9%;
 }
 
-#derecha1 {
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  height: 10px;
-  width: 10px;
-}
-
 }
 
 @media (min-width: 1200px) {
@@ -1216,11 +1210,29 @@ a {
       height: 480px;
       width: 400px;
     }
+    
   } 
 
+  /* @media (max-width: 1150px) {
+  
+    #derecha1 {
+      margin: auto;
+      height: 25%;
+      width: 30%;
+      border: none;
+      background-color: transparent;
+    }
+  } */
 
 @media (max-width: 1000px) {
 
+  #derecha1 {
+    margin: auto;
+    height: 20%;
+    width: 25%;
+    border: none;
+    background-color: transparent;
+  }
   /* .hidden-xs {
     display: block;
 
@@ -1257,6 +1269,14 @@ a {
   /* .hidden-xs {
     display: block;
   } */
+
+  #derecha1 {
+    margin: auto;
+    height: 30%;
+    width: 35%;
+    border: none;
+    background-color: transparent;
+  }
 
   .w3-light-grey {
     height: 300px;
@@ -1466,5 +1486,19 @@ a {
     margin-top: 0px;
     height: 60px;
     width: 150px;
+  }
+}
+
+@media (min-height: 710px) {
+
+  .w3-light-grey {
+    height: 350px;
+  }
+}
+
+@media (min-height: 790px) {
+
+  .w3-light-grey {
+    height: 500px;
   }
 }
