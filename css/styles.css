@@ -119,11 +119,11 @@ text-transform: uppercase;
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
-  height: 300px;
+  height: 250px;
   margin: auto;
-  margin-bottom: 2%;
-  margin-top: 1%;
-  width: 50%;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  width: 45%;
   text-align: center;
   align-items: center;
   display: flex;
@@ -132,7 +132,7 @@ text-transform: uppercase;
 }
 
 .w3-content {
-  padding: 10%;
+  padding: 5%;
 }
 
 #izquierda {
@@ -153,6 +153,7 @@ text-transform: uppercase;
 
 #derecha1 {
   margin: auto;
+  margin-top: 2%;
   margin-bottom: 2%;
   height: 10%;
   width: 15%;
@@ -297,9 +298,7 @@ input {
 
 /* //////////////////////Responsive Styles/////////////////////// */
 
-/*Mayor que */
-
-@media (max-height: 664px) {
+@media (max-height: 664px) {              /*======= Mayor de 664 px (Alto) =======*/
 
   /* Tablero eléctrico Sumergible */
 .w3-light-grey {
@@ -307,7 +306,7 @@ input {
   margin: auto;
   margin-bottom: 20px;
   margin-top: 1%;
-  width: 60%;
+  width: 45%;
   padding: 30px;
   text-align: center;
   align-items: center;
@@ -318,26 +317,40 @@ input {
 #izquierda {
   text-align: center;
   position: relative;
-  margin: 9%;
+  margin: 10%;
 }
 
 #derecha {
   text-align: center;
   position: relative;
-  margin: 9%;
+  margin: 10%;
 }
 
 }
 
-@media (min-width: 1200px) {
+@media (min-height: 790px) {                   /*======= Mayor de 790 px (Alto) =======*/
+
+  .w3-light-grey {
+    height: 500px;
+
+  }
+}
+@media (min-height: 710px) {                  /*======= Mayor de 710 px (Alto) =======*/
+
+  .w3-light-grey {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1200px) {           /*======= Mayor de 1200 px (Ancho) =======*/
 
 .hidden-xs {
   width: 65px;
   height: 65px;
 }
 
-.visible-xs {                 /* imagenesde productos  */
-  display: none;            /*Para una altura minima de 1200px */
+.visible-xs {                 
+  display: none;
 }
 
   .linea_divisora{
@@ -373,25 +386,39 @@ input {
 
 }
 
+@media (max-width: 1400px) {
+  
+  .w3-light-grey {
+    height: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 1%;
+    width: 60%;
+    padding: 0px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
 
-/*Menor que */
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) {                  /*======= Menos de 1200 px (Ancho) =======*/
 
   h1 {
     font-size: 180%;
   }
-
+  
   .linea_divisora{
     margin-top: 0px;
     width: 100%;
   }
-
-.hidden-xs {
-  width: 60px;
-  height: 60px;
-  display: block;
-}
+  
+  .hidden-xs {
+    width: 60px;
+    height: 60px;
+    display: block;
+  }
 
   .img-responsive{
     width: 22,7vw;
@@ -450,7 +477,7 @@ input {
   }
 
 
-  @media (min-width: 1150px) {
+  @media (min-width: 1150px) {      /*======= Menos de 1150 px (Ancho) =======*/
     .imagenproductos {
       position:relative;
       display: block;
@@ -460,10 +487,9 @@ input {
     
   }
 
-@media (max-width: 1000px) {
+@media (max-width: 1000px) {              /*======= Menos de 1000 px (Ancho) =======*/
 
   #derecha1 {
-    margin: auto;
     height: 20%;
     width: 25%;
     border: none;
@@ -496,10 +522,9 @@ input {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 900px) {  /*======= Menos de 900 px (Ancho) =======*/
 
   #derecha1 {
-    margin: auto;
     height: 30%;
     width: 35%;
     border: none;
@@ -552,7 +577,7 @@ input {
 
 
 
-@media (max-width:768px) {     /*======= Menos de 768 px =======*/ 
+@media (max-width:768px) {     /*======= Menos de 768 px (Ancho) =======*/ 
 
   /* Menu inical */
   .navbar-light {
@@ -642,7 +667,7 @@ input {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 576px) {       /*======= Menos de 576 px =======*/
 
   h1 {
     font-size: 130%;
@@ -720,21 +745,8 @@ input {
   
   #logo {
     margin-top: 0px;
-    height: 60px;
+    height: 70px;
     width: 150px;
   }
 }
 
-@media (min-height: 710px) {
-
-  .w3-light-grey {
-    height: 350px;
-  }
-}
-
-@media (min-height: 790px) {
-
-  .w3-light-grey {
-    height: 500px;
-  }
-}
