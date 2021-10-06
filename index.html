@@ -59,12 +59,34 @@
     });
 
       var state = "NaN"
+      var network = "NaN"
       var dynamodb = new AWS.DynamoDB();
       var newer = String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10)
       var docClient = new AWS.DynamoDB.DocumentClient();
       
+      function queryData() {
+
+        var params = {
+            TableName : "teiDB",
+            KeyConditionExpression: "#dt = :id",
+            ExpressionAttributeNames:{
+                "#dt": "date_time"
+            },
+            ExpressionAttributeValues: {
+                ":id": clientID
+            }
+        };
+
+        docClient.query(params, function(err, data) {
+            if (err) {
+                console.log(JSON.stringify(err, undefined, 2));
+            } else {
+                network = data.Items[0].network
+            }
+        });
+    }
+      
       function scanData() {
-        // console.log("Scanning data..." + "\n");
     
         var params = {
             TableName: "teiDB",
@@ -85,13 +107,14 @@
     
         function onScan(err, data) {
             if (err) {
-                document.getElementById('textarea').innerHTML += "Unable to scan the table: " + "\n" + JSON.stringify(err, undefined, 2);
+                console.log(JSON.stringify(err, undefined, 2));
             }
             
             else {
                 // Print all the movies
                 data.Items.forEach(function(each) {
                 // console.log(each.date_time + ": " + each.id_number + ": " + each.thing_status + ": " + each.thing_name + ": " + "\n");
+                                
                 if (each.id_number > newer) {
                     newer = each.id_number
                     state = each.thing_status
@@ -177,7 +200,7 @@
     <hgroup>
       <h1 style="background-color: white; color: rgb(0, 77, 93);">Bienvenido a su Tablero Inteligente</h1>
     </hgroup>
-
+    
     <div class="w3-light-grey w3-container">
       
       <div class="w3-content">
@@ -186,6 +209,10 @@
         </div>
       </div>
 
+      <div>
+        <input type="image" id="derecha2" src="images/loading.gif"></input>
+      </div>
+  
       <div class="w3-content">
         <div class="w3-twothird">
           <input id="izquierda" type="image" alt="OFF" src="imagenes/iconos/offNew.png" onclick="invokeOFF()">OFF</input>
@@ -196,8 +223,6 @@
     <div>
       <input type="image" id="derecha1" src="images/loading.gif"></input>
     </div>
-
-    <!-- <input id="scanData" type="button" value="Update" onclick="updateImage();"/> -->
 
     <footer class="bg-light text-center text-md-start">
       <div class="text-center p-3 base">
