@@ -9,6 +9,8 @@ function myFunction() {
 
 function invokeON() {
 
+  changeImage();
+
   let token = window.location.href
 
   let auth = token.split('&')[1].split('=')[1]
@@ -25,9 +27,12 @@ function invokeON() {
     })
     .then(data=> data.json())
     .then(res=>{console.log(res)});
+
 }
 
-function invokeOFF() {    
+function invokeOFF() {
+
+  changeImageoff();
   
   let token = window.location.href
 
@@ -51,7 +56,7 @@ function getId() {
     
   // let token = window.location.href
 
-  let token = "https://d30a2flcb4p1wx.cloudfront.net/#id_token=eyJraWQiOiJiamI5R3lQbFVYeFlaanlpbW9PR1pSNGYxb0FudWp2YlNtNjF0U29EenZFPSIsImFsZyI6IlJTMjU2In0.eyJhdF9oYXNoIjoiSmhCVUs4NWUzWm1XaldvVFNpMTRjUSIsInN1YiI6ImYzZmViNDg4LTZmNGMtNDJjNi1iMzY5LTFhNjYxMTQzYjkwYyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb21cL2V1LWNlbnRyYWwtMV9aQzF4U2tlZjciLCJjb2duaXRvOnVzZXJuYW1lIjoiZjNmZWI0ODgtNmY0Yy00MmM2LWIzNjktMWE2NjExNDNiOTBjIiwiYXVkIjoiN2czaTdmcHV1b3RsMWQ3ampldnUyOXBpbHEiLCJldmVudF9pZCI6IjQzN2QzNjBkLTExYjYtNDkwNy04ZDg3LTY1NjNhNzZmYTFhYSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjMzMzU4NDUyLCJleHAiOjE2MzMzNjIwNTIsImlhdCI6MTYzMzM1ODQ1MiwianRpIjoiM2FhZDNmNzgtNjNlNy00ZWEyLTg3MjQtNGQzNTI0MjJmYTc5IiwiZW1haWwiOiJ1YmlvdC5yYWZhZWxAZ21haWwuY29tIn0.eHBG9jbpyQSl2iQ714rnQPLFdDqagEezSCAuvBfu9p5Uwciq3qXPRZj_AEmhO5CPSVO_3P4UX4_AfyNQVSADpBb6M9iKqeDY2wmVHZYbEC8fNuIz0MSIwI_Zh9bdSill_9tpUhnlEoAhC-5qOssKC4vt100reP0_4aKWE9dPSijJO-iutG0mGM81iRbHdkTo8b6ZF4ZQZmBB4N-hc3qeq9SimsqXM38Cgcju6SSwKguz3fAEykR4t0MlpAZ81zyVIncMzPpykqJDgFfd7KrVK12lnc6STjorVbOYCr0q32HFZDzNgH65Zs4U_YMqKxbSNsFEqhWe8URpsL40uq_H2A&access_token=eyJraWQiOiJ0eDFkaW5OVGlLZmdSNEpPREsxOFhMRURIUENoM1wvcjBZd1ZjNlV5XC9iTlU9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJmM2ZlYjQ4OC02ZjRjLTQyYzYtYjM2OS0xYTY2MTE0M2I5MGMiLCJldmVudF9pZCI6IjQzN2QzNjBkLTExYjYtNDkwNy04ZDg3LTY1NjNhNzZmYTFhYSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoib3BlbmlkIGh0dHBzOlwvXC90ZWkubG9nby5hY3Rpb25zXC9sb2dvLm9mZiBodHRwczpcL1wvdGVpLmxvZ28uYWN0aW9uc1wvbG9nby5vbiBlbWFpbCIsImF1dGhfdGltZSI6MTYzMzM1ODQ1MiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfWkMxeFNrZWY3IiwiZXhwIjoxNjMzMzYyMDUyLCJpYXQiOjE2MzMzNTg0NTIsInZlcnNpb24iOjIsImp0aSI6ImQxNDFiNWRhLTc2ODctNDUyMy1iYmI3LWRlNWViYmIzZmNlZiIsImNsaWVudF9pZCI6IjdnM2k3ZnB1dW90bDFkN2pqZXZ1MjlwaWxxIiwidXNlcm5hbWUiOiJmM2ZlYjQ4OC02ZjRjLTQyYzYtYjM2OS0xYTY2MTE0M2I5MGMifQ.WT3AiCFlXyNyoh62dl1Qjf9Sttr-IjoG2JEErFvchxeUmNSAGIpG1w5AfJwAD7Q-9l9mp3yh5_wQCq1lqIYbpnSXnv_gweRgBRAPc0MV-NElMlWJ8Ydup6HjHba9M6li8RjRPnNWr90rhjPv_TMrzBD9JKvSJG1WewhV3PC_U_sZGakngsAOVrzfGG2651x2hx3vZ-8VvmvYIXQyhMM_m7-2u9R1GXFihArob_DMM1ywi7O9lt6ePXj2R4GlVXtulnAoj8R5cd9TRRoT6YbSHyr4IOYQcNq1IXlaGQvBjNC1pCgRH7hs5o91Myc-jusPSwKpkgNoPM4nfwFD-dDELQ&expires_in=3600&token_type=Bearer"
+  let token = "https://d30a2flcb4p1wx.cloudfront.net/#id_token=eyJraWQiOiJiamI5R3lQbFVYeFlaanlpbW9PR1pSNGYxb0FudWp2YlNtNjF0U29EenZFPSIsImFsZyI6IlJTMjU2In0.eyJhdF9oYXNoIjoiWmxnQWJQQThPT0ltTzROeDZuamlSUSIsInN1YiI6ImYzZmViNDg4LTZmNGMtNDJjNi1iMzY5LTFhNjYxMTQzYjkwYyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb21cL2V1LWNlbnRyYWwtMV9aQzF4U2tlZjciLCJjb2duaXRvOnVzZXJuYW1lIjoiZjNmZWI0ODgtNmY0Yy00MmM2LWIzNjktMWE2NjExNDNiOTBjIiwiYXVkIjoiN2czaTdmcHV1b3RsMWQ3ampldnUyOXBpbHEiLCJldmVudF9pZCI6IjJlZjZhM2Y4LTFhZDktNGRkMy1hYjE3LWEzMmI4YWU0NmZmNSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjMzNzEyMjIxLCJleHAiOjE2MzM3MTU4MjEsImlhdCI6MTYzMzcxMjIyMSwianRpIjoiZDAyNzBkYzQtMGMzZC00YmJlLTg2NDUtMzBhNDk4YjgzMWQ1IiwiZW1haWwiOiJ1YmlvdC5yYWZhZWxAZ21haWwuY29tIn0.Taw4OJcE1UlKnOjYbRWAJqmAnM07n3AAchY0yGS9f54H0KxVr2MKi4tbkqJtJNk3sscLwuRGZiiKLDS1gJe9lLyZGEynSH31_StgYgNc7uSytCILWydhUN_hG9zzU4kVL53dLLbqLDrqe_gunATNbfT9cwLhPToQCwlmZWY_m6_QktsxtglYieRMvNSPQMS2YTh6gLDfhWEIDdEKMPz94apyJoGE3oQWZogJmkmOzyGVDrPPYe1ohDJaOpPI0B-vtuJX-shSRpTfz_dAHbpN4QplbyPEmH5ov8-6-ygS2n7eZlOH7lQou2Yq00c6CB3e6PbLOgC7-80uUuMncsgsIg&access_token=eyJraWQiOiJ0eDFkaW5OVGlLZmdSNEpPREsxOFhMRURIUENoM1wvcjBZd1ZjNlV5XC9iTlU9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJmM2ZlYjQ4OC02ZjRjLTQyYzYtYjM2OS0xYTY2MTE0M2I5MGMiLCJldmVudF9pZCI6IjJlZjZhM2Y4LTFhZDktNGRkMy1hYjE3LWEzMmI4YWU0NmZmNSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoib3BlbmlkIGh0dHBzOlwvXC90ZWkubG9nby5hY3Rpb25zXC9sb2dvLm9mZiBodHRwczpcL1wvdGVpLmxvZ28uYWN0aW9uc1wvbG9nby5vbiBlbWFpbCIsImF1dGhfdGltZSI6MTYzMzcxMjIyMSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfWkMxeFNrZWY3IiwiZXhwIjoxNjMzNzE1ODIxLCJpYXQiOjE2MzM3MTIyMjEsInZlcnNpb24iOjIsImp0aSI6IjE5N2U5OTlmLWU0MDAtNDY4OS04NjUzLTI1YzZiZTNhNDRlOCIsImNsaWVudF9pZCI6IjdnM2k3ZnB1dW90bDFkN2pqZXZ1MjlwaWxxIiwidXNlcm5hbWUiOiJmM2ZlYjQ4OC02ZjRjLTQyYzYtYjM2OS0xYTY2MTE0M2I5MGMifQ.Txmm4aRDDLxNXJnKgZwA4uC6Ybxns6xX2WNqyycZTiKdbRyIvXiY_5h2CjhhlVrEL55TcDNqS7s80ZBolOm9D9E4EPaifAxN7FfGJM7lGXPg4LHzdEpuA94TpFkFPCk4244NyvhQza63x7RHFvmn7uEQF-HYALNpQTlrlJGHt8R7ZQW6j5SQ-k3xZXPXy4LeV2UWlHtsfq0T5cEGHa64poTs7V4whIwG9b00XxuUEJ5XB32j1YjAOThrELIpdcdBaKdwrweb8FnhWpTIHtg63lvMmP7QGTh9hUet1Kp7YcaVnPUCO_t8YsTvQFMlgMUf51eHpfyUINox8yup_0bs9A&expires_in=3600&token_type=Bearer"
 
   let auth = "Bearer " + token.split('&')[1].split('=')[1]
 
@@ -71,6 +76,8 @@ function getId() {
 
 function updateImage() {
   var image = document.getElementById("derecha1");
+  var imageon = document.getElementById("derecha");
+  var imageoff = document.getElementById("izquierda");
   scanData();
   console.log(state);
 
@@ -79,6 +86,18 @@ function updateImage() {
     } else if ( state == "00") {
         image.src="../imagenes/iconos/valvulaCerrada.png";
     }
+
+    if ( state == "01") {
+      imageon.src="../imagenes/iconos/onNewencendido.png";
+  } else if ( state == "00") {
+      imageon.src="../imagenes/iconos/onNewapagado.png";
+  }
+
+  if ( state == "01") {
+    imageoff.src="../imagenes/iconos/offNewapagado.png";
+} else if ( state == "00") {
+    imageoff.src="../imagenes/iconos/offNewencendido.png";
+}
 }
 
 function handleError(evt) {
@@ -100,6 +119,33 @@ function handleError(evt) {
 
   }
 }
+
+function changeImage() {
+        
+  if (document.getElementById("derecha").src == "imagenes/iconos/onNewapagado.png") 
+  {
+      document.getElementById("derecha").src = "imagenes/iconos/onNewapagado.png";
+  }
+  else 
+  {
+      document.getElementById("derecha").src = "imagenes/iconos/onNewencendido.png";
+      document.getElementById("izquierda").src = "imagenes/iconos/offNewapagado.png";
+  }
+}
+
+function changeImageoff() {
+  
+  if (document.getElementById("izquierda").src == "imagenes/iconos/offNewapagado.png") 
+  {
+      document.getElementById("izquierda").src = "imagenes/iconos/offNewapagado.png";
+  }
+  else 
+  {
+      document.getElementById("derecha").src = "imagenes/iconos/onNewapagado.png";
+      document.getElementById("izquierda").src = "imagenes/iconos/offNewencendido.png";
+  }
+  }
+
 
 setInterval(updateImage, 1000);
 

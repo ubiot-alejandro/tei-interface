@@ -119,7 +119,7 @@ text-transform: uppercase;
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
-  height: 250px;
+  height: 200px;
   margin: auto;
   margin-bottom: 0%;
   margin-top: 0%;
@@ -164,19 +164,9 @@ text-transform: uppercase;
 
 /* Linea divisiora */
 
-.linea_divisora {
-  border-color: rgb(0, 77, 93); 
-  background-color:rgb(0, 77, 93);
-  height: 5px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  position: absolute;
-}
-
 .linea_divisora1 {
-  border-color: #F0DC00; 
-  background-color: #F0DC00;
+  border-color: rgb(244, 216, 15); 
+  background-color: rgb(244, 216, 15);
   height: 5px;
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -186,7 +176,7 @@ text-transform: uppercase;
 
 .linea_divisora2 {
   border-color: rgb(0, 77, 93); 
-  background-color: rgb(0, 80, 94);
+  background-color: rgb(0, 77, 93);
   height: 5px;
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -195,8 +185,8 @@ text-transform: uppercase;
 }
 
 .linea_divisora3 {
-  border-color: rgb(0, 156, 186); 
-  background-color: rgb(0, 156, 186);
+  border-color: rgb(141, 191, 198); 
+  background-color: rgb(141, 191, 198);
   height: 5px;
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -290,10 +280,14 @@ input {
 /* Interfaz de control */
 
 .w3-twothird {
-  height: 60%;
-  width: 60%;
+  height: 70%;
+  width: 70%;
   padding: 10%;
   margin: auto;
+}
+
+.w3-right:hover {
+  color: rgb(244, 216, 15);
 }
 
 /* //////////////////////Responsive Styles/////////////////////// */
