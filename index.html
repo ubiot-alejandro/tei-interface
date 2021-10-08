@@ -90,7 +90,7 @@
     
         var params = {
             TableName: "teiDB",
-            ProjectionExpression: "#id, date_time, #thing, thing_status",
+            ProjectionExpression: "#id, date_time, #thing, thing_status, remote_on, remote_off, manual_on, manual_off",
             FilterExpression: "#id between :start_id and :end_id AND #thing = :thing",
             ExpressionAttributeNames: {
                 "#id": "id_number",
@@ -113,12 +113,18 @@
             else {
                 // Print all the movies
                 data.Items.forEach(function(each) {
-                // console.log(each.date_time + ": " + each.id_number + ": " + each.thing_status + ": " + each.thing_name + ": " + "\n");
+
+                  // console.log(each.date_time + ": " + each.id_number + ": " + each.thing_status + ": " + each.thing_name + ": " + "\n");
                                 
-                if (each.id_number > newer) {
-                    newer = each.id_number
-                    state = each.thing_status
-                }
+                  if (each.id_number > newer) {
+                      newer = each.id_number
+                      state = each.thing_status
+
+                      if (each.remote_on === "01") {document.getElementById('label').innerHTML = 'Encendido remoto';}
+                      else if (each.remote_off === "01") {document.getElementById('label').innerHTML = 'Apagado remoto';}
+                      else if (each.manual_on === "01") {document.getElementById('label').innerHTML = 'Encendido manual';}
+                      else if (each.manual_off === "01") {document.getElementById('label').innerHTML = 'Apagado manual';}                      
+                  }
               });
             }
           }
@@ -175,9 +181,7 @@
                   <h2><span class="label label-default">Contactos</span></h2>
                 </label>
               </a>
-            </li>
-    
-            
+            </li>        
           </ul>
         </div>
       </div>
@@ -219,6 +223,8 @@
         </div>
       </div>
     </div>
+
+    <label style="margin-left: 2%;" id="label">Notifications</label>
 
     <div>
       <input type="image" id="derecha1" src="images/loading.gif"></input>
