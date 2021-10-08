@@ -56,6 +56,8 @@ function getId() {
     
   let token = window.location.href
 
+  // let token = ""
+
   let auth = "Bearer " + token.split('&')[1].split('=')[1]
 
   let url="https://tei.auth.eu-central-1.amazoncognito.com/oauth2/userInfo";
@@ -76,13 +78,16 @@ function updateImage() {
   var image = document.getElementById("derecha1");
   var imageon = document.getElementById("derecha");
   var imageoff = document.getElementById("izquierda");
+  var image1 = document.getElementById("derecha1");
+  var image2 = document.getElementById("derecha2");
+
   scanData();
-  console.log(state);
+  queryData(); 
 
     if ( state == "01") {
-        image.src="../imagenes/iconos/valvulaAbierta.png";
+        image1.src="../imagenes/iconos/valvulaAbierta.png";
     } else if ( state == "00") {
-        image.src="../imagenes/iconos/valvulaCerrada.png";
+        image1.src="../imagenes/iconos/valvulaCerrada.png";
     }
 
     if ( state == "01") {
@@ -96,6 +101,11 @@ function updateImage() {
 } else if ( state == "00") {
     imageoff.src="../imagenes/iconos/offNewencendido.png";
 }
+    if ( network == "Offline") {
+      image2.src="../imagenes/iconos/off.png";
+  } else if ( network == "Online_") {
+      image2.src="../imagenes/iconos/on.png";
+  }
 }
 
 function handleError(evt) {
@@ -114,7 +124,6 @@ function handleError(evt) {
       window.location.href = "https://tei.auth.eu-central-1.amazoncognito.com/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net";
 
     }
-
   }
 }
 

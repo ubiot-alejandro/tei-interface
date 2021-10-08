@@ -5,6 +5,7 @@
   <head>
     <!-- agregado el meta charset UTF-8 para los carácteres como las tildes y la letra ñ -->
     <meta charset="UTF-8">
+    <meta http-equiv="Refresh" content="1800"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -59,16 +60,38 @@
     });
 
       var state = "NaN"
+      var network = "NaN"
       var dynamodb = new AWS.DynamoDB();
       var newer = String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10)
       var docClient = new AWS.DynamoDB.DocumentClient();
       
+      function queryData() {
+
+        var params = {
+            TableName : "teiDB",
+            KeyConditionExpression: "#dt = :id",
+            ExpressionAttributeNames:{
+                "#dt": "date_time"
+            },
+            ExpressionAttributeValues: {
+                ":id": clientID
+            }
+        };
+
+        docClient.query(params, function(err, data) {
+            if (err) {
+                console.log(JSON.stringify(err, undefined, 2));
+            } else {
+                network = data.Items[0].network
+            }
+        });
+    }
+      
       function scanData() {
-        // console.log("Scanning data..." + "\n");
     
         var params = {
             TableName: "teiDB",
-            ProjectionExpression: "#id, date_time, #thing, thing_status",
+            ProjectionExpression: "#id, date_time, #thing, thing_status, remote_on, remote_off, manual_on, manual_off",
             FilterExpression: "#id between :start_id and :end_id AND #thing = :thing",
             ExpressionAttributeNames: {
                 "#id": "id_number",
@@ -85,17 +108,24 @@
     
         function onScan(err, data) {
             if (err) {
-                document.getElementById('textarea').innerHTML += "Unable to scan the table: " + "\n" + JSON.stringify(err, undefined, 2);
+                console.log(JSON.stringify(err, undefined, 2));
             }
             
             else {
                 // Print all the movies
                 data.Items.forEach(function(each) {
-                // console.log(each.date_time + ": " + each.id_number + ": " + each.thing_status + ": " + each.thing_name + ": " + "\n");
-                if (each.id_number > newer) {
-                    newer = each.id_number
-                    state = each.thing_status
-                }
+
+                  // console.log(each.date_time + ": " + each.id_number + ": " + each.thing_status + ": " + each.thing_name + ": " + "\n");
+                                
+                  if (each.id_number > newer) {
+                      newer = each.id_number
+                      state = each.thing_status
+
+                      if (each.remote_on === "01") {document.getElementById('label').innerHTML = 'Encendido remoto';}
+                      else if (each.remote_off === "01") {document.getElementById('label').innerHTML = 'Apagado remoto';}
+                      else if (each.manual_on === "01") {document.getElementById('label').innerHTML = 'Encendido manual';}
+                      else if (each.manual_off === "01") {document.getElementById('label').innerHTML = 'Apagado manual';}                      
+                  }
               });
             }
           }
@@ -150,9 +180,7 @@
                   <h2><span class="label label-default">Contactos</span></h2>
                 </label>
               </a>
-            </li>
-    
-            
+            </li>        
           </ul>
         </div>
       </div>
@@ -175,7 +203,7 @@
     <hgroup>
       <h1 style="background-color: rgb(224, 219, 219); color: rgb(0, 77, 93);">Tablero Eléctrico Inteligente</h1>
     </hgroup>
-
+    
     <div class="w3-light-grey w3-container">
       
       <div class="w3-content">
@@ -183,7 +211,7 @@
           <input id="derecha" type="image" alt="ON" src="imagenes/iconos/onNewapagado.png" onclick="invokeON()"><b>Encender</b></input>
         </div>
       </div>
-
+  
       <div class="w3-content">
         <div class="w3-twothird">
           <input id="izquierda" type="image" alt="OFF" src="imagenes/iconos/offNewencendido.png" onclick="invokeOFF()"><b>Apagar</b></input>
@@ -191,11 +219,14 @@
       </div>
     </div>
 
+    <label style="margin-left: 2%;" id="label">Notifications</label>
+    <div>
+      <input style="height: 70px; width: 70px; margin-left: 3.5%;" type="image" id="derecha2" src="images/loading.gif"></input>
+    </div>
+
     <div>
       <input  type="image" id="derecha1" src="images/loading.gif"></input>
     </div>
-
-    <!-- <input id="scanData" type="button" value="Update" onclick="updateImage();"/> -->
 
     <footer class="bg-light text-center text-md-start">
       <div class="text-center p-3 base">
