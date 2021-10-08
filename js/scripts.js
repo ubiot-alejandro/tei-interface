@@ -9,6 +9,8 @@ function myFunction() {
 
 function invokeON() {
 
+  changeImage();
+
   let token = window.location.href
 
   let auth = token.split('&')[1].split('=')[1]
@@ -25,9 +27,12 @@ function invokeON() {
     })
     .then(data=> data.json())
     .then(res=>{console.log(res)});
+
 }
 
-function invokeOFF() {    
+function invokeOFF() {
+
+  changeImageoff();
   
   let token = window.location.href
 
@@ -51,6 +56,8 @@ function getId() {
     
   let token = window.location.href
 
+  // let token = ""
+
   let auth = "Bearer " + token.split('&')[1].split('=')[1]
 
   let url="https://tei.auth.eu-central-1.amazoncognito.com/oauth2/userInfo";
@@ -68,6 +75,9 @@ function getId() {
 }
 
 function updateImage() {
+  var image = document.getElementById("derecha1");
+  var imageon = document.getElementById("derecha");
+  var imageoff = document.getElementById("izquierda");
   var image1 = document.getElementById("derecha1");
   var image2 = document.getElementById("derecha2");
 
@@ -80,6 +90,17 @@ function updateImage() {
         image1.src="../imagenes/iconos/valvulaCerrada.png";
     }
 
+    if ( state == "01") {
+      imageon.src="../imagenes/iconos/onNewencendido.png";
+  } else if ( state == "00") {
+      imageon.src="../imagenes/iconos/onNewapagado.png";
+  }
+
+  if ( state == "01") {
+    imageoff.src="../imagenes/iconos/offNewapagado.png";
+} else if ( state == "00") {
+    imageoff.src="../imagenes/iconos/offNewencendido.png";
+}
     if ( network == "Offline") {
       image2.src="../imagenes/iconos/off.png";
   } else if ( network == "Online_") {
@@ -105,6 +126,33 @@ function handleError(evt) {
     }
   }
 }
+
+function changeImage() {
+        
+  if (document.getElementById("derecha").src == "imagenes/iconos/onNewapagado.png") 
+  {
+      document.getElementById("derecha").src = "imagenes/iconos/onNewapagado.png";
+  }
+  else 
+  {
+      document.getElementById("derecha").src = "imagenes/iconos/onNewencendido.png";
+      document.getElementById("izquierda").src = "imagenes/iconos/offNewapagado.png";
+  }
+}
+
+function changeImageoff() {
+  
+  if (document.getElementById("izquierda").src == "imagenes/iconos/offNewapagado.png") 
+  {
+      document.getElementById("izquierda").src = "imagenes/iconos/offNewapagado.png";
+  }
+  else 
+  {
+      document.getElementById("derecha").src = "imagenes/iconos/onNewapagado.png";
+      document.getElementById("izquierda").src = "imagenes/iconos/offNewencendido.png";
+  }
+  }
+
 
 setInterval(updateImage, 1000);
 
