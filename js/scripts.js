@@ -54,7 +54,7 @@ function invokeOFF() {
 
 function getId() {
     
-  // let token = window.location.href
+  let token = window.location.href
 
   // let token = ""
 
