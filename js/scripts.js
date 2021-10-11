@@ -102,9 +102,9 @@ function updateImage() {
     imageoff.src="../imagenes/iconos/offNewencendido.png";
 }
     if ( network == "Offline") {
-      image2.src="../imagenes/iconos/off.png";
+      image2.src="../imagenes/iconos/Boton_desconectado.png";
   } else if ( network == "Online_") {
-      image2.src="../imagenes/iconos/on.png";
+      image2.src="../imagenes/iconos/Boton_conectado.png";
   }
 }
 
@@ -126,32 +126,6 @@ function handleError(evt) {
     }
   }
 }
-
-function changeImage() {
-        
-  if (document.getElementById("derecha").src == "imagenes/iconos/onNewapagado.png") 
-  {
-      document.getElementById("derecha").src = "imagenes/iconos/onNewapagado.png";
-  }
-  else 
-  {
-      document.getElementById("derecha").src = "imagenes/iconos/onNewencendido.png";
-      document.getElementById("izquierda").src = "imagenes/iconos/offNewapagado.png";
-  }
-}
-
-function changeImageoff() {
-  
-  if (document.getElementById("izquierda").src == "imagenes/iconos/offNewapagado.png") 
-  {
-      document.getElementById("izquierda").src = "imagenes/iconos/offNewapagado.png";
-  }
-  else 
-  {
-      document.getElementById("derecha").src = "imagenes/iconos/onNewapagado.png";
-      document.getElementById("izquierda").src = "imagenes/iconos/offNewencendido.png";
-  }
-  }
 
 
 setInterval(updateImage, 1000);
