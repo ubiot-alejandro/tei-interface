@@ -119,7 +119,7 @@ text-transform: uppercase;
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
-  height: 200px;
+  height: 270px;
   margin: auto;
   margin-bottom: 0%;
   margin-top: 0%;
@@ -138,17 +138,21 @@ text-transform: uppercase;
 #izquierda {
   text-align: center;
   position: relative;
-  margin: 10%;
   border: none;
   background-color: transparent;
+  font-weight: bold;
 }
 
 #derecha {
   text-align: center;
   position: relative;
-  margin: 10%;
   border: none;
   background-color: transparent;
+}
+
+b {
+  font-weight: bold;
+  font-size: large;
 }
 
 #derecha1 {
@@ -258,6 +262,7 @@ height:203px;
 
 .label-default{
   display: none;
+  font-weight: bold;
 }
 
 
@@ -286,8 +291,12 @@ input {
   margin: auto;
 }
 
+.w3-right {
+  font-weight: bold;
+}
+
 .w3-right:hover {
-  color: rgb(244, 216, 15);
+  color: rgb(0, 77, 93);
 }
 
 /* //////////////////////Responsive Styles/////////////////////// */
@@ -296,7 +305,7 @@ input {
 
   /* Tablero eléctrico Sumergible */
 .w3-light-grey {
-  height: 400px;
+  height: 270px;
   margin: auto;
   margin-bottom: 20px;
   margin-top: 1%;
@@ -325,14 +334,14 @@ input {
 @media (min-height: 790px) {                   /*======= Mayor de 790 px (Alto) =======*/
 
   .w3-light-grey {
-    height: 500px;
+    height: 270px;
 
   }
 }
 @media (min-height: 710px) {                  /*======= Mayor de 710 px (Alto) =======*/
 
   .w3-light-grey {
-    height: 350px;
+    height: 270px;
   }
 }
 
@@ -383,7 +392,7 @@ input {
 @media (max-width: 1400px) {
   
   .w3-light-grey {
-    height: 300px;
+    height: 270px;
     margin: auto;
     margin-bottom: 10px;
     margin-top: 1%;
@@ -526,7 +535,7 @@ input {
   }
 
   .w3-light-grey {
-    height: 300px;
+    height: 270px;
     margin: auto;
     margin-bottom: 10px;
     margin-top: 1%;
