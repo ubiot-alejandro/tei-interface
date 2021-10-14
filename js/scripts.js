@@ -69,7 +69,6 @@ function getId() {
 }
 
 function updateImage() {
-  var image = document.getElementById("derecha1");
   var imageon = document.getElementById("derecha");
   var imageoff = document.getElementById("izquierda");
   var image1 = document.getElementById("derecha1");
