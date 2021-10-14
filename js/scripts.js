@@ -1,3 +1,6 @@
+var notified1 = false
+var notified2 = false
+
 function myFunction() {
     var x = document.getElementById("navDemo");
     if (x.className.indexOf("w3-show") == -1) {
@@ -69,32 +72,39 @@ function getId() {
 }
 
 function updateImage() {
+  const music = new Audio('../audio/notif.mp3');
   var imageon = document.getElementById("derecha");
   var imageoff = document.getElementById("izquierda");
   var image1 = document.getElementById("derecha1");
   var image2 = document.getElementById("derecha2");
 
   scanData();
-  queryData(); 
-
-    if ( state == "01") {
-        image1.src="../imagenes/iconos/valvulaAbierta.png";
-    } else if ( state == "00") {
-        image1.src="../imagenes/iconos/valvulaCerrada.png";
-    }
-
-    if ( state == "01") {
+  queryData();
+  
+  if ( state == "01") {
+      image1.src="../imagenes/iconos/valvulaAbierta.png";
       imageon.src="../imagenes/iconos/onNewencendido.png";
+      imageoff.src="../imagenes/iconos/offNewapagado.png";
+      
+      if (! notified1) {
+        music.play();
+        notified1 = true
+        notified2 = false
+      }
+
   } else if ( state == "00") {
+      image1.src="../imagenes/iconos/valvulaCerrada.png";
       imageon.src="../imagenes/iconos/onNewapagado.png";
+      imageoff.src="../imagenes/iconos/offNewencendido.png";
+            
+      if (! notified2) {
+        music.play();
+        notified1 = false
+        notified2 = true
+      }      
   }
 
-  if ( state == "01") {
-    imageoff.src="../imagenes/iconos/offNewapagado.png";
-} else if ( state == "00") {
-    imageoff.src="../imagenes/iconos/offNewencendido.png";
-}
-    if ( network == "Offline") {
+  if ( network == "Offline") {
       image2.src="../imagenes/iconos/Boton_desconectado.png";
   } else if ( network == "Online_") {
       image2.src="../imagenes/iconos/Boton_conectado.png";
