@@ -52,8 +52,6 @@ function getId() {
     
   let token = window.location.href
 
-  // let token = ""
-
   let auth = "Bearer " + token.split('&')[1].split('=')[1]
 
   let url="https://tei.auth.eu-central-1.amazoncognito.com/oauth2/userInfo";
@@ -71,7 +69,6 @@ function getId() {
 }
 
 function updateImage() {
-  var image = document.getElementById("derecha1");
   var imageon = document.getElementById("derecha");
   var imageoff = document.getElementById("izquierda");
   var image1 = document.getElementById("derecha1");
