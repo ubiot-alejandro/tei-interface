@@ -1,3 +1,4 @@
+var init = true
 var notified1 = false
 var notified2 = false
 
@@ -72,7 +73,7 @@ function getId() {
 }
 
 function updateImage() {
-  const music = new Audio('../audio/notif.mp3');
+  var music = new Audio('../audio/notif.mp3');
   var imageon = document.getElementById("derecha");
   var imageoff = document.getElementById("izquierda");
   var image1 = document.getElementById("derecha1");
@@ -87,9 +88,15 @@ function updateImage() {
       imageoff.src="../imagenes/iconos/offNewapagado.png";
       
       if (! notified1) {
-        music.play();
-        notified1 = true
-        notified2 = false
+        if (! init) {
+          music.play();
+          notified1 = true
+          notified2 = false
+        } else {
+          init = false
+          notified1 = true
+          notified2 = false
+        }
       }
 
   } else if ( state == "00") {
@@ -98,9 +105,15 @@ function updateImage() {
       imageoff.src="../imagenes/iconos/offNewencendido.png";
             
       if (! notified2) {
-        music.play();
-        notified1 = false
-        notified2 = true
+        if (! init) {
+          music.play();
+          notified1 = false
+          notified2 = true
+        } else {
+          init = false
+          notified1 = false
+          notified2 = true
+        }
       }      
   }
 
@@ -129,7 +142,6 @@ function handleError(evt) {
     }
   }
 }
-
 
 setInterval(updateImage, 1000);
 
