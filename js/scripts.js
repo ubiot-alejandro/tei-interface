@@ -1,6 +1,8 @@
 var init = true
 var notified1 = false
 var notified2 = false
+var notified3 = false
+var notified4 = false
 
 function myFunction() {
     var x = document.getElementById("navDemo");
@@ -74,6 +76,7 @@ function getId() {
 
 function updateImage() {
   var music = new Audio('../audio/notif.mp3');
+  var connection = new Audio('../audio/init.mp3');
   var imageon = document.getElementById("derecha");
   var imageoff = document.getElementById("izquierda");
   var image1 = document.getElementById("derecha1");
@@ -119,15 +122,29 @@ function updateImage() {
 
   if ( network == "Offline") {
       image2.src="../imagenes/iconos/Boton_desconectado.png";
+
+      if (! notified3) {
+        connection.play();
+        notified3 = true
+        notified4 = false
+      }
+
   } else if ( network == "Online_") {
       image2.src="../imagenes/iconos/Boton_conectado.png";
+
+      if (! notified4) {
+        connection.play();
+        notified3 = false
+        notified4 = true
+      }
+    
   }
 }
 
 function handleError(evt) {
   if (evt.message) {
 
-    console.log(evt.message)
+    // console.log(String(evt.message)[0,17])
 
     if (evt.message == `Uncaught TypeError: Cannot read properties of undefined (reading 'split')`) {
 
@@ -143,7 +160,7 @@ function handleError(evt) {
   }
 }
 
-setInterval(updateImage, 1000);
+setInterval(updateImage, 2000);
 
 window.addEventListener("error", handleError, true);
 
