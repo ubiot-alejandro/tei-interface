@@ -60,7 +60,7 @@ function getId() {
 
   let auth = "Bearer " + token.split('&')[1].split('=')[1]
 
-  let url="https://tei.auth.eu-central-1.amazoncognito.com/oauth2/userInfo";
+  let url="https://auth.tei.com.ve/oauth2/userInfo";
     
   fetch(url, {
     mode: 'cors',
@@ -149,12 +149,12 @@ function handleError(evt) {
     if (evt.message == `Uncaught TypeError: Cannot read properties of undefined (reading 'split')`) {
 
       //alert("Por favor inicie sesion antes...")
-      window.location.href = "https://tei.auth.eu-central-1.amazoncognito.com/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net";
+      window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://tei.com.ve";
 
     } else if (evt.message == `Script error.`) {
 
       //alert("Por favor inicie sesion antes...")
-      window.location.href = "https://tei.auth.eu-central-1.amazoncognito.com/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net";
+      window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://tei.com.ve";
 
     }
   }
