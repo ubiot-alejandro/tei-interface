@@ -49,7 +49,7 @@ function invokeOFF() {
 }
 
 function getId() {
-    
+
   let token = window.location.href
 
   let auth = "Bearer " + token.split('&')[1].split('=')[1]
