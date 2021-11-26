@@ -160,6 +160,19 @@ function handleError(evt) {
   }
 }
 
+function test() {
+
+  now = parseInt(Date.now().toString().substr(0,10))
+  dt = parseInt(dt)
+ 
+  var date = new Date(null);
+  date.setSeconds(now - dt);
+  var result = date.toISOString().substr(11, 8);
+
+  console.log(result)
+
+}
+
 setInterval(updateImage, 5000);
 
 window.addEventListener("error", handleError, true);

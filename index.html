@@ -61,6 +61,7 @@
 
       var state = "NaN"
       var network = "NaN"
+      var dt = "NaN"
       var dynamodb = new AWS.DynamoDB();
       var newer = String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10)
       var docClient = new AWS.DynamoDB.DocumentClient();
@@ -122,6 +123,7 @@
                   if (each.id_number > newer) {
                       newer = each.id_number
                       state = each.thing_status
+                      dt = each.id_number
 
                       if (each.remote_on === "01") {document.getElementById('label').innerHTML = 'Encendido remoto';}
                       else if (each.remote_off === "01") {document.getElementById('label').innerHTML = 'Apagado remoto';}
@@ -219,6 +221,9 @@
           <input id="izquierda" type="image" alt="OFF" src="imagenes/iconos/offNewencendido.png" onclick="invokeOFF()"><b>Apagar</b></input>
         </div>
       </div>
+
+      <button id="test" onclick="test()">Test</button>
+    
     </div>
 
     <label style="margin-left: 2%; font-weight: bold;"> Última actividad de su motor:</label>
