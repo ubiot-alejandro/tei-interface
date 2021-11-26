@@ -42,7 +42,7 @@
   
     <!-- mover carrusel desde JavaScript -->
     <script src="js/jquery.tinycarousel.min.js"></script>
-    <link  rel="icon"   href="imagenes/logos/teiNew.png" type="image/png" />
+    <link  rel="icon"   href="imagenes/iconos/favicon.png" type="image/png" />
   
   
     <!-- Add fancyBox -->
@@ -81,7 +81,6 @@
         docClient.query(params, function(err, data) {
             if (err) {
                 console.log(JSON.stringify(err, undefined, 2));
-                window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://tei.com.ve";
             } else {
                 network = data.Items[0].network
             }
@@ -110,7 +109,6 @@
         function onScan(err, data) {
             if (err) {
                 console.log(JSON.stringify(err, undefined, 2));
-                window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://tei.com.ve";
             }
             
             else {
@@ -140,7 +138,7 @@
     <!-- Barra de logo e iconos -->
     <nav class="navbar container-fluid navbar-expand-md navbar-light">
       <div class="container-fluid">
-        <a href="https://testagropezim2.s3.us-east-1.amazonaws.com/index.html"><img src="imagenes/logos/teiNew.png" id="logo1"></a>
+        <a href="https://testagropezim2.s3.us-east-1.amazonaws.com/index.html"><img src="imagenes/iconos/TEI.png" id="logo1"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -148,18 +146,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="https://testagropezim2.s3.us-east-1.amazonaws.com/index.html">
                 <img src="imagenes/iconos/home1.png  " class="hidden-xs btn_nosotros">
                 <label class="visible-xs" align-content="center" onclick="location.href='';">
                   <h2><span class="label label-default">AGG</span></h2>
                 </label>
               </a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">
-                <img src="imagenes/iconos/logout.png" class="hidden-xs btn_nosotros">
+                <img src="imagenes/iconos/logout2.png" class="hidden-xs btn_nosotros">
                 <label class="visible-xs" align-content="center" onclick="location.href='';">
                   <h2><span class="label label-default">Logout</span></h2>
                 </label>
@@ -208,7 +206,7 @@
       
     </div><br>
 
-<a style="background-color: rgb(224, 219, 219); margin-left: 1%;" class="w3-right" href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://tei.com.ve">Log out</a>
+    <!-- <a style="background-color: rgb(224, 219, 219); margin-left: 1%;" class="w3-right" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">Log out</a> -->
 
     <!-- First Grid -->
     <hgroup>
