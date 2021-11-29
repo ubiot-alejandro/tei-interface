@@ -149,12 +149,12 @@ function handleError(evt) {
     if (evt.message == `Uncaught TypeError: Cannot read properties of undefined (reading 'split')`) {
 
       //alert("Por favor inicie sesion antes...")
-      window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://tei.com.ve";
+      window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio";
 
     } else if (evt.message == `Script error.`) {
 
       //alert("Por favor inicie sesion antes...")
-      window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://tei.com.ve";
+      window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio";
 
     }
   }
