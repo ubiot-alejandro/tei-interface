@@ -195,7 +195,7 @@ body {
   padding-right: 0px;
   margin-bottom: 0px;
   position: relative;
-  height: 1300px;
+  height: 1500px;
   width: 100%;
 }
 
@@ -207,7 +207,7 @@ body {
   padding-right: 0px;
   margin-bottom: 0px;
   position: relative;
-  height: 120px;
+  height: 1200px;
   width: 100%;
 }
 
@@ -1233,6 +1233,10 @@ a {
 
 @media (max-width: 900px) {
 
+  #cabecera-nosotros {
+    height: 1550px;
+  }
+
   .visible-xs {
     display: none;
 
@@ -1309,9 +1313,8 @@ a {
   }
 
   #cabecera-nosotros {
-    height: 850px;
+    height: 1500px;
   }
-
   .sangria{
     padding-left: 30px;
     padding-right: 30px;
@@ -1414,7 +1417,7 @@ a {
     }
     
     #cabecera-nosotros {
-      height: 700px;
+      height: 1200px;
     }
 
     #quienes-somos {
@@ -1468,7 +1471,7 @@ a {
   }
 
   #cabecera-nosotros {
-    height: 500px;
+    height: 900px;
   }
 
   .botonServicios {
@@ -1498,6 +1501,7 @@ a {
 }
 
 }
+
 
 @media only screen and (max-width:1250px) {
   [class*="card"] {
