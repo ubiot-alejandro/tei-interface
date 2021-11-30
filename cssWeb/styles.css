@@ -984,8 +984,8 @@ input:focus ~ .highlight {
 /* Página de TEI */
 
 .botonTEI {
-  width: 45%;
-  margin-left: 2%;
+  width: 30%;
+  margin-left: 1%;
 }
 
 .botonTEI:hover {
