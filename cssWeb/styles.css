@@ -1,0 +1,1544 @@
+/* ============= Estilos ============= */
+
+body {
+  margin: 0;
+  margin-bottom: 0px;
+  min-height: 100vh;
+  height: auto;
+}
+
+.home {
+  background: white;
+  background-repeat: repeat;
+  padding: 0;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+/* Ajuste del Home */
+.prueba-responsive {
+  float: left;
+  width: 50%;
+}
+
+.prueba-responsive2 {
+  float: right;
+  width: 50%;
+  padding: 2%;
+
+}
+
+.prueba-responsive3 {
+  float: right;
+  width: 50%;
+}
+
+.prueba-responsive4 {
+  float: left;
+  width: 50%;
+  padding: 2%;
+
+}
+
+.prueba-responsive5 {
+  float: left;
+  width: 50%;
+}
+
+.prueba-responsive6 {
+  float: right;
+  width: 50%;
+  padding: 2%;
+
+}
+
+.prueba-responsive7 {
+  float: right;
+  width: 50%;
+}
+
+.prueba-responsive8 {
+  float: left;
+  width: 50%;
+  padding: 2%;
+
+}
+
+/* ============= Logo ============= */
+
+/* Caracteristicas de la barra de navegación: */
+/* Tamaño del logotipo */
+
+#logo {
+  margin-top: 0px;
+  height: auto;
+  width: 43%;
+}
+
+#logo:hover {
+  width: 45%;
+}
+
+#logo1 {
+  margin-top: 0px;
+  height: 70px;
+  width: 100px;
+}
+
+#logo-tei {
+  margin-top: 0px;
+  height: 90px;
+  width: 110px;
+}
+
+/* Tamaño de iconos*/
+
+.hidden-xs {
+  width: 4vw;
+  height: 4vw;
+}
+
+.hidden-xs:hover {
+  width: 4.5vw;
+  height: 4.5vw;
+}
+
+
+/* Fondo del container del navbar */
+
+.navbar {
+  background-color: white;
+  border: 100px "solid" #00353e;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100px;
+}
+
+.nav-item {
+  justify-content: flex-start;
+}
+
+
+.items {
+  height: 100px;
+  padding-bottom: 0px;
+}
+
+.imagenPresentacionPozos {
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+}
+
+.imagenPresentacionEmpalmes {
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+}
+
+.imagenPresentacionTei {
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+}
+
+.imagen1 {
+  padding: 150px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.imagenproductos {
+  position:relative;
+  display: block;
+  margin: auto;
+  margin-top: 0px;
+  height: 50%;
+  width: 30%;
+  padding: 0px;
+}
+
+.imagen-login {
+  position: absolute;
+  margin-left: 220px;
+  padding-left: 30px;
+  padding-top: 90px;
+}
+
+.navbar-toggler {
+  border-color: black;
+  border: solid;
+}
+
+.navbar-toggler:hover {
+  background-color:rgb(110, 180, 222);
+}
+
+#cabecera {
+  background-color: white;
+  border: 100px "solid" #00353e;
+  margin-top: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 0px;
+  position: relative;
+  height: 100%;
+}
+
+#cabecera-nosotros {
+  border: 100px "solid" #00353e;
+  background:rgb(110, 180, 222);
+  margin-top: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 0px;
+  position: relative;
+  height: 1300px;
+  width: 100%;
+}
+
+#cabecera-productos {
+  background-color: white;
+  border: 100px "solid" #00353e;
+  margin-top: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 0px;
+  position: relative;
+  height: 120px;
+  width: 100%;
+}
+
+.row{
+  position: relative;
+}
+
+
+#quienes-somos {
+  padding: 5%;
+  position: relative;
+  height: 100%;
+  width: 80%;
+  background-color: white;
+}
+
+/* Botones Productos  */
+.btn {
+  font-weight: bold;
+  color: rgb(0, 77, 93);
+  background-color: rgb(110, 180, 222);
+}
+
+#cabecera-servicios {
+  background-color: white;
+  border: 100px "solid" #00353e;
+  margin-top: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 0px;
+  position: relative;
+  height: 120px;
+  width: 100%;
+}
+
+.container.formulario {
+  padding: 0;
+  width: 100%;
+  height: 800px;
+}
+
+.h1 {
+  color:rgb(0, 80, 94);
+  font-size: medium;
+}
+
+#TEI {
+color: rgb(0, 80, 94);
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-transform: uppercase;
+}
+
+
+#containerCentral {
+  background-color: white;
+  margin-top: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 0px;
+  position: relative;
+  height: 100px;
+  width: auto;
+}
+
+#cabecera-formulario {
+background-color: white;
+margin-top: 0;
+padding-left: 0px;
+padding-right: 0px;
+margin-bottom: 0px;
+position: relative;
+height: 120px;
+width: auto;
+}
+
+/* -------------Formulario----------------- */
+
+#nombre {
+  width: 70%;
+}
+
+#telefono {
+  width: 70%;
+}
+
+#email {
+  width: 70%;
+}
+
+#mensaje {
+  width: 70%;
+}
+
+#phone {
+  width: 70%;
+}
+
+.myButton {
+  width: 30%;
+  margin-bottom: 40px;
+  top: 30%;
+  left: 35%;
+  position: relative;
+}
+
+#mensaje {
+  padding-bottom: 20px;
+}
+
+
+/* -------------Formulario----------------- */
+
+/* Pagina de TEI */
+
+.tei-texto {
+  margin-top: 2%;
+  text-align: center;
+  font-size: em;
+}
+
+/* Tablero eléctrico Sumergible */
+
+.w3-light-grey {
+  height: 575px;
+}
+
+
+.login100-more {
+  width: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.login100-more::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+
+/* Linea divisiora */
+
+.linea_divisora {
+  border-color: rgb(0, 80, 94); 
+  background-color:rgb(0, 80, 94);
+  height: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  position: absolute;
+}
+
+.linea_divisora1 {
+  border-color: rgb(244, 216, 15); 
+  background-color: rgb(244, 216, 15);
+  height: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  position: relative;
+}
+
+.linea_divisora2 {
+  border-color: rgb(0, 77, 93); 
+  background-color: rgb(0, 80, 94);
+  height: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  position: relative;
+}
+
+.linea_divisora3 {
+  border-color: rgb(141, 191, 198); 
+  background-color: rgb(141, 191, 198);
+  height: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  position: relative;
+}
+
+#logo-movil {
+  height: 30px;
+}
+
+/* Para que los items del navbar se muestren a la izquierda de la pantalla */
+
+#navbarSupportedContent {
+  justify-content: flex-end;
+  width: 50px;
+}
+
+/* Base del template */
+
+footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 67px;
+  font-weight: bold;
+  color: rgb(0, 80, 94); 
+  clear: left;
+}
+
+.base {
+  background: rgb(0, 80, 94);
+  color: white;
+  font-size: 1vw;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+}
+
+/* seccion nosotros */
+
+.txt_quienes {
+  text-align: center;
+  color: black;
+  width:90%;
+  margin-top: 0;
+  line-height: 200%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.letras_mas_grandes{
+  font-size: 1.2vw;
+  color:rgb(0, 80, 94);
+  text-align: justify;
+}
+
+/* ===================== Productos ===================== */
+
+
+
+#productos{
+  justify-content: center;
+}
+
+.card-body {
+  color: rgb(0, 80, 94);
+
+}
+
+.card-text {
+  text-align: justify;
+}
+
+.card-title {
+  color: rgb(0, 77, 93);
+  font-weight: bold;
+
+}
+
+.card-body-productos {
+  color: rgb(0, 80, 94);
+  position:relative;
+  display: block;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.card {
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  height: 470px;
+  width: 48%;
+  float: left;
+  margin: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%; 
+}
+
+.card2 {
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  height: 470px;
+  width: 48%;
+  float: right;
+  margin: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  background-color: white;
+}
+
+.cardproduct {
+  float:left;
+}
+
+.card-box {
+    padding: 0px;
+    box-shadow: 0px 0px 0px 0px #c5c5c5;
+    margin-bottom: 0px;
+}
+
+
+.card-box .card-thumbnail {
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: 0px;
+    transition: 1s;
+}
+
+.card-box .card-thumbnail img{
+  padding: 20px ;
+  object-fit: fill;
+}
+
+.login {
+  width: 40%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: auto;
+}
+
+
+.card-box h3 a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(0, 80, 94);
+}
+
+.estilo_imagenes{
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  flex: 1;
+  display: inline-flex;
+}
+
+
+.estilo_imagenes a img{
+  display: flex;
+}
+
+.color_letras_productos {
+  font-size: 18px;
+  text-align: center;
+  color:rgb(0, 80, 94);
+  text-decoration:none;
+}
+
+
+/* seccion servicios */
+
+.accordion {
+  height: 130%;
+  position: relative;
+  align-items: center;
+  margin: 3%;
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.color_letras_servicios2 {
+  font-size: 1.2vw;
+  color: rgb(0,53,62);
+  background-color:rgb(255,255,255);
+  text-decoration:none;
+}
+
+.color_letras_servicios2:hover{color:rgb(50,103,112);}
+
+
+.color_letras_servicios2 ,a:link {
+  text-decoration: none;
+}
+
+
+.color_letras_servicios {
+  margin-top: 10px;
+  font-size: 1vw;
+  color: rgb(0,53,62);
+  background-color:rgb(255,255,255);
+  text-decoration:none;
+}
+
+.sangria {
+  padding: 10px;
+  text-align: justify;
+}
+
+
+#myList li{
+  list-style: disc;
+}
+
+
+.serviciosAgropezim{
+  margin-top: 30px;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.accordion-body {
+  color: rgb(0, 80, 94);
+}
+
+.botonServicios {
+  color: rgb(244, 216, 15);
+  font-weight: bold;
+  position: relative;
+  margin-left: 70%;
+}
+
+.botonServicios:hover {
+  font-size: large;
+  color: rgb(0, 80, 94);
+}
+
+.botonServicios:active {
+  color: rgb(0, 80, 94);
+}
+
+
+/*seccion de la ventana modal*/
+/* Z-index of #mask must lower than #boxes .window */
+
+#mask {
+  position: relative;
+  z-index:900;
+  background-color:#000;
+  background-color:rgb(0,53,62);
+  display: none;
+}
+
+#boxes .window {
+  margin-top: 0px;
+  position: relative;
+  display:none;
+  z-index:910;
+  /* padding:20px; */
+  font-size:22px;
+  color:rgb(0,53,62);
+  background-color:rgb(255,255,255);
+}
+
+
+/* Customize your modal window here, you can add background image too */
+#boxes #dialog {
+padding-top: 10px;
+width:375px;
+height:203px;
+}
+
+/* seccion contacto */
+
+.ocultarMail {
+  opacity: 0;
+}
+
+.myButton {
+  -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+  -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+  box-shadow: 0px 1px 0px 0px #f0f7fa;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+  background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+  background-color:#33bdef;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #057fd0;
+  display:block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding: 10px 10px;
+  text-decoration:none;
+  text-shadow:0px 0px 0px #5b6178;
+  height: 60px;
+  padding-top: 10px;
+}
+
+.myButton:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+  background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+  background-color:#019ad2;
+}
+
+label {
+  margin-top: 0px;
+  letter-spacing:1px;
+  width: 70%;
+  padding-left: 0;
+  color: rgb(0, 80, 94);
+}
+
+.label-default{
+  display: none;
+}
+
+.formulario	 {
+  display:block;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  color: #666666;
+  font-size: 20px;
+}
+
+.mb-3 {
+  position: relative;
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 90%;
+  margin-right: 0px;
+}
+
+.form-control {
+  position: relative;
+}
+
+form {
+  width: 100%;
+  height: 570px;
+  padding-left: 0px;
+  position: relative;
+}
+
+
+input, textarea {
+  width: 80px;
+  height:70px;
+  border:2px solid #f6f6f6;
+  padding:10px;
+  padding-bottom: 20px;
+  margin-top:15px;
+  font-size: 20px;
+  color:#ffffff;
+}
+
+textarea {
+  height:100px;
+
+}
+
+#submit {
+  width:85px;
+  height:35px;
+  border:block;
+  margin-top:40px;
+  cursor:pointer;
+}
+
+/* Inicio de sesion  */
+
+* { box-sizing:border-box; }
+
+body {
+	font-family: Helvetica;
+	background: #eee;
+  -webkit-font-smoothing: antialiased;
+}
+
+hgroup { 
+	text-align:center;
+}
+
+h1, h3 { font-weight: 300px; }
+
+h1 { color: #636363; }
+
+h3, h5 { color: #4a89dc; }
+
+form {
+	width: 380px;
+	margin: 4em auto;
+  margin-right: 25em;
+	padding: 3em 2em 2em 2em;
+	background: #fafafa;
+	border: 1px solid #ebebeb;
+	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+
+.group { 
+	position: relative; 
+	margin-bottom: 45px;
+  columns:rgb(0, 77, 93);
+}
+
+input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: #fafafa;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
+}
+
+input:focus { outline: none; }
+
+
+/* Label */
+
+label {
+	color: #999; 
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+input:focus ~ label, input.used ~ label {
+	color: #4a89dc;
+}
+
+
+/* Underline */
+
+.bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.bar:before, .bar:after {
+	content: '';
+	height: 2px; 
+	width: 0;
+	bottom: 1px; 
+	position: absolute;
+	background: #4a89dc; 
+	transition: all 0.2s ease;
+}
+
+.bar:before { left: 50%; }
+
+.bar:after { right: 50%; }
+
+
+/* active */
+
+input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
+
+
+/* Highlight */
+
+.highlight {
+	position: absolute;
+	height: 60%; 
+	width: 100px; 
+	top: 25%; 
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+/* active */
+
+input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+	from { background: #4a89dc; }
+	to 	{ width: 0; background: transparent; }
+}
+
+
+/* Button */
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 40%;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  /* -webkit-font-smoothing: antialiased; */
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  align-items: center;
+}
+
+.button:focus { outline: 0; }
+
+
+/* Button modifiers */
+
+.buttonBlue {
+  background: rgb(0, 77, 93);
+}
+
+.buttonBlue:hover { 
+  background: rgb(110, 180, 222); 
+}
+
+
+/* Ripples container */
+
+.ripples {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+
+/* Ripples circle */
+
+.ripplesCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ripples.is-active .ripplesCircle {
+  animation: ripples .4s ease-in;
+}
+
+/* Página de TEI */
+
+.botonTEI {
+  width: 45%;
+  margin-left: 2%;
+}
+
+.botonTEI:hover {
+  filter: saturate(250%);
+}
+
+/* Interfaz de control */
+
+
+.w3-twothird {
+  height: auto;
+  width: auto;
+}
+
+.w3-light-grey {
+  background-color: white;
+}
+
+/* Ripples animation */
+
+@keyframes ripples {
+  0% { opacity: 0; }
+
+  25% { opacity: 1; }
+
+  100% {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
+}
+
+footer { text-align: center; }
+
+footer p {
+	color: #888;
+	font-size: 13px;
+	letter-spacing: .4px;
+}
+
+footer a {
+	color: #4a89dc;
+	text-decoration: none;
+	transition: all .2s ease;
+}
+
+footer a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+
+footer img {
+	width: 80px;
+	transition: all .2s ease;
+}
+
+footer img:hover { opacity: .83; }
+
+footer img:focus , footer a:focus { outline: none; }
+
+/* Inicio de sesion > */
+
+                                /* Responsive Styles */
+
+/*responsividad mayor que */
+@media (min-width: 1200px) {
+
+.hidden-xs {
+  width: 65px;
+  height: 65px;
+}
+
+.visible-xs {                 /* imagenesde productos  */
+  display: none;            /*Para una altura minima de 1200px */
+}
+
+  .linea_divisora{
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+  .viewport {
+    height: 0px;
+  }
+
+  .base {
+    font-size: 1vw;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    }
+
+    .color_letras_servicios2 {
+      font-size: 1.5vw;
+      margin: 0;
+  
+    }
+
+}
+
+
+a {
+  padding-bottom: 0px;
+}
+
+
+/*Responsividad menor que */
+
+@media (max-width: 1200px) {
+
+  .login {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .linea_divisora{
+    margin-top: 0px;
+    width: 100%;
+  }
+
+.hidden-xs {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+  .img-responsive{
+    width: 22,7vw;
+    height: 21,2vh;
+    justify-content: center;
+    object-fit: scale-down;
+    padding: 0px;
+
+  }
+
+  .viewport {
+    height: 0px;
+  }
+
+  .productogiro {
+    height: 0px;
+  }
+
+  .letras_mas_grandes {
+      font-size: 2vw;
+    }
+  
+  .color_letras_servicios2 {
+      font-size: 2.1vw;
+      margin: 0;
+  
+    }
+  
+  .color_letras_servicios{
+      font-size: 2vw;
+  
+    }
+
+  #logo {
+    margin-top: 0px;
+    height: 100px;
+    width: 210px;
+  }
+
+
+  .base {
+    font-size: 1.5vw;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    }
+
+    .navbar-nav {
+      position: relative;
+      z-index: 10000;
+      background-color: white;
+    }
+
+  }
+
+
+  @media (min-width: 1150px) {
+    
+    .imagenproductos {
+      position:relative;
+      display: block;
+    }
+
+    #cabecera {
+      float: none;
+    }
+  } 
+
+
+@media (max-width: 1000px) {
+
+  .imagenproductos {
+    position:relative;
+    display: block;
+    margin: auto;
+    height: 60%;
+    width: 50%;
+  }
+
+  .letras_mas_grandes{
+    font-size: 2.1vw;
+  }
+
+
+  .color_letras_servicios2 {
+
+    font-size: 2.5vw;
+    margin: 0;
+
+  }
+
+  .color_letras_servicios{
+    font-size: 2vw;
+
+  }
+
+  #logo-tei {
+    margin-top: 0px;
+    height: 90px;
+    width: 110px;
+  }
+  
+}
+
+
+@media (max-width: 900px) {
+
+  .visible-xs {
+    display: none;
+
+  }
+  
+  .letras_mas_grandes{
+    font-size: 2.5vw;
+  }
+
+
+  .color_letras_servicios2 {
+
+    font-size: 2.5vw;
+    margin: 0;
+
+  }
+
+  .color_letras_servicios{
+    font-size: 2.5vw;
+
+  }
+
+  .footer {
+    font-size: 2vw;
+  }
+  
+  .button {
+    width: 60%;
+  }
+
+  .button:focus { outline: 0; }
+
+  .botonTEI {
+    width: 50%;
+    margin-left: 2%;
+  }
+
+}
+
+
+@media (max-width:768px) {     /*======= Menos de 768 px =======*/ 
+
+  /* Menu inical */
+  .navbar-light {
+    height: 80px;
+    padding: 0;
+    position: relative;
+  }
+
+  .imagenproductos {
+    position:relative;
+    display: block;
+    margin: auto;
+    height: 60%;
+    width: 60%;
+  }
+
+  .hidden-xs {
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+  
+  .items {
+    height: 100px;
+  }
+
+  #info {
+    padding: 10px;
+  }
+
+  .footer {
+    font-size: 2vw;
+  }
+
+  #cabecera-nosotros {
+    height: 850px;
+  }
+
+  .sangria{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .txt_quienes {
+
+    font-size: 2vw;
+
+  }
+
+  #myList li{
+
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+  }
+
+  .navbar-light {
+    height: 100px;
+    padding: 0;
+    position: relative;
+  }
+
+  .base {
+  font-size: 2vw;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+  text-align: center;
+  margin: auto;
+  }
+
+  #logo {
+    margin-top: 0px;
+    height: 80px;
+    width: 190px;
+  }
+
+  #logo-tei {
+    margin-top: 0px;
+    height: 70px;
+    width: 90px;
+  }
+
+  .login {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  h5 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .login {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  #boxes .window {
+    margin-top: 10;
+    position: absolute;
+    display:none;
+    z-index:930;
+    padding:10px;
+    font-size:30px;
+    color:rgb(0,53,62);
+    background-color:rgb(255,255,255);
+  }  
+
+
+  .color_letras_servicios2 {
+    margin-top: 0px;
+    margin-bottom: 0;
+    font-size: 1.5w;
+  }
+
+  .base {
+    font-size: 2.6vw;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    }
+    
+    #cabecera-nosotros {
+      height: 700px;
+    }
+
+    #quienes-somos {
+      font-size: 2.2vw;
+    }
+
+    .letras_mas_grandes{
+      font-size: 2.2w;
+    }
+  
+  
+    .color_letras_servicios2 {
+      font-size: 3vw;
+      margin: 0;
+  
+    }
+  
+    .color_letras_servicios{
+      font-size: 3vw;
+    }
+
+}
+
+@media (max-width:475px) {    
+  .button {
+    width: 50%;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width:420px) {
+  h5 {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width:400px) {     /*======= Menos de 400 px =======*/
+  
+  #logo {
+    margin-top: 0px;
+    height: 70px;
+    width: 160px;
+  }
+
+  #cabecera-nosotros {
+    height: 500px;
+  }
+
+  .botonServicios {
+    margin-left: 60%;
+  }
+
+}
+
+@media (max-width:300px) {     /*======= Menos de 300 px =======*/
+  
+  #logo {
+    margin-top: 0px;
+    height: 60px;
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width:1420px) {
+  [class*="prueba-responsive"] {
+    width: 100%;
+    float: none;
+}
+
+.botonTEI {
+  width: 25%;
+  margin-left: 2%;
+}
+
+}
+
+@media only screen and (max-width:1250px) {
+  [class*="card"] {
+    width: 80%;
+    height: 100%;
+    float: none;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+.card-title {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.card-text {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.card-body-productos {
+  color: rgb(0, 80, 94);
+  position:relative;
+  display: block;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: auto;
+}
+
+.botonTEI {
+  width: 30%;
+  margin-left: 2%;
+}
+
+}
+
+@media (max-height: 930px) {
+  .login {
+    height: 600px;
+
+  }
+}

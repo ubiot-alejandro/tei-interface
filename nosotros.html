@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- agregado el meta charset UTF-8 para los carácteres como las tildes y la letra ñ -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Se eliminá el cache cada vez que se llego a la index.hmtl, cuidado cabecera perligrosa-->
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+
+    <meta name="google-site-verification" content="FOZxWmSQhvTTOeeXxEYeAfyHCm2NCPSOeP4_tw-KkSE" />
+
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>TEI</title>
+
+	<!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <!--link rel="stylesheet" href="./css/main.css"-->
+
+    <!-- Custom CSS -->
+    <!-- <link href="css/custom.css"   rel="stylesheet"> -->
+    <link rel="stylesheet" href="cssWeb/styles.css">
+
+    <!-- normalize CSS -->
+    <link href="css/normalize.css" rel="stylesheet">
+
+    <!-- bootstrap js core -->
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- para el carrusel de productos CSS -->
+    <!-- <link rel="stylesheet" href="css/tinycarousel.css" type="text/css" media="screen"/> -->
+
+    <!-- para la animacion CSS -->
+    <!-- <link href="css/camera.css"  rel="stylesheet" id="camera-css"  type="text/css" media="all"> -->
+
+
+
+
+  <!-- jQuery -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+
+    <!-- mover carrusel desde JavaScript -->
+  <script src="js/jquery.tinycarousel.min.js"></script>
+
+  <link rel="icon" href="imagenesWeb/iconos/home.png" type="image/png" />
+  
+    <!-- para las animaciones -->
+    <!-- -->
+    <!-- <script src="js/jquery.min.js"></script>
+    <script src="js/camera.min.js"></script>
+    <script src='js/jquery.mobile.customized.min.js'  type='text/javascript'></script>
+    <script src='js/jquery.easing.1.3.js' type='text/javascript'></script> -->
+
+  <!-- Add fancyBox -->
+    <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  </head>
+  <body class="home">
+
+    <nav class="navbar container-fluid navbar-expand-md navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="imagenesWeb/logos/logoTEI1.png" alt="" id="logo1"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://testagropezim2.s3.us-east-1.amazonaws.com/index.html">
+                <img src="imagenesWeb/iconos/home1.png" class="hidden-xs btn_nosotros">
+                <label class="visible-xs" align-content="center" onclick="location.href='';">
+                  <h2><span class="label label-default">AGG</span></h2>
+                </label>
+              </a>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="nosotros">
+                <img src="imagenesWeb/iconos/nosotrosTeiAzul.png" class="hidden-xs btn_nosotros">
+                <label class="visible-xs" align-content="center" onclick="location.href='nosotros';">
+                  <h2><span class="label label-default">Nosotros</span></h2>
+                </label>
+              </a>
+            </li>
+            
+            <!-- <li>
+              <a class="nav-link" href="productos.html">
+                <img src="images/productos.jpg" class="hidden-xs btn_productos">
+                <label class="visible-xs" align-content="center" onclick="location.href='productos.html';">
+                  <h2><span class=" label label-default">Productos</span></h2>
+                </label>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="servicios.html">
+                <img src="images/servicios.jpg" class="hidden-xs btn_servicios">
+                <label class="visible-xs" align-content="center" onclick="location.href='servicios.html';">
+                  <h2><span class="label label-default">Servicios</span></h2>
+                </label>
+              </a>
+            </li>     -->
+            
+            <li class="nav-item">
+              <a class="nav-link" href="contactos">
+                <img src="imagenesWeb/iconos/contacto.png" class="hidden-xs btn_contacto">
+                <label class="visible-xs" align-content="center" onclick="location.href=contacto">
+                  <h2><span class="label label-default">Contactos</span></h2>
+                </label>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+                <img src="imagenesWeb/iconos/loginTei.png" class="hidden-xs btn_tei">
+                <label class="visible-xs" align-content="center" onclick="location.href='';">
+                  <h2><span class="label label-default">TEI</span></h2>
+                </label>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid" id="cabecera">
+      
+      <div class="linea_divisora1"></div>
+
+      <div class="linea_divisora3"></div>
+      
+      <div class="linea_divisora2"></div>
+      
+    </div>
+    
+    <div class="container-fluid" id="cabecera-nosotros">
+
+      <div class=" container-fluid txt_quienes" id="quienes-somos"><br>
+        <b class="letras_mas_grandes" >QUIENES SOMOS</b>
+          <p class="letras_mas_grandes"><br>
+            Somos una organización especializada emprendiendo en el desarrollo de Soluciones Tecnológicas Inteligentes, con un equipo técnico altamente capacitado en brindarle optimización de la gestión logística y operativa de sus Procesos, así como gestión óptima preventiva de riesgos. Nuestro propósito es contribuir en el cumplimiento efectivo de todas sus tareas diarias, facilitándole la planificación, mejorando al máximo el uso de su tiempo y ahorrando los recursos económicos involucrados, a fin de satisfacer plenamente sus necesidades.
+          </p><br><br>
+
+          <b class="letras_mas_grandes" >MISIÓN </b>
+          <p class="letras_mas_grandes" ><br>
+            Nuestra misión es mediante el conocimiento técnico y las Soluciones Tecnológicas Inteligentes poder ofrecerle alcanzar el mayor nivel de rendimiento a la pequeña y mediana industria PYME en diversos sectores: AgroIndustrial, Salud, Turismo, Comercio, manufactura y Residencial en Venezuela y el Mundo.
+          </p><br><br>
+
+          <b class="letras_mas_grandes">VISIÓN</b>
+          <p class="letras_mas_grandes"><br>
+            Nuestra visión es ser líderes a Nivel Nacional e Internacional, facilitando la gestión automatizada de procesos para PYMES, mediante el desarrollo e implementación de Soluciones Tecnológicas Inteligentes a su medida.
+          </p><br><br>
+
+          <b class="letras_mas_grandes">VALORES</b>
+          <p class="letras_mas_grandes">Nuestros valores nos definen:</p><br>
+          <p class="letras_mas_grandes">- Transparencia</p>
+          <p class="letras_mas_grandes">- Honestidad</p>
+          <p class="letras_mas_grandes">- Adaptabilidad</p>
+          <p class="letras_mas_grandes">- Diligencia</p>
+          <p class="letras_mas_grandes">- Excelencia</p>
+          <p class="letras_mas_grandes">- Constancia</p>
+      </div>
+    </div>
+
+            
+    <footer class="bg-light text-center text-md-start">
+      <div class="text-center p-3 base">
+        Agropezim Group C.A. RIF: J-404095969 Venezuela, <br> 
+        San Felipe - Estado Yaracuy. Todos los Derechos Reservados  2014.
+      </div>
+    </footer>
+
+  </body>
+</html>

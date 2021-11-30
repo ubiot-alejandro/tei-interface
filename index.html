@@ -1,156 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-  <title>Tablero Inteligente</title>
 
-  <head>
+<html lang="en">
+<head>
     <!-- agregado el meta charset UTF-8 para los carácteres como las tildes y la letra ñ -->
     <meta charset="UTF-8">
-    <meta http-equiv="Refresh" content="1800"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
     <!-- Se eliminá el cache cada vez que se llego a la index.hmtl, cuidado cabecera perligrosa-->
-    <meta http-equiv="Expires" content="0" />
-    <meta http-equiv="Pragma" content="no-cache" />
+  	<meta http-equiv="Expires" content="0" />
+  	<meta http-equiv="Pragma" content="no-cache" />
     <meta name="google-site-verification" content="FOZxWmSQhvTTOeeXxEYeAfyHCm2NCPSOeP4_tw-KkSE" />
-  
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Agropezim Group C.A. </title>
-  
-    <!-- Bootstrap Core CSS -->
+
+	  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>TEI</title>
+
+	  <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!--link rel="stylesheet" href="./css/main.css"-->
-  
+
     <!-- Custom CSS -->
     <!-- <link href="css/custom.css"   rel="stylesheet"> -->
-    <link rel="stylesheet" href="css/styles.css">
-  
+    <link rel="stylesheet" href="cssWeb/styles.css">
+
     <!-- normalize CSS -->
     <!-- <link href="css/normalize.css" rel="stylesheet"> -->
-  
+
     <!-- bootstrap js core -->
     <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
-  
+
     <!-- para el carrusel de productos CSS -->
     <!-- <link rel="stylesheet" href="css/tinycarousel.css" type="text/css" media="screen"/> -->
-  
+
     <!-- para la animacion CSS -->
     <!-- <link href="css/camera.css"  rel="stylesheet" id="camera-css"  type="text/css" media="all"> -->
-  
+
     <!-- jQuery -->
     <script src="js/jquery-1.11.1.min.js"></script>
-  
+
+    <link rel="icon" href="imagenesWeb/iconos/favicon.png" type="image/png" />
+
     <!-- mover carrusel desde JavaScript -->
     <script src="js/jquery.tinycarousel.min.js"></script>
-    <link  rel="icon"   href="imagenes/iconos/favicon.png" type="image/png" />
-  
-  
+
+
+    <!-- para las animaciones -->
+    <!-- -->
+    <!-- <script src="js/jquery.min.js"></script>
+    <script src="js/camera.min.js"></script>
+    <script src='js/jquery.mobile.customized.min.js'  type='text/javascript'></script>
+    <script src='js/jquery.easing.1.3.js' type='text/javascript'></script> -->
+
     <!-- Add fancyBox -->
     <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-    <script src="./js/scripts.js"></script>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
-    <script type="text/javascript">
-
-    // Initialize the Amazon Cognito credentials provider
-    AWS.config.region = 'eu-central-1'; // Region
-    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'eu-central-1:00abeafd-83d3-4ccb-9ba5-c5fc5b31af03',
-    });
-
-      var state = "NaN"
-      var network = "NaN"
-      var dt = "NaN"
-      var dynamodb = new AWS.DynamoDB();
-      var newer = String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10)
-      var docClient = new AWS.DynamoDB.DocumentClient();
-      
-      function queryData() {
-
-        var params = {
-            TableName : "teiDB",
-            KeyConditionExpression: "#dt = :id",
-            ExpressionAttributeNames:{
-                "#dt": "date_time"
-            },
-            ExpressionAttributeValues: {
-                ":id": clientID
-            }
-        };
-
-        docClient.query(params, function(err, data) {
-            if (err) {
-                console.log(JSON.stringify(err, undefined, 2));
-            } else {
-                network = data.Items[0].network
-            }
-        });
-    }
-      
-      function scanData() {
-    
-        var params = {
-            TableName: "teiDB",
-            ProjectionExpression: "#id, date_time, #thing, thing_status, remote_on, remote_off, manual_on, manual_off",
-            FilterExpression: "#id between :start_id and :end_id AND #thing = :thing",
-            ExpressionAttributeNames: {
-                "#id": "id_number",
-                "#thing": "thing_name"
-            },
-            ExpressionAttributeValues: {
-                ":start_id": String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10),
-                ":end_id": "2600000000",
-                ":thing": clientID
-            }
-        };
-            
-        docClient.scan(params, onScan);
-    
-        function onScan(err, data) {
-            if (err) {
-                console.log(JSON.stringify(err, undefined, 2));
-            }
-            
-            else {
-                // Print all the movies
-                data.Items.forEach(function(each) {
-
-                  // console.log(each.date_time + ": " + each.id_number + ": " + each.thing_status + ": " + each.thing_name + ": " + "\n");
-                                
-                  if (each.id_number > newer) {
-                      newer = each.id_number
-                      state = each.thing_status
-                      dt = each.id_number
-
-                      if (each.remote_on === "01") {document.getElementById('label').innerHTML = 'Encendido remoto';}
-                      else if (each.remote_off === "01") {document.getElementById('label').innerHTML = 'Apagado remoto';}
-                      else if (each.manual_on === "01") {document.getElementById('label').innerHTML = 'Encendido manual';}
-                      else if (each.manual_off === "01") {document.getElementById('label').innerHTML = 'Apagado manual';}                      
-                  }
-              });
-            }
-          }
-      }  
-    </script>
-  </head>
-
-  <body style="background-color: rgb(224, 219, 219);">
-
-    <!-- Barra de logo e iconos -->
+</head>
+  <body class="home">
     <nav class="navbar container-fluid navbar-expand-md navbar-light">
       <div class="container-fluid">
-        <a href="https://testagropezim2.s3.us-east-1.amazonaws.com/index.html"><img src="imagenes/iconos/TEI.png" id="logo1"></a>
+        <a href="/"><img src="imagenesWeb/logos/logoTEI1.png" id="logo1"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
 
             <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="https://testagropezim2.s3.us-east-1.amazonaws.com/index.html">
-                <img src="imagenes/iconos/home1.png  " class="hidden-xs btn_nosotros">
+                <img src="imagenesWeb/iconos/home1.png" class="hidden-xs btn_nosotros">
                 <label class="visible-xs" align-content="center" onclick="location.href='';">
                   <h2><span class="label label-default">AGG</span></h2>
                 </label>
@@ -158,97 +76,137 @@
             </li> -->
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">
-                <img src="imagenes/iconos/logout2.png" class="hidden-xs btn_nosotros">
+              <a class="nav-link active" aria-current="page" href="nosotros">
+                <img src="imagenesWeb/iconos/nosotrosTeiAzul.png" class="hidden-xs btn_nosotros">
+                <label class="visible-xs" align-content="center" onclick="location.href='nosotros';">
+                  <h2><span class="label label-default">Nosotros</span></h2>
+                </label>
+              </a>
+            </li>
+            
+              <!-- <li>
+                <a class="nav-link" href="productos.html">
+                  <img src="images/productos.jpg" class="hidden-xs btn_productos">
+                  <label class="visible-xs" align-content="center" onclick="location.href='productos.html';">
+                    <h2><span class=" label label-default">Productos</span></h2>
+                  </label>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="servicios.html">
+                  <img src="images/servicios.jpg" class="hidden-xs btn_servicios">
+                  <label class="visible-xs" align-content="center" onclick="location.href='servicios.html';">
+                    <h2><span class="label label-default">Servicios</span></h2>
+                  </label>
+                </a>
+              </li>    -->
+            
+            <li class="nav-item">
+              <a class="nav-link" href="contactos">
+                <img src="imagenesWeb/iconos/contacto.png" class="hidden-xs btn_contacto">
+                <label class="visible-xs" align-content="center" onclick="location.href=contacto">
+                  <h2><span class="label label-default">Contacto</span></h2>
+                </label>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+                <img src="imagenesWeb/iconos/loginTei.png" class="hidden-xs btn_tei">
                 <label class="visible-xs" align-content="center" onclick="location.href='';">
-                  <h2><span class="label label-default">Logout</span></h2>
+                  <h2><span class="label label-default">TEI</span></h2>
                 </label>
               </a>
             </li>
+
             
-            <!-- <li>
-              <a class="nav-link" href="productos.html">
-                <img src="images/productos.jpg" class="hidden-xs btn_productos">
-                <label class="visible-xs" align-content="center" onclick="location.href='productos.html';">
-                  <h2><span class=" label label-default">Productos</span></h2>
-                </label>
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="servicios.html">
-                <img src="images/servicios.jpg" class="hidden-xs btn_servicios">
-                <label class="visible-xs" align-content="center" onclick="location.href='servicios.html';">
-                  <h2><span class="label label-default">Servicios</span></h2>
-                </label>
-              </a>
-            </li>   
-            
-            <li class="nav-item">
-              <a class="nav-link" href="contactos.html">
-                <img src="images/contactos.jpg" class="hidden-xs btn_contacto">
-                <label class="visible-xs" align-content="center" onclick="location.href=contacto.html">
-                  <h2><span class="label label-default">Contactos</span></h2>
-                </label>
-              </a>
-            </li>         -->
           </ul>
         </div>
       </div>
-    
     </nav>
 
     <div class="container-fluid" id="cabecera">
       
       <div class="linea_divisora1"></div>
-    
+
       <div class="linea_divisora3"></div>
       
       <div class="linea_divisora2"></div>
       
-    </div><br>
-
-    <!-- <a style="background-color: rgb(224, 219, 219); margin-left: 1%;" class="w3-right" href="https://tei.auth.eu-central-1.amazoncognito.com/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://d30a2flcb4p1wx.cloudfront.net">Log out</a> -->
-
-    <!-- First Grid -->
-    <hgroup>
-      <h1 style="background-color: rgb(224, 219, 219); color: rgb(0, 77, 93);">Tablero Eléctrico Inteligente</h1>
-    </hgroup>
-    
-    <div class="w3-light-grey w3-container">
+    </div> 
       
-      <div class="w3-content">
-        <div class="w3-twothird">
-          <input id="derecha" type="image" alt="ON" src="imagenes/iconos/onNewapagado.png" onclick="invokeON()"><b>Encender</b></input>
-        </div>
+      
+	  <hgroup class="tei-texto">
+      <h1 style="color: rgb(0, 77, 93);">TABLERO ELÉCTRICO INTELIGENTE</h1>
+      <h5><I>Soluciones de automatización para Pozos Profundos</I></h5>
+    </hgroup>
+
+    <div class="container-fluid" id="cabecera">
+      <div class="prueba-responsive">
+        <img class="imagenPresentacionPozos" id= "info" src="imagenesWeb/infografias/tei13.png">
       </div>
-  
-      <div class="w3-content">
-        <div class="w3-twothird">
-          <input id="izquierda" type="image" alt="OFF" src="imagenes/iconos/offNewencendido.png" onclick="invokeOFF()"><b>Apagar</b></input>
-        </div>
+      <div class="prueba-responsive2">
+        <h5><b>ACTUALICE SU POZO PROFUNDO</b></h5>
+        <p>TEI es un Sistema Inteligente para automatización de su Tablero Eléctrico, que le brinda acceso y control de su Motor para extracción y administración de agua, permitiéndole la Gestión a distancia de su pozo profundo, con su celular tablet, laptop, o computadora, desde la comodidad de su casa, de acuerdo a sus requerimientos.</p><br>
+        <h5><b>Obtenga enormes beneficios:</b></h5>
+      
+        <p>- Optimización del tiempo de trabajo</p>
+        <p>- Control a distancia desde cualquier parte</p>
+        <p>- Ahorro de sus costos de producción</p>
+        <p>- Gestión adecuada de sus procesos</p>
+        <p>- Recepción de alertas sobre el funcionamiento</p> 
+        <br>
+        <a href="contactos">
+          <img class="botonTEI" src="imagenesWeb/iconos/quieroUteiLargo.png" alt="">
+        </a>
+        <a href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+          <img class="botonTEI" src="imagenesWeb/iconos/soyUteiLargo.png" alt="">
+        </a>
       </div>
-
-      <!-- TEST BUTTON <button id="test" onclick="test()">Test</button> -->
-    
     </div>
 
-    <label style="margin-left: 2%; font-weight: bold;"> Última actividad de su motor:</label>
-    <label style="margin-left: 0.5%; margin-top: 3%; font-weight: bold; color: rgb(0, 77, 93)" id="label">--</label>
-    <div>
-      <input style="height: 50px; width: 210px; margin-left: 6%; margin-top: 1%;" type="image" id="derecha2" src="images/loading.gif"></input>
+    <div style="clear: left;" class="container-fluid" id="cabecera">
+      
+      <div class="linea_divisora1"></div>
+
+      <div class="linea_divisora3"></div>
+      
+      <div class="linea_divisora2"></div>
+      
+    </div> 
+
+    <div class="container-fluid" id="cabecera">
+      <div class="prueba-responsive3">
+        <img class="imagenPresentacionTei" id= "info" src="imagenesWeb/infografias/tei14.png">
+      </div>
+      <div class="prueba-responsive4">
+        <h5><b>Sea un Usuario TEI</b></h5><br>
+        <p>Diseñamos su Tablero Eléctrico Inteligente o actualizamos el suyo para brindarle
+          acceso y control de su Pozo Profundo con su celular, tablet, laptop o computadora,
+          desde la comodidad de su casa, de acuerdo a sus requerimientos. </p><br>
+
+          <p>CON TEI, SEA PRODUCTIVO, LE GANAMOS TIEMPO AL TIEMPO DE VERDAD VERDAD</p><br>
+          <!-- <p>www.tei.com.ve - ventas@tei.com.ve</p><br> -->
+        
+        <a href="contactos">
+          <img class="botonTEI" src="imagenesWeb/iconos/quieroUteiLargo.png" alt="">
+        </a>
+        <a href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+          <img class="botonTEI" src="imagenesWeb/iconos/soyUteiLargo.png" alt="">
+        </a>
+      </div>
     </div>
 
-    <div>
-      <input  type="image" id="derecha1" src="images/loading.gif"></input>
-    </div>
-
-    <footer class="bg-light text-center text-md-start">
+    <footer style="clear: right" class="bg-light text-center text-md-start">
       <div class="text-center p-3 base">
-        Agropezim Group C.A. RIF: J-404095969 Venezuela, <br> San Felipe - Estado Yaracuy. Todos los Derechos Reservados 2014.
+        Agropezim Group C.A. RIF: J-404095969 Venezuela, <br> 
+        San Felipe - Estado Yaracuy. Todos los Derechos Reservados 2014.
       </div>
     </footer>
+    
     <script>
-      </script>
+    </script>
+
   </body>
 </html>
