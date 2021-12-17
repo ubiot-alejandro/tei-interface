@@ -74,6 +74,11 @@
                 network = data.Items[0].network
                 state = data.Items[0].thing_status
             }
+
+            if (data.Items[0].remote_on === "01" ) {document.getElementById('label').innerHTML = 'Encendido remoto';}
+            if (data.Items[0].remote_off === "01" ) {document.getElementById('label').innerHTML = 'Apagado remoto';}
+            if (data.Items[0].manual_on === "01" ) {document.getElementById('label').innerHTML = 'Encendido manual';}
+            if (data.Items[0].manual_off === "01" ) {document.getElementById('label').innerHTML = 'Apagado manual';}
         });
     }
       
