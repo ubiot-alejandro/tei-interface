@@ -54,22 +54,16 @@
 
       var state = "NaN"
       var network = "NaN"
-      var dt = "NaN"
       var dynamodb = new AWS.DynamoDB();
-      var newer = String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10)
       var docClient = new AWS.DynamoDB.DocumentClient();
       
       function queryData() {
 
         var params = {
-            TableName : "teiDB",
-            KeyConditionExpression: "#dt = :id",
-            ExpressionAttributeNames:{
-                "#dt": "date_time"
-            },
-            ExpressionAttributeValues: {
-                ":id": clientID
-            }
+            TableName : "tei-db",
+            KeyConditionExpression: "#id = :id",
+            ExpressionAttributeNames:{ "#id": "id_number" },
+            ExpressionAttributeValues: { ":id": clientID }
         };
 
         docClient.query(params, function(err, data) {
@@ -78,55 +72,11 @@
                 window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio";
             } else {
                 network = data.Items[0].network
+                state = data.Items[0].thing_status
             }
         });
     }
       
-      function scanData() {
-    
-        var params = {
-            TableName: "teiDB",
-            ProjectionExpression: "#id, date_time, #thing, thing_status, remote_on, remote_off, manual_on, manual_off",
-            FilterExpression: "#id between :start_id and :end_id AND #thing = :thing",
-            ExpressionAttributeNames: {
-                "#id": "id_number",
-                "#thing": "thing_name"
-            },
-            ExpressionAttributeValues: {
-                ":start_id": String(Date.now() - (48 * 60 * 60 * 1000)).substr(0,10),
-                ":end_id": "2600000000",
-                ":thing": clientID
-            }
-        };
-            
-        docClient.scan(params, onScan);
-    
-        function onScan(err, data) {
-            if (err) {
-                console.log(JSON.stringify(err, undefined, 2));
-                window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio";
-            }
-            
-            else {
-                // Print all the movies
-                data.Items.forEach(function(each) {
-
-                  // console.log(each.date_time + ": " + each.id_number + ": " + each.thing_status + ": " + each.thing_name + ": " + "\n");
-                                
-                  if (each.id_number > newer) {
-                      newer = each.id_number
-                      state = each.thing_status
-                      dt = each.id_number
-
-                      if (each.remote_on === "01") {document.getElementById('label').innerHTML = 'Encendido remoto';}
-                      else if (each.remote_off === "01") {document.getElementById('label').innerHTML = 'Apagado remoto';}
-                      else if (each.manual_on === "01") {document.getElementById('label').innerHTML = 'Encendido manual';}
-                      else if (each.manual_off === "01") {document.getElementById('label').innerHTML = 'Apagado manual';}                      
-                  }
-              });
-            }
-          }
-      }  
     </script>
   </head>
 
