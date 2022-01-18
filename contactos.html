@@ -55,6 +55,15 @@
             <ul class="navbar-nav ml-auto">
 
               <li class="nav-item">
+                <a class="nav-link" href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+                  <img src="imagenesWeb/iconos/loginTei.png" class="hidden-xs btn_tei">
+                  <label class="visible-xs" align-content="center" onclick="location.href='';">
+                    <h2><span class="label label-default">TEI</span></h2>
+                  </label>
+                </a>
+              </li>
+              
+              <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="nosotros">
                   <img src="imagenesWeb/iconos/nosotrosTeiAzul.png" class="hidden-xs btn_nosotros">
                   <label class="visible-xs" align-content="center" onclick="location.href='nosotros';">
@@ -72,14 +81,6 @@
                 </a>
               </li>
               
-              <li class="nav-item">
-                <a class="nav-link" href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
-                  <img src="imagenesWeb/iconos/loginTei.png" class="hidden-xs btn_tei">
-                  <label class="visible-xs" align-content="center" onclick="location.href='';">
-                    <h2><span class="label label-default">TEI</span></h2>
-                  </label>
-                </a>
-              </li>
 
             </ul>
           </div>
@@ -105,18 +106,18 @@
     <form id="form" class="login">
       
       <div class="group">
-        <input id="name" type="text"><span class="highlight"></span><span class="bar"></span>
-        <label for="name">Nombre</label>
+        <input id="name" type="text" placeholder="Nombre"><span class="highlight"></span><span class="bar"></span>
+        <!-- <label for="name">Nombre</label> -->
       </div>
 
       <div class="group">
-        <input id="mail" type="email"><span class="highlight"></span><span class="bar"></span>
-        <label for="mail">Correo Eléctronico</label>
+        <input id="mail" type="email" placeholder="Correo Eléctronico"><span class="highlight"></span><span class="bar"></span>
+        <!-- <label for="mail">Correo Eléctronico</label> -->
       </div>
       
       <div class="group">
-        <textarea id="message" class="form-control"></textarea>
-        <label for="message">Comentario</label>
+        <textarea id="message" class="form-control" placeholder="Comentario"></textarea>
+        <!-- <label for="message">Comentario</label> -->
       </div>
 
       <button type="submit" class="button buttonBlue">Enviar Mensaje
