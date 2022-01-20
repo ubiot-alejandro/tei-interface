@@ -4,15 +4,6 @@ var notified2 = false
 var notified3 = false
 var notified4 = false
 
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else { 
-      x.className = x.className.replace(" w3-show", "");
-    }
-}
-
 function invokeON() {
 
   let token = window.location.href
@@ -82,7 +73,7 @@ function updateImage() {
   var image1 = document.getElementById("derecha1");
   var image2 = document.getElementById("derecha2");
 
-  scanData();
+  //scanData();
   queryData();
   
   if ( state == "01") {
