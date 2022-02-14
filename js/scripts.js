@@ -164,7 +164,7 @@ function test() {
 
 }
 
-setInterval(updateImage, 5000);
+setInterval(updateImage, 1000);
 
 window.addEventListener("error", handleError, true);
 
