@@ -72,6 +72,7 @@ function updateImage() {
   var imageoff = document.getElementById("izquierda");
   var image1 = document.getElementById("derecha1");
   var image2 = document.getElementById("derecha2");
+  var thermal_not = document.getElementById("thermal");
 
   //scanData();
   queryData();
@@ -130,6 +131,14 @@ function updateImage() {
       }
     
   }
+
+  if ( thermal == "01") {
+    thermal_not.src="../imagenes/iconos/on-thermal.png";
+
+  } else if ( thermal == "00") {
+    thermal_not.src="../imagenes/iconos/off-thermal.png";
+  }
+
 }
 
 function handleError(evt) {

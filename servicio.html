@@ -54,6 +54,7 @@
 
       var state = "NaN"
       var network = "NaN"
+      var thermal = "NaN"
       var dynamodb = new AWS.DynamoDB();
       var docClient = new AWS.DynamoDB.DocumentClient();
       
@@ -73,6 +74,7 @@
             } else {
                 network = data.Items[0].network
                 state = data.Items[0].thing_status
+                thermal = data.Items[0].thermal_alert
             }
 
             if (data.Items[0].remote_on === "01" ) {document.getElementById('label').innerHTML = 'Encendido remoto';}
@@ -133,6 +135,12 @@
       <div class="w3-content">
         <div class="w3-twothird">
           <input id="derecha" type="image" alt="ON" src="imagenes/iconos/onNewapagado.png" onclick="invokeON()"><b>Encender</b></input>
+        </div>
+      </div>
+
+      <div class="w3-content">
+        <div class="w3-twothird">
+          <input type="image" id="thermal" src="imagenes/iconos/off-thermal.png"><b>Thermal</b> </input>    
         </div>
       </div>
   
