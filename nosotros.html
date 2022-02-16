@@ -39,6 +39,7 @@
   <!-- Add fancyBox -->
     <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script src="./js/redirects.js"></script>
   </head>
 
   <body class="home">
@@ -72,7 +73,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+              <a class="nav-link" onclick="redirectToLogin();">
                 <img src="imagenesWeb/iconos/loginTei.png" class="hidden-xs btn_tei">
                 <label class="visible-xs" align-content="center" onclick="location.href='';">
                   <h2><span class="label label-default">TEI</span></h2>
