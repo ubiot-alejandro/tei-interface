@@ -37,6 +37,7 @@
   <!-- Add fancyBox -->
   <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
   <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="./js/redirects.js"></script>
 </head>
 
   <body class="home">
@@ -51,7 +52,7 @@
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-              <a class="nav-link" href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+              <a class="nav-link" onclick="redirectToLogin();">
                 <img src="imagenesWeb/iconos/loginTei.png" class="hidden-xs btn_tei">
                 <label class="visible-xs" align-content="center" onclick="location.href='';">
                   <h2><span class="label label-default">TEI</span></h2>
@@ -95,10 +96,9 @@
     </div> 
       
       
-	  <hgroup class="tei-texto">
-      <h1 style="color: rgb(0, 77, 93);">TABLERO ELÉCTRICO INTELIGENTE</h1>
-      <h4 style="color: grey;" ><I>Soluciones de automatización para <b>Pozos Profundos</b></I></h4><br>
-    </hgroup>
+      <h1 class="tei-texto" style="color: rgb(0, 77, 93);">TABLERO ELÉCTRICO INTELIGENTE</h1>
+      <h4 class="tei-texto" style="color: grey;" ><I>Soluciones de automatización para <b>Pozos Profundos</b></I></h4><br>
+    
 
     <div class="container-fluid" id="cabecera">
       <div class="prueba-responsive">
@@ -106,10 +106,10 @@
       </div>
       
       <div class="prueba-responsive2">
-        <h5 style="color: rgb(0, 77, 93);" ><b>ACTUALICE SU POZO PROFUNDO</b></h5><br>
-        <p>TEI es un Sistema Inteligente para automatización de su <b>Tablero Eléctrico</b>, que le brinda acceso y control de su Motor para extracción y administración de agua, permitiéndole la Gestión a distancia de su pozo profundo, con su celular, tablet, laptop, o computadora, desde la comodidad de su casa, de acuerdo a sus requerimientos.</p><br>
+        <h5 style="color: rgb(0, 77, 93);" ><b>ACTUALICE SU POZO PROFUNDO</b></h5>
+        <p>TEI es un Sistema Inteligente para automatización de su <b>Tablero Eléctrico</b>, que le brinda acceso y control de su Motor para extracción y administración de agua, permitiéndole la Gestión a distancia de su pozo profundo, con su celular, tablet, laptop, o computadora, desde la comodidad de su casa, de acuerdo a sus requerimientos.</p>
        
-        <h5 style="color: rgb(0, 77, 93);" ><b>OTENGA ENORMES BENEFICIOS:</b></h5><br>
+        <h5 style="color: rgb(0, 77, 93);" ><b>OTENGA ENORMES BENEFICIOS:</b></h5>
         <ul>
           <li>Optimización del tiempo de trabajo</li>
           <li>Control a distancia desde cualquier parte</li>
@@ -125,7 +125,7 @@
         <a href="contactos">
           <img class="botonTEI" src="imagenesWeb/iconos/quieroUteiLargo.png" alt="">
         </a>
-        <a href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+        <a onclick="redirectToLogin();">
           <img class="botonTEI" src="imagenesWeb/iconos/soyUteiLargo.png" alt="">
         </a><br><br>        
       </div>
@@ -154,13 +154,13 @@
         <a href="contactos">
           <img class="botonTEI" src="imagenesWeb/iconos/quieroUteiLargo.png" alt="">
         </a>
-        <a href="https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+        <a onclick="redirectToLogin();">
           <img class="botonTEI" src="imagenesWeb/iconos/soyUteiLargo.png" alt="">
         </a><br><br><br><br>
 
-        <p style="text-align: center; font-style: oblique;">CON TEI, SEA PRODUCTIVO, LE GANAMOS TIEMPO AL TIEMPO DE VERDAD VERDAD</p><br>
+        <p class="slogan" style="text-align: center; font-style: oblique;">CON TEI, SEA PRODUCTIVO, LE GANAMOS TIEMPO AL TIEMPO DE VERDAD VERDAD</p><br>
         <a style="color: rgb(0, 77, 93); font-weight: bold; " href="contactos">ventas@tei.com.ve</a><br>
-        <br><br><br>
+        <br><br>
       </div>
     </div>
 

@@ -43,6 +43,7 @@
     <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
     <script src="./js/scripts.js"></script>
+   
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
     <script type="text/javascript">
 
@@ -54,13 +55,14 @@
 
       var state = "NaN"
       var network = "NaN"
+      var thermal = "NaN"
       var dynamodb = new AWS.DynamoDB();
       var docClient = new AWS.DynamoDB.DocumentClient();
       
       function queryData() {
 
         var params = {
-            TableName : "tei-db",
+            TableName : db,
             KeyConditionExpression: "#id = :id",
             ExpressionAttributeNames:{ "#id": "id_number" },
             ExpressionAttributeValues: { ":id": clientID }
@@ -69,10 +71,11 @@
         docClient.query(params, function(err, data) {
             if (err) {
                 console.log(JSON.stringify(err, undefined, 2));
-                window.location.href = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio";
+                window.location.href = login;
             } else {
                 network = data.Items[0].network
                 state = data.Items[0].thing_status
+                thermal = data.Items[0].thermal_alert
             }
 
             if (data.Items[0].remote_on === "01" ) {document.getElementById('label').innerHTML = 'Encendido remoto';}
@@ -90,7 +93,7 @@
     <!-- Barra de logo e iconos -->
     <nav class="navbar container-fluid navbar-expand-md navbar-light">
       <div class="container-fluid">
-        <a href="https://testagropezim2.s3.us-east-1.amazonaws.com/index.html"><img src="imagenes/iconos/TEI.png" id="logo1"></a>
+        <a href="/"><img src="imagenes/iconos/TEI.png" id="logo1"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -99,7 +102,7 @@
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="https://auth.tei.com.ve/logout?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/servicio">
+              <a class="nav-link active" aria-current="page" onclick="redirectTo();">
                 <img src="imagenes/iconos/logout2.png" class="hidden-xs btn_nosotros">
                 <label class="visible-xs" align-content="center" onclick="location.href='';">
                   <h2><span class="label label-default">Logout</span></h2>
@@ -133,6 +136,12 @@
       <div class="w3-content">
         <div class="w3-twothird">
           <input id="derecha" type="image" alt="ON" src="imagenes/iconos/onNewapagado.png" onclick="invokeON()"><b>Encender</b></input>
+        </div>
+      </div>
+
+      <div class="w3-content">
+        <div class="w3-twothird">
+          <input type="image" id="thermal" src="imagenes/iconos/off-thermal.png"><b>Thermal</b> </input>    
         </div>
       </div>
   
