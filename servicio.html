@@ -48,17 +48,19 @@
     <script type="text/javascript">
 
     // Initialize the Amazon Cognito credentials provider
-    AWS.config.region = 'eu-central-1'; // Region
+    AWS.config.region = 'eu-central-1'; // Select the AWS region
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: 'eu-central-1:00abeafd-83d3-4ccb-9ba5-c5fc5b31af03',
     });
-
+      
+      // Set init variables
       var state = "NaN"
       var network = "NaN"
       var thermal = "NaN"
       var dynamodb = new AWS.DynamoDB();
       var docClient = new AWS.DynamoDB.DocumentClient();
       
+      // Funtion to query the data from the DB
       function queryData() {
 
         var params = {
