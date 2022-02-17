@@ -1,7 +1,7 @@
-// select the form area by id
+// Select the form area by id
 const form = document.querySelector("#form");
 
-// function addEventListener for submit operation
+// Function addEventListener for submit operation
 form.addEventListener("submit", (event) => {
   // prevent the form submit from refreshing the page
   event.preventDefault();
