@@ -99,9 +99,13 @@ body {
   margin: auto;
 }
 
+#logo1:hover {
+  overflow: hidden;
+  transform:scale(1.1);
+}
+
 .hidden-xs:hover {
-  width: 4.5vw;
-  height: 4.5vw;
+  transform:scale(1.2);
 }
 
 
@@ -182,12 +186,11 @@ body {
 }
 
 .navbar-toggler {
-  border-color: black;
-  border: solid;
+  border: none;
 }
 
-.navbar-toggler:hover {
-  background-color:rgb(110, 180, 222);
+.navbar-toggler:hover{
+  background-color: rgb(141, 191, 198);
 }
 
 #cabecera {
@@ -342,10 +345,6 @@ width: auto;
   font-size: 30px;
 }
 
-.slogan {
-  font-size: 15px;
-}
-
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
@@ -377,20 +376,10 @@ width: auto;
 
 /* Linea divisiora */
 
-.linea_divisora {
-  border-color: rgb(0, 80, 94); 
-  background-color:rgb(0, 80, 94);
-  height: 5px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  position: absolute;
-}
-
 .linea_divisora1 {
   border-color: rgb(244, 216, 15); 
   background-color: rgb(244, 216, 15);
-  height: 5px;
+  height: 6px;
   margin-bottom: 0px;
   padding-bottom: 0px;
   padding-top: 0px;
@@ -400,7 +389,7 @@ width: auto;
 .linea_divisora2 {
   border-color: rgb(0, 77, 93); 
   background-color: rgb(0, 80, 94);
-  height: 5px;
+  height: 6px;
   margin-bottom: 0px;
   padding-bottom: 0px;
   padding-top: 0px;
@@ -410,7 +399,7 @@ width: auto;
 .linea_divisora3 {
   border-color: rgb(141, 191, 198); 
   background-color: rgb(141, 191, 198);
-  height: 5px;
+  height: 6px;
   margin-bottom: 0px;
   padding-bottom: 0px;
   padding-top: 0px;
@@ -445,7 +434,7 @@ footer{
   color: white;
   font-size: 1vw;
   height: 100%;
-  width: 100%;
+  width: 80%;
   padding: 0;
   margin: 0;
   bottom: 0;
@@ -466,7 +455,7 @@ footer{
 .letras_mas_grandes{
   font-size: 1.2vw;
   color:rgb(0, 80, 94);
-  text-align: justify;
+  text-align:left;
 }
 
 /* ===================== Productos ===================== */
@@ -817,11 +806,13 @@ hgroup {
 	text-align:center;
 }
 
-h1, h3 { font-weight: 300px; }
+h3 { font-weight: 300px; color: rgb(0, 77, 93);}
 
-h1 { color: #636363; }
+h1 { color: rgb(0, 77, 93); font-weight: bold;}
 
-h3, h5 { color: #4a89dc; }
+h3, h5 { color: rgb(0, 77, 93); font-weight: bold; }
+
+p { line-height: 25px;}
 
 form {
 	width: 380px;
@@ -1159,7 +1150,7 @@ a {
   }
 
   .letras_mas_grandes {
-      font-size: 2vw;
+      font-size: 1.5vw;
     }
   
   .color_letras_servicios2 {
@@ -1197,7 +1188,6 @@ a {
       height: auto;
       width: auto;
       background-color: white;
-      flex-direction: row;
     }
 
   }
@@ -1227,7 +1217,7 @@ a {
   }
 
   .letras_mas_grandes{
-    font-size: 2.1vw;
+    font-size: 2vw;
   }
 
 
@@ -1264,7 +1254,7 @@ a {
   }
   
   .letras_mas_grandes{
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
 
 
