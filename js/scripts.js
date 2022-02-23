@@ -1,5 +1,5 @@
 // Set environment
-var environment = "dev"  // dev = aquifer.network || prod = tei.com.ve
+var environment = "prod"  // dev = aquifer.network || prod = tei.com.ve
 
 if (environment == "prod") {
     var db = "tei-db"
@@ -64,6 +64,7 @@ function invokeOFF() {
 
 // Funtion to get the client ID
 function getId() {
+  // let token = "" // For tests
   let token = window.location.href  // Reading from url
   let auth = "Bearer " + token.split('&')[1].split('=')[1]  // Select the auth section
   let url = oauth;  // Using the variable link
@@ -89,6 +90,8 @@ function updateImage() {
   var image1 = document.getElementById("derecha1");
   var image2 = document.getElementById("derecha2");
   var thermal_not = document.getElementById("thermal");
+  var phase_not = document.getElementById("phase");
+  var level_not = document.getElementById("level");
 
   queryData();  // To update the data each time
   
@@ -157,6 +160,24 @@ function updateImage() {
   // Updating for THERMAL OFF cases
   } else if ( thermal == "00") {
     thermal_not.src="../imagenes/iconos/off-thermal.png";
+  }
+
+  // Updating for PHASE ON cases
+  if ( phase == "01") {
+    phase_not.src="../imagenes/iconos/on-phase.png";
+  
+  // Updating for PHASE OFF cases
+  } else if ( phase == "00") {
+    phase_not.src="../imagenes/iconos/off-phase.png";
+  }
+
+  // Updating for LEVEL ON cases
+  if ( level == "01") {
+    level_not.src="../imagenes/iconos/on-level.png";
+  
+  // Updating for LEVEL OFF cases
+  } else if ( level == "00") {
+    level_not.src="../imagenes/iconos/off-level.png";
   }
 }
 
