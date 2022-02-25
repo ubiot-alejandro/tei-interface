@@ -64,8 +64,9 @@ function invokeOFF() {
 
 // Funtion to get the client ID
 function getId() {
-  // let token = "" // For tests
-  let token = window.location.href  // Reading from url
+  let token = "https://www.aquifer.network/servicio#id_token=eyJraWQiOiJMOG1lcHJOWk1HV0VOWGEwTURYaW51bjQzSksrXC9QTkVTVHBkUG8xR3NxQT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoiY2RaNlI5LWtoVm5jT0dkbVhvQmhvdyIsInN1YiI6IjU0ZmRiOTY4LWRhODEtNGU2OC04MWU1LThhYWM3NWRhOTI2ZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb21cL2V1LWNlbnRyYWwtMV84ZWliTHV0MFEiLCJjb2duaXRvOnVzZXJuYW1lIjoiNTRmZGI5NjgtZGE4MS00ZTY4LTgxZTUtOGFhYzc1ZGE5MjZmIiwiYXVkIjoiNDUycGIycjR0MmVlYWFiaWk2aThtY2cwb3AiLCJldmVudF9pZCI6ImZiZGY3N2Y1LWQ5MjQtNDdkNS05MDcwLTMwMWQ5MWEzZGE4NCIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ1NzI3NDM5LCJleHAiOjE2NDU3MzEwMzksImlhdCI6MTY0NTcyNzQzOSwianRpIjoiNDE1Y2RjOGItYjVlMS00ZWVhLWJlODgtMGYzOWUyMTU0ZmY3IiwiZW1haWwiOiJ1YmlvdC5hbGVqYW5kcm9AZ21haWwuY29tIn0.I2ERRAd_E3Py3HfJ-L8nqxiaWQebGU9LMwd7JksoRWbtwDNlNT3sXb2VNiL4yIA582pJApa9yU6jyVBDSVOs_HvpqrVMZgoFZfxiQaonbjMrWA3gG_YmN0wFvBuSnoNDy6U8YeL5nyF2p_GhyeBpYvN-LzHEqbPysWv-_v3_S9_MBJA25zey5bVu80Ggv9vzAQMLHMBmFUnT0oc77wC3zY0FpQTdRlEgyslFdRU14EFlBqvmCjjMG8pRutFdwOJW013dG_Y88faz_smBNOQh1TnzDnqOm-fLLTCt9UoL-ow1OnJnLFyLb2CxYAHJSdRYtDc31lga7LHN5eVxavitKQ&access_token=eyJraWQiOiIyTmg5bjNScjJ0cXVERmpTY2xNaWo5MnZqWVBYMkloN0pWUWFKd2JHNlZJPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI1NGZkYjk2OC1kYTgxLTRlNjgtODFlNS04YWFjNzVkYTkyNmYiLCJldmVudF9pZCI6ImZiZGY3N2Y1LWQ5MjQtNDdkNS05MDcwLTMwMWQ5MWEzZGE4NCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiaHR0cHM6XC9cL2FxdWlmZXIubG9nby5hY3Rpb25zXC9sb2dvLm9mZiBodHRwczpcL1wvYXF1aWZlci5sb2dvLmFjdGlvbnNcL2xvZ28ub24gb3BlbmlkIGVtYWlsIiwiYXV0aF90aW1lIjoxNjQ1NzI3NDM5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb21cL2V1LWNlbnRyYWwtMV84ZWliTHV0MFEiLCJleHAiOjE2NDU3MzEwMzksImlhdCI6MTY0NTcyNzQzOSwidmVyc2lvbiI6MiwianRpIjoiMzM0ZjFmYzYtYmNmOS00MDFlLTgyYjMtNzFjNzU0MDgxZTMwIiwiY2xpZW50X2lkIjoiNDUycGIycjR0MmVlYWFiaWk2aThtY2cwb3AiLCJ1c2VybmFtZSI6IjU0ZmRiOTY4LWRhODEtNGU2OC04MWU1LThhYWM3NWRhOTI2ZiJ9.fAEXWen7ZrS9atcH8VQZgclYhUAoIcGXH8PcF7a6Np6J_6i_i7m60-g1X7FbckSfM7jyZFDjvfVDbazafBgeENMHd6RjE2Doj5H7goUqwOCAgzSe855ZDdwYsV72GJQSc6EnooZdD7n9h7VtgJHUS_H_wv0lVTtigU7b6TgRAaKEkcgHCFzBQJRSWARDYaeQdXX07de2P8PpSIxuP-CCFDl7q0e849D7Wc-W-01_6LAq4TV0y3wQ4FkTU2QirvG8u0GOcSBUGrF5y5fvjqd2mpznMZvxay562Dk10lqfC_HHyNFc30e7HkFvleBkB0dDHKVssnh8tucONISLpuAaOg&expires_in=3600&token_type=Bearer" // For tests
+  
+  //let token = window.location.href  // Reading from url
   let auth = "Bearer " + token.split('&')[1].split('=')[1]  // Select the auth section
   let url = oauth;  // Using the variable link
     
@@ -97,9 +98,9 @@ function updateImage() {
   
   // Updating for ON cases
   if ( state == "01") {
-      image1.src="../imagenes/iconos/valvulaAbierta.png";
-      imageon.src="../imagenes/iconos/onNewencendido.png";
-      imageoff.src="../imagenes/iconos/offNewapagado.png";
+      image1.src="../imagenes/iconos/gota-on.png";
+      imageon.src="../imagenes/iconos/encendido-on.png";
+      imageoff.src="../imagenes/iconos/apagado-off.png";
       
       if (! notified1) {
         if (! init) {
@@ -115,9 +116,9 @@ function updateImage() {
   
   // Updating for OFF cases  
   } else if ( state == "00") {
-      image1.src="../imagenes/iconos/valvulaCerrada.png";
-      imageon.src="../imagenes/iconos/onNewapagado.png";
-      imageoff.src="../imagenes/iconos/offNewencendido.png";
+      image1.src="../imagenes/iconos/gota-off.png";
+      imageon.src="../imagenes/iconos/apagado-on.png";
+      imageoff.src="../imagenes/iconos/encendido-off.png";
             
       if (! notified2) {
         if (! init) {
@@ -134,7 +135,7 @@ function updateImage() {
   
   // Updating for OFFLINE cases
   if ( network == "Offline") {
-      image2.src="../imagenes/iconos/Boton_desconectado.png";
+      image2.src="../imagenes/iconos/conexion-off.png";
 
       if (! notified3) {
         connection.play();
@@ -144,7 +145,7 @@ function updateImage() {
   
   // Updating for ONLINE cases
   } else if ( network == "Online_") {
-      image2.src="../imagenes/iconos/Boton_conectado.png";
+      image2.src="../imagenes/iconos/conexion-on.png";
 
       if (! notified4) {
         connection.play();
@@ -155,29 +156,29 @@ function updateImage() {
 
   // Updating for THERMAL ON cases
   if ( thermal == "01") {
-    thermal_not.src="../imagenes/iconos/on-thermal.png";
+    thermal_not.src="../imagenes/iconos/termico-on.png";
   
   // Updating for THERMAL OFF cases
   } else if ( thermal == "00") {
-    thermal_not.src="../imagenes/iconos/off-thermal.png";
+    thermal_not.src="../imagenes/iconos/termico-off.png";
   }
 
   // Updating for PHASE ON cases
   if ( phase == "01") {
-    phase_not.src="../imagenes/iconos/on-phase.png";
+    phase_not.src="../imagenes/iconos/supervisor-on.png";
   
   // Updating for PHASE OFF cases
   } else if ( phase == "00") {
-    phase_not.src="../imagenes/iconos/off-phase.png";
+    phase_not.src="../imagenes/iconos/supervisor-off.png";
   }
 
   // Updating for LEVEL ON cases
   if ( level == "01") {
-    level_not.src="../imagenes/iconos/on-level.png";
+    level_not.src="../imagenes/iconos/nivel-on.png";
   
   // Updating for LEVEL OFF cases
   } else if ( level == "00") {
-    level_not.src="../imagenes/iconos/off-level.png";
+    level_not.src="../imagenes/iconos/nivel-off.png";
   }
 }
 

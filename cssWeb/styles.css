@@ -11,7 +11,7 @@ body {
   background: white;
   background-repeat: repeat;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -812,7 +812,7 @@ h1 { color: rgb(0, 77, 93); font-weight: bold;}
 
 h3, h5 { color: rgb(0, 77, 93); font-weight: bold; }
 
-p { line-height: 25px;}
+p { line-height: 25px; text-align: left; font-size: large;}
 
 form {
 	width: 380px;
@@ -1029,18 +1029,14 @@ input:focus ~ .highlight {
 footer { text-align: center; }
 
 footer p {
-	color: #888;
-	font-size: 13px;
+	color: white;
+	font-size: 18px;
 	letter-spacing: .4px;
+  text-align: center;
+  font-weight: bold;
 }
 
-footer a {
-	color: #4a89dc;
-	text-decoration: none;
-	transition: all .2s ease;
-}
-
-footer a:hover {
+footer p:hover {
 	color: #666;
 	text-decoration: underline;
 }

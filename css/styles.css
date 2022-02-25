@@ -7,7 +7,7 @@ body {
   height: auto;
   background-color: white;
   font-family: Helvetica;
-	background: #eee;
+	background: white;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -110,6 +110,10 @@ body {
   font-size: medium;
 }
 
+.h5 {
+  font-weight: bold;
+}
+
 #TEI {
 color: rgb(0, 80, 94);
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -119,7 +123,7 @@ text-transform: uppercase;
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
-  height: 270px;
+  height: 230px;
   margin: auto;
   margin-bottom: 0%;
   margin-top: 0%;
@@ -128,11 +132,24 @@ text-transform: uppercase;
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color:rgb(167, 164, 164);
+  background-color: white;
+}
+
+.w3-light-grey-alert {
+  height: 150px;
+  margin: auto;
+  margin-bottom: 1%;
+  margin-top: 0%;
+  width: 35%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: white;
 }
 
 .w3-content {
-  padding: 5%;
+  padding: 1%;
 }
 
 #izquierda {
@@ -157,10 +174,7 @@ b {
 
 #derecha1 {
   margin: auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  height: 10%;
-  width: 15%;
+  width: 10%;
   border: none;
   background-color: transparent;
 }
@@ -265,6 +279,13 @@ height:203px;
   font-weight: bold;
 }
 
+footer p {
+	color: white;
+	font-size: 18px;
+	letter-spacing: .4px;
+  text-align: center;
+  font-weight: bold;
+}
 
 hgroup { 
 	text-align:center;
@@ -285,9 +306,8 @@ input {
 /* Interfaz de control */
 
 .w3-twothird {
-  height: 70%;
-  width: 70%;
-  padding: 10%;
+  width: 40%;
+  padding: 2%;
   margin: auto;
 }
 
@@ -299,18 +319,21 @@ input {
   color: rgb(0, 77, 93);
 }
 
+
+#derecha2 {
+  width: 50px;
+  ;
+}
+
 /* //////////////////////Responsive Styles/////////////////////// */
 
 @media (max-height: 664px) {              /*======= Mayor de 664 px (Alto) =======*/
 
   /* Tablero eléctrico Sumergible */
 .w3-light-grey {
-  height: 270px;
+  height: 230px;
   margin: auto;
-  margin-bottom: 20px;
-  margin-top: 1%;
   width: 45%;
-  padding: 30px;
   text-align: center;
   align-items: center;
   display: flex;
@@ -334,14 +357,14 @@ input {
 @media (min-height: 790px) {                   /*======= Mayor de 790 px (Alto) =======*/
 
   .w3-light-grey {
-    height: 270px;
+    height: 230px;
 
   }
 }
 @media (min-height: 710px) {                  /*======= Mayor de 710 px (Alto) =======*/
 
   .w3-light-grey {
-    height: 270px;
+    height: 230px;
   }
 }
 
@@ -392,12 +415,9 @@ input {
 @media (max-width: 1400px) {
   
   .w3-light-grey {
-    height: 270px;
+    height: 230px;
     margin: auto;
-    margin-bottom: 10px;
-    margin-top: 1%;
     width: 60%;
-    padding: 0px;
     text-align: center;
     align-items: center;
     display: flex;
@@ -473,7 +493,7 @@ input {
     .w3-twothird {
       height: 80%;
       width: 80%;
-      padding: 10%;
+      padding: 2%;
       margin: auto;
     }
 
@@ -528,17 +548,14 @@ input {
 @media (max-width: 900px) {  /*======= Menos de 900 px (Ancho) =======*/
 
   #derecha1 {
-    height: 30%;
-    width: 35%;
+    width: 30%;
     border: none;
     background-color: transparent;
   }
 
   .w3-light-grey {
-    height: 270px;
+    height: 230px;
     margin: auto;
-    margin-bottom: 10px;
-    margin-top: 1%;
     width: 80%;
     padding: 0px;
     text-align: center;
@@ -726,7 +743,7 @@ input {
     .w3-twothird {
       height: 90%;
       width: 90%;
-      padding: 10%;
+      padding: 2%;
       margin: auto;
     }
 }
