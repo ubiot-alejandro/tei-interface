@@ -6,7 +6,6 @@ body {
   min-height: 100vh;
   height: auto;
   background-color: white;
-  font-family: Helvetica;
 	background: white;
   -webkit-font-smoothing: antialiased;
 }
@@ -41,11 +40,23 @@ body {
   width: 110px;
 }
 
+#logo1:hover {
+  overflow: hidden;
+  transform:scale(1.1);
+}
+
 /* Tamaño de iconos*/
 
+
 .hidden-xs {
-  width: 4vw;
-  height: 4vw;
+  width: 65px;
+  height: 65px;
+  margin: auto;
+}
+
+
+.hidden-xs:hover {
+  transform:scale(1.2);
 }
 
 
@@ -63,6 +74,7 @@ body {
 .nav-item {
   justify-content: flex-start;
 }
+
 
 .items {
   height: 100px;
@@ -140,7 +152,7 @@ text-transform: uppercase;
   margin: auto;
   margin-bottom: 1%;
   margin-top: 0%;
-  width: 35%;
+  width: 50%;
   text-align: center;
   align-items: center;
   display: flex;
