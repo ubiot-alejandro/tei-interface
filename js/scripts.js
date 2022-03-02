@@ -1,5 +1,5 @@
 // Set environment
-var environment = "dev"  // dev = aquifer.network || prod = tei.com.ve
+var environment = "prod"  // dev = aquifer.network || prod = tei.com.ve
 
 if (environment == "prod") {
     var db = "tei-db"
