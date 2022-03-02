@@ -4,7 +4,7 @@
   background: white;
   background-repeat: repeat;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Via Sans" Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -31,10 +31,12 @@ p {
 
 #texto-footer {
   font-size: 18px;
+  padding-top: 1.5%;
   margin: auto; 
-  color: black;
+  color: white;
   text-align: center;
   align-items: center;
+  font-weight: bold;
 }
 
 /* Ajuste de las imagenes y texto del Home */
@@ -60,6 +62,60 @@ p {
   width: 50%;
   padding: 2%;
 
+}
+
+/* Tablero eléctrico Sumergible */
+
+.w3-light-grey {
+  height: 230px;
+  margin: auto;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  width: 45%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.w3-light-grey-alert {
+  height: 150px;
+  margin: auto;
+  margin-bottom: 1%;
+  margin-top: 0%;
+  width: 50%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.w3-content {
+  padding: 1%;
+}
+
+#izquierda {
+  text-align: center;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+#derecha {
+  text-align: center;
+  position: relative;
+  border: none;
+  background-color: transparent;
+}
+
+#derecha1 {
+  margin: auto;
+  width: 10%;
+  border: none;
+  background-color: transparent;
 }
 
 /* ============= Logo ============= */
@@ -206,7 +262,7 @@ p {
 
 .linea_footer {
   background-color: rgb(141, 191, 198);
-  height: 25px;
+  height: 30px;
   text-align: center;
   margin: auto;
 }
@@ -240,6 +296,7 @@ footer p {
 
 .base {
   background: rgb(0, 80, 94);
+  height: 100%;
 }
 
 /* ===================== Nosotros ===================== */
@@ -568,9 +625,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
   }
 
   #texto-footer {
-    font-size: 15px;
-    margin: auto; 
-    color: black;
+    font-size: 12px;
+    margin: auto;
   }
   
 }
@@ -711,8 +767,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 
     #texto-footer {
       font-size: 14px;
-      margin: auto; 
-      color: black;
+      margin: auto;
     }
 
 }
@@ -727,9 +782,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
   }
 
   #texto-footer {
-  font-size: 13px;
-  margin: auto; 
-  color: black;
+  font-size: 10px;
+  margin: auto;
 }
 
 }

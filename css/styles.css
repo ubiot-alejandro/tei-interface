@@ -1,43 +1,33 @@
 /* ============= Estilos ============= */
 
-body {
-  margin: 0;
-  margin-bottom: 0px;
-  min-height: 100vh;
-  height: auto;
-  background-color: white;
-	background: white;
-  -webkit-font-smoothing: antialiased;
-}
-
 .home {
   background: white;
   background-repeat: repeat;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Via Sans" Arial, Helvetica, sans-serif;
   margin: 0;
 }
+
+#texto-footer {
+  font-size: 18px;
+  padding-top: 1.5%;
+  margin: auto; 
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+}
+
 
 /* ============= Logo ============= */
 /* Caracteristicas de la barra de navegación: */
 /* Tamaño del logotipo */
 
-#logo {
-  margin-top: 0px;
-  height: auto;
-  width: 50%;
-}
 
 #logo1 {
   margin-top: 0px;
   height: 70px;
   width: 100px;
-}
-
-#logo-tei {
-  margin-top: 0px;
-  height: 90px;
-  width: 110px;
 }
 
 #logo1:hover {
@@ -49,66 +39,33 @@ body {
 
 
 .hidden-xs {
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
   margin: auto;
 }
-
 
 .hidden-xs:hover {
   transform:scale(1.2);
 }
 
-
 /* Fondo del container del navbar */
 .navbar {
   background-color: white;
-  border: 100px "solid" #00353e;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-left: 1%;
-  padding-right: 1%;
-  height: 95px;
+  height: 100%;
 }
 
 .nav-item {
   justify-content: flex-start;
 }
 
-
 .items {
   height: 100px;
   padding-bottom: 0px;
 }
 
-.imagen1 {
-  padding: 120px;
-  
-}
-
-.imagenproductos {
-  position:relative;
-  display: block;
-  margin: auto;
-  height: 60%;
-  width: 50%;
-}
-
-.imagen-login {
-  position: absolute;
-  margin-left: 220px;
-  padding-left: 30px;
-  padding-top: 90px;
-}
-
-.navbar-toggler {
-  border-color: black;
-  border: solid;
-}
-
 #cabecera {
-  background-color: white;
-  border: 100px "solid" #00353e;
   margin-top: 0;
   padding-left: 0px;
   padding-right: 0px;
@@ -117,29 +74,27 @@ body {
   width: 100%;
 }
 
-.h1 {
+h1 {
   color:rgb(0, 80, 94);
-  font-size: medium;
+  font-weight: bold;
+}
+
+h3 { 
+  font-weight: 300px; 
+  color: rgb(0, 77, 93);
 }
 
 .h5 {
   font-weight: bold;
 }
 
-#TEI {
-color: rgb(0, 80, 94);
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-text-transform: uppercase;
-}
-
 /* Tablero eléctrico Sumergible */
 
 .w3-light-grey {
-  height: 230px;
   margin: auto;
   margin-bottom: 0%;
   margin-top: 0%;
-  width: 45%;
+  width: 35%;
   text-align: center;
   align-items: center;
   display: flex;
@@ -148,20 +103,15 @@ text-transform: uppercase;
 }
 
 .w3-light-grey-alert {
-  height: 150px;
   margin: auto;
-  margin-bottom: 1%;
+  margin-bottom: 3%;
   margin-top: 0%;
-  width: 50%;
+  width: 40%;
   text-align: center;
   align-items: center;
   display: flex;
   justify-content: center;
   background-color: white;
-}
-
-.w3-content {
-  padding: 1%;
 }
 
 #izquierda {
@@ -179,16 +129,22 @@ text-transform: uppercase;
   background-color: transparent;
 }
 
-b {
-  font-weight: bold;
-  font-size: large;
-}
-
 #derecha1 {
   margin: auto;
-  width: 10%;
+  margin-top: 0px;
+  margin-bottom: 2.5%;
+  width: 7%;
   border: none;
   background-color: transparent;
+}
+
+.w3-content-alert {
+  margin: 0px;
+  width: 30%;
+  border: none;
+  background-color: transparent;
+  color: rgb(0, 77, 93);
+  font-weight: bold;
 }
 
 
@@ -224,10 +180,6 @@ b {
   position: relative;
 }
 
-#logo-movil {
-  height: 30px;
-}
-
 /* Para que los items del navbar se muestren a la izquierda de la pantalla */
 
 #navbarSupportedContent {
@@ -237,53 +189,13 @@ b {
 
 /* Base del template */
 
-footer{
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 67px;
-  font-weight: bold;
-  color: rgb(0, 80, 94);
-}
-
 .base {
   background: rgb(0, 80, 94);
   color: white;
   font-size: 1vw;
-  height: 100%;
+  height: 120%;
   width: 100%;
-  padding: 0;
-  margin: 0;
-  bottom: 0;
-}
-
-/*seccion de la ventana modal*/
-/* Z-index of #mask must lower than #boxes .window */
-
-#mask {
-  position: relative;
-  z-index:900;
-  background-color:#000;
-  background-color:rgb(0,53,62);
-  display: none;
-}
-
-#boxes .window {
-  margin-top: 0px;
-  position: relative;
-  display:none;
-  z-index:910;
-  font-size:22px;
-  color:rgb(0,53,62);
-  background-color:rgb(255,255,255);
-}
-
-
-/* Customize your modal window here, you can add background image too */
-#boxes #dialog {
-padding-top: 10px;
-width:375px;
-height:203px;
+  margin: auto;
 }
 
 .label-default{
@@ -294,24 +206,20 @@ height:203px;
 footer p {
 	color: white;
 	font-size: 18px;
-	letter-spacing: .4px;
+	letter-spacing: .3px;
   text-align: center;
-  font-weight: bold;
+  margin: auto;
 }
 
 hgroup { 
 	text-align:center;
-	margin-top: 0.3em;
+	margin-top: 0px;
   margin-bottom: 0.5em;
   font-size: large;
 }
 
 input {
-	font-size: 18px;
-	padding: 5px 5px 5px 5px;
 	display: block;
-	background: #fafafa;
-	color: #636363;
 	width: 100%;
 }
 
@@ -319,25 +227,17 @@ input {
 
 .w3-twothird {
   width: 40%;
-  padding: 2%;
   margin: auto;
-}
-
-.w3-right {
-  font-weight: bold;
-}
-
-.w3-right:hover {
-  color: rgb(0, 77, 93);
 }
 
 
 #derecha2 {
   width: 50px;
-  ;
 }
 
 /* //////////////////////Responsive Styles/////////////////////// */
+
+
 
 @media (max-height: 664px) {              /*======= Mayor de 664 px (Alto) =======*/
 
@@ -355,13 +255,11 @@ input {
 #izquierda {
   text-align: center;
   position: relative;
-  margin: 10%;
 }
 
 #derecha {
   text-align: center;
   position: relative;
-  margin: 10%;
 }
 
 }
@@ -391,18 +289,9 @@ input {
   display: none;
 }
 
-  .linea_divisora{
-    margin-top: 0px;
-    width: 100%;
-  }
-
   .nav-link {
     padding-bottom: 0px;
     margin-bottom: 0px;
-  }
-
-  .viewport {
-    height: 0px;
   }
 
   .base {
@@ -421,20 +310,6 @@ input {
       margin: 0;
   
     }
-
-}
-
-@media (max-width: 1400px) {
-  
-  .w3-light-grey {
-    height: 230px;
-    margin: auto;
-    width: 60%;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
 }
 
 
@@ -442,17 +317,6 @@ input {
 
   h1 {
     font-size: 180%;
-  }
-  
-  .linea_divisora{
-    margin-top: 0px;
-    width: 100%;
-  }
-  
-  .hidden-xs {
-    width: 60px;
-    height: 60px;
-    display: block;
   }
 
   .img-responsive{
@@ -467,22 +331,6 @@ input {
   .viewport {
     height: 0px;
   }
-
-  .productogiro {
-    height: 0px;
-  }
-
-  .color_letras_servicios{
-      font-size: 2vw;
-  
-    }
-
-  #logo {
-    margin-top: 0px;
-    height: 100px;
-    width: 210px;
-  }
-
 
   .base {
     font-size: 1.5vw;
@@ -502,56 +350,33 @@ input {
 
     }
 
-    .w3-twothird {
-      height: 80%;
-      width: 80%;
-      padding: 2%;
+    .w3-content-alert {
+      margin: 0px;
+      width: 35%;
+      border: none;
+      background-color: transparent;
+    }
+
+    .w3-content-alert {
       margin: auto;
+      margin-bottom: 3%;
+      margin-top: 0%;
+      width: 50%;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      background-color: white;
     }
 
-  }
-
-
-  @media (min-width: 1150px) {      /*======= Menos de 1150 px (Ancho) =======*/
-    .imagenproductos {
-      position:relative;
-      display: block;
-      height: 480px;
-      width: 400px;
-    }
-    
   }
 
 @media (max-width: 1000px) {              /*======= Menos de 1000 px (Ancho) =======*/
 
   #derecha1 {
-    height: 20%;
-    width: 25%;
+    width: 9%;
     border: none;
     background-color: transparent;
-  }
-
-  .letras_mas_grandes{
-    font-size: 2.5vw;
-  }
-
-
-  .color_letras_servicios2 {
-
-    font-size: 2.5vw;
-    margin: 0;
-
-  }
-
-  .color_letras_servicios{
-    font-size: 2vw;
-
-  }
-
-  #logo-tei {
-    margin-top: 0px;
-    height: 90px;
-    width: 110px;
   }
   
 }
@@ -560,15 +385,14 @@ input {
 @media (max-width: 900px) {  /*======= Menos de 900 px (Ancho) =======*/
 
   #derecha1 {
-    width: 30%;
+    width: 11%;
     border: none;
     background-color: transparent;
   }
 
   .w3-light-grey {
-    height: 230px;
     margin: auto;
-    width: 80%;
+    width: 70%;
     padding: 0px;
     text-align: center;
     align-items: center;
@@ -582,23 +406,6 @@ input {
 
   .visible-xs {
     display: none;
-
-  }
-  
-  .letras_mas_grandes{
-    font-size: 2.5vw;
-  }
-
-
-  .color_letras_servicios2 {
-
-    font-size: 2.5vw;
-    margin: 0;
-
-  }
-
-  .color_letras_servicios{
-    font-size: 2.5vw;
 
   }
 
@@ -623,43 +430,9 @@ input {
     height: 30px;
     display: block;
   }
-  
-  .items {
-    height: 100px;
-  }
-
-   
-  #info {
-    padding: 10px;
-  }
 
   .footer {
     font-size: 2vw;
-  }
-
-   #cabecera-nosotros {
-     height: 700px;
-   }
-
-   
-  .sangria{
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .txt_quienes {
-
-    font-size: 2vw;
-
-  }
-
-  #myList li{
-
-    padding-top: 20px;
-    padding-bottom: 10px;
-
   }
 
   .navbar-light {
@@ -679,18 +452,6 @@ input {
   margin: auto;
   }
 
-  #logo {
-    margin-top: 0px;
-    height: 80px;
-    width: 190px;
-  }
-
-  #logo-tei {
-    margin-top: 0px;
-    height: 70px;
-    width: 90px;
-  }
-
   hgroup { 
     text-align:center;
     margin-top: 1.5em;
@@ -705,24 +466,6 @@ input {
     font-size: 130%;
   }
 
-  #boxes .window {
-    margin-top: 10;
-    position: absolute;
-    display:none;
-    z-index:930;
-    padding:10px;
-    font-size:30px;
-    color:rgb(0,53,62);
-    background-color:rgb(255,255,255);
-  }  
-
-
-  .color_letras_servicios2 {
-    margin-top: 0px;
-    margin-bottom: 0;
-    font-size: 1.5w;
-  }
-
   .base {
     font-size: 2.6vw;
     height: 100%;
@@ -733,28 +476,9 @@ input {
     text-align: center;
     margin: auto;
     }
-
-    #quienes-somos {
-      font-size: 3vw;
-    }
-
-    .letras_mas_grandes{
-      font-size: 3vw;
-    }
   
-  
-    .color_letras_servicios2 {
-      font-size: 3vw;
-      margin: 0;
-  
-    }
-  
-    .color_letras_servicios{
-      font-size: 3vw;
-    }
     .w3-twothird {
-      height: 90%;
-      width: 90%;
+      width: 60%;
       padding: 2%;
       margin: auto;
     }
@@ -766,18 +490,4 @@ input {
     font-size: 100%;
   }
 
-  #logo {
-    margin-top: 0px;
-    height: 70px;
-    width: 160px;
-  }
-}
-
-@media (max-width:300px) {     /*======= Menos de 300 px =======*/
-  
-  #logo {
-    margin-top: 0px;
-    height: 70px;
-    width: 150px;
-  }
 }

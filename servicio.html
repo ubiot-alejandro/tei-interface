@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>Tablero Inteligente</title>
+  <title>TEI</title>
 
   <head>
     <!-- agregado el meta charset UTF-8 para los carácteres como las tildes y la letra ñ -->
@@ -21,6 +21,8 @@
     <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     
     <!-- Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/styles.css">
     
   
@@ -28,8 +30,7 @@
     <!-- <link href="css/normalize.css" rel="stylesheet"> -->
   
     <!-- bootstrap js core -->
-    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
-  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   
     <!-- jQuery -->
     <script src="js/jquery-1.11.1.min.js"></script>
@@ -137,7 +138,7 @@
 
     <!-- First Grid -->
     <hgroup style="margin-top: 0%; margin-bottom: 0%;">
-      <h2 style="color: rgb(0, 77, 93); font-weight: bold; margin-bottom: 0px;">Bienvenido a TEI</h2>
+      <h1 style="color: rgb(0, 77, 93); font-weight: bold; margin-bottom: 0px;">Bienvenido a TEI</h>
       <h3 style="color: rgb(0, 77, 93); margin-bottom: 0px;">Tablero Eléctrico Inteligente</h3>
     </hgroup>
     
@@ -145,13 +146,13 @@
       
       <div class="w3-content">
         <div class="w3-twothird">
-          <input id="derecha" type="image" alt="ON" src="imagenes/iconos/apagado-on.png" onclick="invokeON()"><b>Encender</b></input>
+          <input id="derecha" type="image" alt="ON" src="imagenes/iconos/encendido-off.png" onclick="invokeON()"><b>Encender</b></input>
         </div>
       </div>
 
       <div class="w3-content">
         <div class="w3-twothird">
-          <input id="izquierda" type="image" alt="OFF" src="imagenes/iconos/encendido-off.png" onclick="invokeOFF()"><b>Apagar</b></input>
+          <input id="izquierda" type="image" alt="OFF" src="imagenes/iconos/apagado-on.png" onclick="invokeOFF()"><b>Apagar</b></input>
         </div>
       </div>
     
@@ -159,49 +160,52 @@
 
     <hgroup>
       <h5 style="color: rgb(0, 77, 93);">Última actividad de su motor:</h5>
-      <h5 style="color: red;" id="label">Esperando Actualización</h5>
+      <h5 style="color: rgb(216, 48, 37);" id="label">Esperando Actualización...</h5><br>
     </hgroup>
   
 
     <div>
-      <input  type="image" id="derecha1" src="imagenes/iconos/gota-off.png"></input>
+      <input  type="image" id="derecha1" src="imagenes/iconos/gota-off2.png"></input>
     </div>
+
+    <hgroup>
+      <h5 style="color:rgb(216, 48, 37);">Alertas de seguridad:</h5><br>
+    </hgroup>
 
     <div class="w3-light-grey-alert w3-container">
-
-    <div class="w3-content">
-      <div class="w3-twothird">
-        <input type="image" id="phase" src="imagenes/iconos/supervisor-off.png"></input>    
+      <div class="w3-content-alert">
+        <div class="w3-twothird">
+          <input type="image" id="phase" src="imagenes/iconos/supervisor-off.png">Supervisor</input>    
+        </div>
       </div>
-    </div>
-
-    <div class="w3-content">
-      <div class="w3-twothird">
-        <input type="image" id="level" src="imagenes/iconos/nivel-off.png"></input>    
+      
+      <div class="w3-content-alert">
+        <div class="w3-twothird">
+          <input type="image" id="level" src="imagenes/iconos/nivel-off.png">Nivel</input>    
+        </div>
       </div>
-    </div>
-
-    <div class="w3-content">
-      <div class="w3-twothird">
-        <input type="image" id="thermal" src="imagenes/iconos/termico-off.png"></input>    
+      
+      <div class="w3-content-alert">
+        <div class="w3-twothird">
+          <input type="image" id="thermal" src="imagenes/iconos/termico-off.png">Térmico</input>    
+        </div>
       </div>
-    </div>
-
   </div>
 
 
 
-    <footer style="clear: right" class="bg-light text-center text-md-start">
-    </div>
+  <footer class="bg-light text-md-start">
+      
     <div style="height: 10px;" class="linea_divisora1"></div>
+    <div style="height: 10px;" class="linea_divisora3"></div>
     
-    <div style="height: 25px;" class="linea_divisora3">
-      <p>Contáctenos a ventas@tei.com.ve / +58 424 506 93 73</p>
+    <div class="base">
+      <p id="texto-footer">Agropezim Group C.A. RIF: J-404095969 Venezuela, <br> 
+      San Felipe - Estado Yaracuy. Todos los Derechos Reservados 2014. <br>
+      Tablero Eléctrico Inteligente <br>
+      Contáctenos a ventas@tei.com.ve / +58 424 506 93 73</p><br>
     </div>
-    <div class="text-center p-3 base">
-      <p>Agropezim Group C.A. RIF: J-404095969 Venezuela, <br> 
-      San Felipe - Estado Yaracuy. Todos los Derechos Reservados 2014.</p>
-    </div>
+    
   </footer>
 
     <script>

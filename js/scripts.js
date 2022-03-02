@@ -98,7 +98,7 @@ function updateImage() {
   
   // Updating for ON cases
   if ( state == "01") {
-      image1.src="../imagenes/iconos/gota-on.png";
+      image1.src="../imagenes/iconos/gota-on2.png";
       imageon.src="../imagenes/iconos/encendido-on.png";
       imageoff.src="../imagenes/iconos/apagado-off.png";
       
@@ -116,7 +116,7 @@ function updateImage() {
   
   // Updating for OFF cases  
   } else if ( state == "00") {
-      image1.src="../imagenes/iconos/gota-off.png";
+      image1.src="../imagenes/iconos/gota-off2.png";
       imageon.src="../imagenes/iconos/apagado-on.png";
       imageoff.src="../imagenes/iconos/encendido-off.png";
             
