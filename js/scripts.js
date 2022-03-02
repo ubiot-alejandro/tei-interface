@@ -64,7 +64,8 @@ function invokeOFF() {
 
 // Funtion to get the client ID
 function getId() {
-  // let token = "" // For tests
+  //let token = "" // For tests
+  
   let token = window.location.href  // Reading from url
   let auth = "Bearer " + token.split('&')[1].split('=')[1]  // Select the auth section
   let url = oauth;  // Using the variable link
@@ -97,9 +98,9 @@ function updateImage() {
   
   // Updating for ON cases
   if ( state == "01") {
-      image1.src="../imagenes/iconos/valvulaAbierta.png";
-      imageon.src="../imagenes/iconos/onNewencendido.png";
-      imageoff.src="../imagenes/iconos/offNewapagado.png";
+      image1.src="../imagenes/iconos/gota-on2.png";
+      imageon.src="../imagenes/iconos/encendido-on.png";
+      imageoff.src="../imagenes/iconos/apagado-off.png";
       
       if (! notified1) {
         if (! init) {
@@ -115,9 +116,9 @@ function updateImage() {
   
   // Updating for OFF cases  
   } else if ( state == "00") {
-      image1.src="../imagenes/iconos/valvulaCerrada.png";
-      imageon.src="../imagenes/iconos/onNewapagado.png";
-      imageoff.src="../imagenes/iconos/offNewencendido.png";
+      image1.src="../imagenes/iconos/gota-off2.png";
+      imageon.src="../imagenes/iconos/apagado-on.png";
+      imageoff.src="../imagenes/iconos/encendido-off.png";
             
       if (! notified2) {
         if (! init) {
@@ -134,7 +135,7 @@ function updateImage() {
   
   // Updating for OFFLINE cases
   if ( network == "Offline") {
-      image2.src="../imagenes/iconos/Boton_desconectado.png";
+      image2.src="../imagenes/iconos/conexion-off.png";
 
       if (! notified3) {
         connection.play();
@@ -144,7 +145,7 @@ function updateImage() {
   
   // Updating for ONLINE cases
   } else if ( network == "Online_") {
-      image2.src="../imagenes/iconos/Boton_conectado.png";
+      image2.src="../imagenes/iconos/conexion-on.png";
 
       if (! notified4) {
         connection.play();
@@ -155,29 +156,29 @@ function updateImage() {
 
   // Updating for THERMAL ON cases
   if ( thermal == "01") {
-    thermal_not.src="../imagenes/iconos/on-thermal.png";
+    thermal_not.src="../imagenes/iconos/termico-on.png";
   
   // Updating for THERMAL OFF cases
   } else if ( thermal == "00") {
-    thermal_not.src="../imagenes/iconos/off-thermal.png";
+    thermal_not.src="../imagenes/iconos/termico-off.png";
   }
 
   // Updating for PHASE ON cases
   if ( phase == "01") {
-    phase_not.src="../imagenes/iconos/on-phase.png";
+    phase_not.src="../imagenes/iconos/supervisor-on.png";
   
   // Updating for PHASE OFF cases
   } else if ( phase == "00") {
-    phase_not.src="../imagenes/iconos/off-phase.png";
+    phase_not.src="../imagenes/iconos/supervisor-off.png";
   }
 
   // Updating for LEVEL ON cases
   if ( level == "01") {
-    level_not.src="../imagenes/iconos/on-level.png";
+    level_not.src="../imagenes/iconos/nivel-on.png";
   
   // Updating for LEVEL OFF cases
   } else if ( level == "00") {
-    level_not.src="../imagenes/iconos/off-level.png";
+    level_not.src="../imagenes/iconos/nivel-off.png";
   }
 }
 
