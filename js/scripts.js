@@ -117,8 +117,8 @@ function updateImage() {
   // Updating for OFF cases  
   } else if ( state == "00") {
       image1.src="../imagenes/iconos/gota-off2.png";
-      imageon.src="../imagenes/iconos/apagado-on.png";
-      imageoff.src="../imagenes/iconos/encendido-off.png";
+      imageon.src="../imagenes/iconos/encendido-off.png";
+      imageoff.src="../imagenes/iconos/apagado-on.png";
             
       if (! notified2) {
         if (! init) {
