@@ -26,7 +26,16 @@ h5 { color: rgb(0, 77, 93);
 p { 
   line-height: 25px; 
   text-align: left; 
-  font-size: large;}
+  font-size: large;
+}
+
+#texto-footer {
+  font-size: 18px;
+  margin: auto; 
+  color: black;
+  text-align: center;
+  align-items: center;
+}
 
 /* Ajuste de las imagenes y texto del Home */
 .prueba-responsive {
@@ -93,12 +102,6 @@ p {
 .navbar {
   background-color: white;
   height: 100px;
-}
-
-.nav-item {
-  margin-bottom: 10px;
-  margin-left: 25px;
-  align-items: center;
 }
 
 
@@ -201,6 +204,13 @@ p {
   position: relative;
 }
 
+.linea_footer {
+  background-color: rgb(141, 191, 198);
+  height: 25px;
+  text-align: center;
+  margin: auto;
+}
+
 /* Posicion de los items (iconos) en el navbar*/
 
 #navbarSupportedContent {
@@ -245,7 +255,7 @@ footer p {
 
 
 .login {
-  width: 60%;
+  width: 50%;
   margin: auto;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -465,55 +475,23 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 
 .botonTEI {
   width: 30%;
-  margin-left: 2%;
+  margin-left: 0%;
 }
 
 .botonTEI:hover {
   transform: scaleX(1.1);  
 }
 
-/* Ripples animation */
-
-@keyframes ripples {
-  0% { opacity: 0; }
-
-  25% { opacity: 1; }
-
-  100% {
-    width: 200%;
-    padding-bottom: 200%;
-    opacity: 0;
-  }
-}
-
-
-
-.nav-link {
-  width: 60px;
-  height: 60px;
+.hidden-xs {
+  width: 80px;
   margin: auto;
 }
 
-/* Inicio de sesion > */
 
-                                /* Responsive Styles */
+/* Responsive Styles */
 
-/*responsividad mayor que */
+/*Responsividad para dispositivis con un ancho mayor a 1200px */
 @media (min-width: 1200px) {
-
-.hidden-xs {
-  width: 65px;
-  height: 65px;
-}
-
-.visible-xs {                 /* imagenesde productos  */
-  display: none;            /*Para una altura minima de 1200px */
-}
-
-  .linea_divisora{
-    margin-top: 0px;
-    width: 100%;
-  }
 
   .viewport {
     height: 0px;
@@ -527,20 +505,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
     margin: 0;
     bottom: 0;
     text-align: center;
-    margin: auto;
     }
 
-    .color_letras_servicios2 {
-      font-size: 1.5vw;
-      margin: 0;
-  
-    }
-
-}
-
-
-a {
-  padding-bottom: 0px;
 }
 
 
@@ -555,55 +521,14 @@ a {
     margin-top: 20px;
   }
 
-  .linea_divisora{
-    margin-top: 0px;
-    width: 100%;
-  }
-
-.hidden-xs {
-  width: 60px;
-  height: 60px;
-  display: block;
+  .hidden-xs {
+    width: 70px;
+    height: 70px;
+    display: block;
 }
-
-  .img-responsive{
-    width: 22,7vw;
-    height: 21,2vh;
-    justify-content: center;
-    object-fit: scale-down;
-    padding: 0px;
-
-  }
-
   .viewport {
     height: 0px;
   }
-
-  .productogiro {
-    height: 0px;
-  }
-
-  .letras_mas_grandes {
-      font-size: 1.5vw;
-    }
-  
-  .color_letras_servicios2 {
-      font-size: 2.1vw;
-      margin: 0;
-  
-    }
-  
-  .color_letras_servicios{
-      font-size: 2vw;
-  
-    }
-
-  #logo {
-    margin-top: 0px;
-    height: 100px;
-    width: 210px;
-  }
-
 
   .base {
     font-size: 1.5vw;
@@ -615,49 +540,37 @@ a {
     text-align: center;
     margin: auto;
     }
-
-    .navbar-nav {
-      position: relative;
-      z-index: 10000;
-      height: auto;
-      width: auto;
-      background-color: white;
+    
+  .navbar-nav {
+    position: relative;
+    z-index: 10000;
+    width: 40%;
+    background-color: white;
     }
 
   }
 
-
+  
   @media (min-width: 1150px) {
 
     #cabecera {
       float: none;
     }
-  } 
+} 
 
 
 @media (max-width: 1000px) {
-
-  .letras_mas_grandes{
-    font-size: 2vw;
-  }
-
-
-  .color_letras_servicios2 {
-
-    font-size: 2.5vw;
-    margin: 0;
-
-  }
-
-  .color_letras_servicios{
-    font-size: 2vw;
-
-  }
 
   #logo-tei {
     margin-top: 0px;
     height: 90px;
     width: 110px;
+  }
+
+  #texto-footer {
+    font-size: 15px;
+    margin: auto; 
+    color: black;
   }
   
 }
@@ -673,33 +586,6 @@ a {
     display: none;
 
   }
-  
-  .letras_mas_grandes{
-    font-size: 2vw;
-  }
-
-
-  .color_letras_servicios2 {
-
-    font-size: 2.5vw;
-    margin: 0;
-
-  }
-
-  .color_letras_servicios{
-    font-size: 2.5vw;
-
-  }
-
-  .footer {
-    font-size: 2vw;
-  }
-  
-  .button {
-    width: 60%;
-  }
-
-  .button:focus { outline: 0; }
 
   .botonTEI {
     width: 50%;
@@ -724,17 +610,9 @@ a {
     position: relative;
   }
 
-  .nav-item {
-    height: auto;
-    width: auto;
-    margin-bottom: 15px;
-    margin-left: 10px;
-    margin-right: 5px;
-  }
-
   .hidden-xs {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     display: block;
   }
 
@@ -742,31 +620,12 @@ a {
     padding: 10px;
   }
 
-  .footer {
-    font-size: 2vw;
-  }
-
   #cabecera-nosotros {
     height: 1500px;
   }
-  .sangria{
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
+ 
   .txt_quienes {
-
     font-size: 2vw;
-
-  }
-
-  #myList li{
-
-    padding-top: 20px;
-    padding-bottom: 10px;
-
   }
 
   .navbar-light {
@@ -784,12 +643,6 @@ a {
   bottom: 0;
   text-align: center;
   margin: auto;
-  }
-
-  #logo {
-    margin-top: 0px;
-    height: 80px;
-    width: 190px;
   }
 
   #logo-tei {
@@ -831,15 +684,8 @@ a {
     margin-top: 20px;
   }
 
-
-  .color_letras_servicios2 {
-    margin-top: 0px;
-    margin-bottom: 0;
-    font-size: 1.5w;
-  }
-
   .base {
-    font-size: 2.6vw;
+    font-size: 2vw;
     height: 100%;
     width: 100%;
     padding: 0;
@@ -856,26 +702,17 @@ a {
     #quienes-somos {
       font-size: 2vw;
     }
-
-    .letras_mas_grandes{
-      font-size: 2.2w;
-    }
   
-  
-    .color_letras_servicios2 {
-      font-size: 3vw;
-      margin: 0;
-  
-    }
-  
-    .color_letras_servicios{
-      font-size: 3vw;
-    }
-
     .tei-texto {
       margin-top: 3%;
       text-align: center;
       font-size: 18px;
+    }
+
+    #texto-footer {
+      font-size: 14px;
+      margin: auto; 
+      color: black;
     }
 
 }
@@ -889,24 +726,18 @@ a {
     font-size: 14px;
   }
 
+  #texto-footer {
+  font-size: 13px;
+  margin: auto; 
+  color: black;
 }
 
-/* @media (max-width:420px) {
-  h5 {
-    font-size: 13px;
-  }
-} */
+}
 
 @media (max-width:400px) {     /*======= Menos de 400 px =======*/
-  
-  #logo {
-    margin-top: 0px;
-    height: 70px;
-    width: 160px;
-  }
 
   #cabecera-nosotros {
-    height: 1700px;
+    height: 1500px;
   }
 
   .botonServicios {
@@ -921,23 +752,26 @@ a {
 }
 
 @media (max-width:300px) {     /*======= Menos de 300 px =======*/
-  
-  #logo {
-    margin-top: 0px;
-    height: 60px;
-    width: 150px;
-  }
-}
 
-@media only screen and (max-width:1420px) {
-  [class*="prueba-responsive"] {
+  base {
+    font-size: 0.5vw;
+    height: 100%;
     width: 100%;
-    float: none;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    }
+
+
 }
 
-.botonTEI {
-  width: 25%;
-  margin-left: 2%;
+@media only screen and (max-width:1400px) {
+  [class*="prueba-responsive"] {
+    width: 90%;
+    float: none;
+    margin: auto;
 }
 
 }
