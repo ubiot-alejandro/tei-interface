@@ -635,7 +635,6 @@ input {
 }
 
 @media (max-width:300px) { 
-
   #derecha2 {
   width: 35px;
 }
@@ -662,4 +661,5 @@ h5 {
   font-size: 8px;
 }
 
+}
 }
