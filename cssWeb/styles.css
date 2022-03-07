@@ -505,7 +505,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 }
 
 .buttonBlue:hover { 
-  background: rgb(110, 180, 222); 
+  opacity: 0.8;
 }
 
 
@@ -543,11 +543,12 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 /* Botones Usuario-TEI */
 
 .botonTEI {
-  width: 30%;
+  width: 33%;
   margin: auto;
   color: rgb(228, 149, 7);
   font-weight: bold;
   margin-bottom: 5%;
+  font-size: large;
 }
 
 
