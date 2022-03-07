@@ -544,10 +544,10 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 
 .botonTEI {
   width: 30%;
-}
-
-.botonTEI:hover {
-  transform: scaleX(1.1);  
+  margin: auto;
+  color: rgb(228, 149, 7);
+  font-weight: bold;
+  margin-bottom: 5%;
 }
 
 
