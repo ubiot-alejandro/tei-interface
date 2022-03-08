@@ -122,6 +122,16 @@ h3 {
   background-color: white;
 }
 
+.capa {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.capa:hover {
+  opacity: 1;
+}
+
 #izquierda {
   text-align: center;
   position: relative;
@@ -155,6 +165,17 @@ h3 {
   font-weight: bold;
 }
 
+.w3-content:hover {
+  filter: saturate(180%)
+}
+
+#derecha:active {
+  transform: scale(1.15);
+}
+
+#izquierda:active {
+  transform: scale(1.09);
+}
 
 /* Linea divisiora */
 
@@ -233,7 +254,11 @@ input {
 .w3-twothird {
   width: 40%;
   margin: auto;
+  position: relative;
+  transition: all 500ms ease-out;
 }
+
+
 
 
 #derecha2 {
@@ -635,7 +660,6 @@ input {
 }
 
 @media (max-width:300px) { 
-
   #derecha2 {
   width: 35px;
 }
@@ -662,4 +686,5 @@ h5 {
   font-size: 8px;
 }
 
+}
 }

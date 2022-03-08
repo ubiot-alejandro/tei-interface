@@ -505,7 +505,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 }
 
 .buttonBlue:hover { 
-  background: rgb(110, 180, 222); 
+  opacity: 0.8;
 }
 
 
@@ -543,11 +543,12 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 /* Botones Usuario-TEI */
 
 .botonTEI {
-  width: 30%;
-}
-
-.botonTEI:hover {
-  transform: scaleX(1.1);  
+  width: 40%;
+  margin: auto;
+  color: rgb(228, 149, 7);
+  font-weight: bold;
+  margin-bottom: 5%;
+  font-size: medium;
 }
 
 
@@ -577,7 +578,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 
 @media (max-width: 1400px) {
   .botonTEI {
-    width: 20%;
+    width: 30%;
   }
 
   #texto-footer {
@@ -632,7 +633,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
   }
 
   .botonTEI {
-    width: 25%;
+    width: 33%;
   } 
 
   .login {
@@ -650,7 +651,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
   }
 
   .botonTEI {
-    width: 30%;
+    width: 35%;
   }
 
   .tei-texto {
@@ -663,6 +664,14 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
     margin-top: 2%;
     text-align: center;
     font-size: 28px;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .botonTEI {
+    width: 38%;
   }
 
 }
@@ -734,12 +743,21 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
   }
 
   .botonTEI {
-    width: 33%;
+    width: 45%;
+    font-size: small;
   }
 
   #texto-footer {
     font-size: 1.2em;
     margin: auto;
+  }
+}
+
+@media (max-width: 630px) {
+ 
+  .botonTEI {
+    width: 45%;
+    font-size: small;
   }
 }
 
@@ -749,7 +767,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
   }
 
   .botonTEI {
-    width: 35%;
+    width: 45%;
+    font-size: small;
   }
 }
 
@@ -794,6 +813,11 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
       margin: auto;
     }
 
+    .botonTEI {
+      width: 45%;
+      font-size: 11px;
+    }
+
 }
 
 
@@ -819,7 +843,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 }
 
 .botonTEI {
-  width: 37%;
+  width: 50%;
+  font-size: 10px;
 }
 
 }
