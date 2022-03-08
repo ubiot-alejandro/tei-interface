@@ -122,6 +122,16 @@ h3 {
   background-color: white;
 }
 
+.capa {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.capa:hover {
+  opacity: 1;
+}
+
 #izquierda {
   text-align: center;
   position: relative;
@@ -244,7 +254,11 @@ input {
 .w3-twothird {
   width: 40%;
   margin: auto;
+  position: relative;
+  transition: all 500ms ease-out;
 }
+
+
 
 
 #derecha2 {

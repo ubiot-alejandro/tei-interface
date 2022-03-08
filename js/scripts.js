@@ -135,7 +135,7 @@ function updateImage() {
   
   // Updating for OFFLINE cases
   if ( network == "Offline") {
-      image2.src="../imagenes/iconos/conexion-off.png";
+      image2.src="../imagenes/iconos/conexion-off2.png";
 
       if (! notified3) {
         connection.play();
@@ -145,7 +145,7 @@ function updateImage() {
   
   // Updating for ONLINE cases
   } else if ( network == "Online_") {
-      image2.src="../imagenes/iconos/conexion-on.png";
+      image2.src="../imagenes/iconos/conexion-on2.png";
 
       if (! notified4) {
         connection.play();
@@ -156,29 +156,29 @@ function updateImage() {
 
   // Updating for THERMAL ON cases
   if ( thermal == "01") {
-    thermal_not.src="../imagenes/iconos/termico-on.png";
+    thermal_not.src="../imagenes/iconos/termico-on2.png";
   
   // Updating for THERMAL OFF cases
   } else if ( thermal == "00") {
-    thermal_not.src="../imagenes/iconos/termico-off.png";
+    thermal_not.src="../imagenes/iconos/termico-off2.png";
   }
 
   // Updating for PHASE ON cases
   if ( phase == "01") {
-    phase_not.src="../imagenes/iconos/supervisor-on.png";
+    phase_not.src="../imagenes/iconos/supervisor-on2.png";
   
   // Updating for PHASE OFF cases
   } else if ( phase == "00") {
-    phase_not.src="../imagenes/iconos/supervisor-off.png";
+    phase_not.src="../imagenes/iconos/supervisor-off2.png";
   }
 
   // Updating for LEVEL ON cases
   if ( level == "01") {
-    level_not.src="../imagenes/iconos/nivel-on.png";
+    level_not.src="../imagenes/iconos/nivel-on2.png";
   
   // Updating for LEVEL OFF cases
   } else if ( level == "00") {
-    level_not.src="../imagenes/iconos/nivel-off.png";
+    level_not.src="../imagenes/iconos/nivel-off2.png";
   }
 }
 
