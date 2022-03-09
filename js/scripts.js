@@ -64,7 +64,8 @@ function invokeOFF() {
 
 // Funtion to get the client ID
 function getId() {
-  // let token = window.location.href  // Reading from url
+  //let token = ""  // For tests 
+  let token = window.location.href  // Reading from url
   let auth = "Bearer " + token.split('&')[1].split('=')[1]  // Select the auth section
   let url = oauth;  // Using the variable link
     

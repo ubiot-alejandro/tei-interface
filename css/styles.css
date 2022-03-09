@@ -128,10 +128,6 @@ h3 {
   opacity: 0;
 }
 
-.capa:hover {
-  opacity: 1;
-}
-
 #izquierda {
   text-align: center;
   position: relative;
@@ -163,10 +159,6 @@ h3 {
   background-color: transparent;
   color: rgb(0, 77, 93);
   font-weight: bold;
-}
-
-.w3-content:hover {
-  filter: saturate(180%)
 }
 
 #derecha:active {
@@ -258,7 +250,13 @@ input {
   transition: all 500ms ease-out;
 }
 
-
+.alertas-titulo {
+  color: rgb(228, 149, 7);
+  background-color:rgb(2, 83, 97);
+  width: 35%; 
+  margin: auto;
+  font-weight: bold;
+}
 
 
 #derecha2 {
@@ -558,6 +556,11 @@ input {
     font-size: 13px;
 }
 
+.alertas-titulo {
+  width: 45%;
+}
+}
+
 @media (max-width: 576px) {       /*======= Menos de 576 px =======*/
 
   .base {
@@ -657,6 +660,10 @@ input {
   #texto-footer {
     font-size: 10px;
   }
+
+  .alertas-titulo {
+    width: 60%;
+  }
 }
 
 @media (max-width:300px) { 
@@ -686,5 +693,19 @@ h5 {
   font-size: 8px;
 }
 
+.alertas-titulo {
+  width: 60%;
 }
+
+}
+
+
+@media (hover: hover) {
+  .capa:hover {
+    opacity: 1;
+  }
+
+  .w3-content:hover {
+    filter: saturate(180%)
+  }
 }
