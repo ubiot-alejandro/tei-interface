@@ -89,7 +89,12 @@
             if (data.Items[0].remote_on === "01" ) {document.getElementById('label').innerHTML = 'Encendido remoto';}
             if (data.Items[0].remote_off === "01" ) {document.getElementById('label').innerHTML = 'Apagado remoto';}
             if (data.Items[0].manual_on === "01" ) {document.getElementById('label').innerHTML = 'Encendido manual';}
-            if (data.Items[0].manual_off === "01" ) {document.getElementById('label').innerHTML = 'Apagado manual';}
+            
+            if (data.Items[0].thermal_alert === "00" && data.Items[0].phase_alert === "00"&& data.Items[0].level_alert === "00") {
+
+              if (data.Items[0].manual_off === "01" ) {document.getElementById('label').innerHTML = 'Apagado manual';}
+
+            }
         });
     }
       
