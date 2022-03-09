@@ -160,7 +160,7 @@ function updateImage() {
   
   // Updating for THERMAL OFF cases
   } else if ( thermal == "00") {
-    thermal_not.src="../imagenes/iconos/termico-off2.png";
+    thermal_not.src="../imagenes/iconos/termico-off3.png";
   }
 
   // Updating for PHASE ON cases
@@ -170,7 +170,7 @@ function updateImage() {
   
   // Updating for PHASE OFF cases
   } else if ( phase == "00") {
-    phase_not.src="../imagenes/iconos/supervisor-off2.png";
+    phase_not.src="../imagenes/iconos/supervisor-off3.png";
   }
 
   // Updating for LEVEL ON cases
@@ -180,7 +180,7 @@ function updateImage() {
   
   // Updating for LEVEL OFF cases
   } else if ( level == "00") {
-    level_not.src="../imagenes/iconos/nivel-off2.png";
+    level_not.src="../imagenes/iconos/nivel-off3.png";
   }
 }
 
