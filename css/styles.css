@@ -163,10 +163,13 @@ h3 {
 
 #derecha:active {
   transform: scale(1.15);
+  filter: saturate(180%)
 }
 
 #izquierda:active {
   transform: scale(1.09);
+  filter: saturate(180%)
+  
 }
 
 /* Linea divisiora */
