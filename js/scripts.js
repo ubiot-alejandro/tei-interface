@@ -92,6 +92,7 @@ function updateImage() {
   var thermal_not = document.getElementById("thermal");
   var phase_not = document.getElementById("phase");
   var level_not = document.getElementById("level");
+  
 
   queryData();  // To update the data each time
   
