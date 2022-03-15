@@ -169,7 +169,7 @@ function updateImage() {
   if ( phase == "01") {
     phase_not.src="../imagenes/iconos/supervisor-on2.png";
     alert_flag = true
-    document.getElementById('label').innerHTML = 'Apagado por el supervisor de fase';
+    document.getElementById('label').innerHTML = 'Una o más fases caídas';
   
   // Updating for PHASE OFF cases
   } else if ( phase == "00") {
@@ -180,7 +180,7 @@ function updateImage() {
   if ( level == "01") {
     level_not.src="../imagenes/iconos/nivel-on2.png";
     alert_flag = true
-    document.getElementById('label').innerHTML = 'Apagado por el relé de nivel';
+    document.getElementById('label').innerHTML = 'Nivel de agua bajo en el pozo';
   
   // Updating for LEVEL OFF cases
   } else if ( level == "00") {
