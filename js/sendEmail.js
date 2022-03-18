@@ -54,3 +54,8 @@ form.addEventListener("submit", (event) => {
       message.value = "";
     });
 });
+
+function enviar() {
+  alert('Su mensaje fue enviado exitosamente');
+  form.reset();
+}
