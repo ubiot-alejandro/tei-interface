@@ -57,5 +57,4 @@ form.addEventListener("submit", (event) => {
 
 function enviar() {
   alert('Su mensaje fue enviado exitosamente');
-  form.reset();
 }
