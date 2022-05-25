@@ -64,11 +64,11 @@ function invokeOFF() {
 
 // Funtion to get the client ID
 function getId() {
-  // let token = ""  // For tests 
+  //let token = ""  // For tests 
   let token = window.location.href  // Reading from url
   let auth = "Bearer " + token.split('&')[1].split('=')[1]  // Select the auth section
   let url = oauth;  // Using the variable link
-    
+  
   fetch(url, {
     mode: 'cors',
     method: "GET",
@@ -78,7 +78,8 @@ function getId() {
     }
   })
   .then(data=> data.json())
-  .then(res=>{ clientID = res["sub"] }); // Fetching with auth
+  .then(res=>{ clientID = res["sub"];
+  if (clientID == "XXXXX" ) { window.location.href = "clientX.html" } }); // Fetching with auth
 }
 
 // Funtion to update the notifications on the GUI according with the DB; including sounds
@@ -89,9 +90,9 @@ function updateImage() {
   var imageoff = document.getElementById("izquierda");
   var image1 = document.getElementById("derecha1");
   var image2 = document.getElementById("derecha2");
-  var thermal_not = document.getElementById("thermal");
-  var phase_not = document.getElementById("phase");
-  var level_not = document.getElementById("level");
+  var thermal_icon = document.getElementById("thermal");
+  var phase_icon = document.getElementById("phase");
+  var level_icon = document.getElementById("level");
   
 
   queryData();  // To update the data each time
@@ -155,36 +156,45 @@ function updateImage() {
   }
 
   // Updating for THERMAL ON cases
+  if (thermal_not == "01" && thermal == "00" ) {
+    document.getElementById('label').innerHTML = 'Apagado por el relé térmico';
+  }
+
   if ( thermal == "01") {
-    thermal_not.src="../imagenes/iconos/termico-on2.png";
-    alert_flag = true
-    document.getElementById('label').innerHTML = 'Apagado por el relé termico';
+    thermal_icon.src="../imagenes/iconos/termico-on2.png";
+    document.getElementById('label').innerHTML = 'Relé térmico activado';
   
   // Updating for THERMAL OFF cases
   } else if ( thermal == "00") {
-    thermal_not.src="../imagenes/iconos/termico-off3.png";
+    thermal_icon.src="../imagenes/iconos/termico-off3.png";
   }
 
   // Updating for PHASE ON cases
+  if (phase_not == "01" && phase == "00") {
+    document.getElementById('label').innerHTML = 'Apagado por el supervisor de fase';
+  }
+
   if ( phase == "01") {
-    phase_not.src="../imagenes/iconos/supervisor-on2.png";
-    alert_flag = true
+    phase_icon.src="../imagenes/iconos/supervisor-on2.png";
     document.getElementById('label').innerHTML = 'Una o más fases caídas';
   
   // Updating for PHASE OFF cases
   } else if ( phase == "00") {
-    phase_not.src="../imagenes/iconos/supervisor-off3.png";
+    phase_icon.src="../imagenes/iconos/supervisor-off3.png";
   }
 
   // Updating for LEVEL ON cases
+  if (level_not == "01" && level == "00" ) {
+    document.getElementById('label').innerHTML = 'Apagado por el relé de nivel';
+  }
+
   if ( level == "01") {
-    level_not.src="../imagenes/iconos/nivel-on2.png";
-    alert_flag = true
+    level_icon.src="../imagenes/iconos/nivel-on2.png";
     document.getElementById('label').innerHTML = 'Nivel de agua bajo en el pozo';
   
   // Updating for LEVEL OFF cases
   } else if ( level == "00") {
-    level_not.src="../imagenes/iconos/nivel-off3.png";
+    level_icon.src="../imagenes/iconos/nivel-off3.png";
   }
 }
 
