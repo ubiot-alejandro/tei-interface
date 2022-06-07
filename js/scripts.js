@@ -27,10 +27,34 @@ var notified4 = false
 
 // Funtion to turn ON from the GUI
 function invokeON() {
-  let token = window.location.href  // Reading from url
+  let token = window.location.href  // Reading from url 
   let auth = token.split('&')[1].split('=')[1]  // Select the auth section
   let url= on_api + "?id=" + clientID;  // and join  with the api to make the auth call
-    
+  
+  if (state == "01") {
+    swal("Estimado usuario TEI", "Su motor ya se ecuentra encendido.", {
+      buttons: false,
+      icon: "warning",
+      timer: 2000,
+      closeOnClickOutside: false,
+    });
+
+  } else if (network == "Offline") {
+    swal("Estimado usuario TEI", "Su equipo se ecuentra sin conexión.", {
+      buttons: false,
+      icon: "info",
+      timer: 2000,
+      closeOnClickOutside: false,
+    });
+
+  } else {
+    swal("Estimado usuario TEI", "Su motor está siendo encendido...", {
+      buttons: false,
+      icon: "info",
+      timer: 10000,
+      closeOnClickOutside: false,
+    });
+
     fetch(url, {
       mode: 'cors',
       method: "GET",
@@ -41,7 +65,7 @@ function invokeON() {
     })
     .then(data=> data.json())
     .then(res=>{console.log(res)}); // Fetching with auth
-
+  }
 }
 
 // Funtion to turn OFF from the GUI
@@ -50,6 +74,30 @@ function invokeOFF() {
   let auth = token.split('&')[1].split('=')[1]  // Select the auth section
   let url= off_api + "?id=" + clientID; // and join  with the api to make the auth call
     
+  if (state == "00") {
+    swal("Estimado cliente TEI", "Su motor ya se ecuentra apagado.", {
+      buttons: false,
+      icon: "warning",
+      timer: 2000,
+      closeOnClickOutside: false,
+    });
+
+  } else if (network == "Offline") {
+    swal("Estimado usuario TEI", "Su equipo se ecuentra sin conexión.", {
+      buttons: false,
+      icon: "error",
+      timer: 2000,
+      closeOnClickOutside: false,
+    });
+
+   } else {
+    swal("Estimado usuario TEI", "Su motor está siendo apagado...", {
+      buttons: false,
+      icon: "info",
+      timer: 10000,
+      closeOnClickOutside: false,
+    });
+
     fetch(url, {
       mode: 'cors',
       method: "GET",
@@ -60,11 +108,13 @@ function invokeOFF() {
     })
     .then(data=> data.json())
     .then(res=>{console.log(res)}); // Fetching with auth
+  }
 }
+
 
 // Funtion to get the client ID
 function getId() {
-  //let token = ""  // For tests 
+  // let token = ""  // For tests 
   let token = window.location.href  // Reading from url
   let auth = "Bearer " + token.split('&')[1].split('=')[1]  // Select the auth section
   let url = oauth;  // Using the variable link
@@ -108,6 +158,13 @@ function updateImage() {
           music.play();
           notified1 = true
           notified2 = false
+          swal("Estimado usuario TEI", "Su motor ha sido encendido correctamente.", {
+            buttons: false,
+            icon: "success",
+            timer: 3000,
+            closeOnClickOutside: false,
+          });
+
         } else {
           init = false
           notified1 = true
@@ -126,6 +183,13 @@ function updateImage() {
           music.play();
           notified1 = false
           notified2 = true
+          swal("Estimado usuario TEI", "Su motor ha sido apagado correctamente.", {
+            buttons: false,
+            icon: "success",
+            timer: 3000,
+            closeOnClickOutside: false,
+          });
+
         } else {
           init = false
           notified1 = false
@@ -190,7 +254,7 @@ function updateImage() {
 
   if ( level == "01") {
     level_icon.src="../imagenes/iconos/nivel-on2.png";
-    document.getElementById('label').innerHTML = 'Nivel de agua bajo en el pozo';
+    document.getElementById('label').innerHTML = 'Bajo nivel de agua en pozo';
   
   // Updating for LEVEL OFF cases
   } else if ( level == "00") {
