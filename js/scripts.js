@@ -24,6 +24,9 @@ var notified1 = false
 var notified2 = false
 var notified3 = false
 var notified4 = false
+var notifiedL = false
+var notifiedP = false
+var notifiedT = false
 
 // Funtion to turn ON from the GUI
 function invokeON() {
@@ -111,7 +114,6 @@ function invokeOFF() {
   }
 }
 
-
 // Funtion to get the client ID
 function getId() {
   // let token = ""  // For tests 
@@ -152,6 +154,9 @@ function updateImage() {
       image1.src="../imagenes/iconos/gota-on2.png";
       imageon.src="../imagenes/iconos/encendido-on.png";
       imageoff.src="../imagenes/iconos/apagado-off.png";
+      notifiedL = false
+      notifiedP = false
+      notifiedT = false
       
       if (! notified1) {
         if (! init) {
@@ -227,6 +232,18 @@ function updateImage() {
   if ( thermal == "01") {
     thermal_icon.src="../imagenes/iconos/termico-on2.png";
     document.getElementById('label').innerHTML = 'Relé térmico activado';
+
+    if (! notifiedT) {
+      swal("Estimado usuario TEI", "Su relé térmico se ha activado.", {
+        buttons: false,
+        icon: "warning",
+        timer: 3000,
+        closeOnClickOutside: false,
+      });      
+      notifiedT = true
+      notifiedL = false
+      notifiedP = false
+    }
   
   // Updating for THERMAL OFF cases
   } else if ( thermal == "00") {
@@ -241,6 +258,18 @@ function updateImage() {
   if ( phase == "01") {
     phase_icon.src="../imagenes/iconos/supervisor-on2.png";
     document.getElementById('label').innerHTML = 'Una o más fases caídas';
+
+    if (! notifiedP) {
+      swal("Estimado usuario TEI", "Su supervisor de fase se ha activado.", {
+        buttons: false,
+        icon: "warning",
+        timer: 3000,
+        closeOnClickOutside: false,
+      });      
+      notifiedP = true
+      notifiedL = false
+      notifiedT = false
+    }
   
   // Updating for PHASE OFF cases
   } else if ( phase == "00") {
@@ -255,6 +284,18 @@ function updateImage() {
   if ( level == "01") {
     level_icon.src="../imagenes/iconos/nivel-on2.png";
     document.getElementById('label').innerHTML = 'Bajo nivel de agua en pozo';
+
+    if (! notifiedL) {
+      swal("Estimado usuario TEI", "Su relé de nivel se ha activado.", {
+        buttons: false,
+        icon: "warning",
+        timer: 3000,
+        closeOnClickOutside: false,
+      });   
+      notifiedL = true
+      notifiedP = false
+      notifiedT = false
+    }
   
   // Updating for LEVEL OFF cases
   } else if ( level == "00") {
