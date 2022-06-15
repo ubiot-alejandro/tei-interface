@@ -92,6 +92,14 @@ function invokeOFF() {
       timer: 2000,
       closeOnClickOutside: false,
     });
+
+  } else if (thermal === "01" || phase === "01" || level === "01") {
+    swal("Estimado usuario TEI", "Una de sus alarmas está activa.", {
+      buttons: false,
+      icon: "error",
+      timer: 3000,
+      closeOnClickOutside: false,
+    });
     
   } else if (state == "00") {
     swal("Estimado cliente TEI", "Su motor ya se ecuentra apagado.", {
