@@ -28,9 +28,11 @@ var notifiedL = false
 var notifiedP = false
 var notifiedT = false
 
+const token = window.location.href
+
 // Funtion to turn ON from the GUI
 function invokeON() {
-  let token = window.location.href  // Reading from url 
+  // let token = window.location.href  // Reading from url 
   let auth = token.split('&')[1].split('=')[1]  // Select the auth section
   let url= on_api + "?id=" + clientID;  // and join  with the api to make the auth call
 
@@ -81,7 +83,7 @@ function invokeON() {
 
 // Funtion to turn OFF from the GUI
 function invokeOFF() {
-  let token = window.location.href  // Reading from url
+  // let token = window.location.href  // Reading from url
   let auth = token.split('&')[1].split('=')[1]  // Select the auth section
   let url= off_api + "?id=" + clientID; // and join  with the api to make the auth call
     
@@ -132,8 +134,7 @@ function invokeOFF() {
 
 // Funtion to get the client ID
 function getId() {
-  // let token = ""  // For tests 
-  let token = window.location.href  // Reading from url
+  // let token = window.location.href  // Reading from url
   let auth = "Bearer " + token.split('&')[1].split('=')[1]  // Select the auth section
   let url = oauth;  // Using the variable link
   
