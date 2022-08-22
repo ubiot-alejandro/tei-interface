@@ -44,66 +44,6 @@
     <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-    <script src="./js/scripts.js"></script>
-   
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
-    <script src="./js/sweetalert.min.js"></script>
-    <script type="text/javascript">
-
-    // Initialize the Amazon Cognito credentials provider
-    AWS.config.region = 'eu-central-1'; // Select the AWS region
-    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'eu-central-1:00abeafd-83d3-4ccb-9ba5-c5fc5b31af03',
-    });
-      
-      // Set init variables
-      var state = "NaN"
-      var network = "NaN"
-      var thermal = "NaN"
-      var thermal_not = "NaN"
-      var phase = "NaN"
-      var phase_not = "NaN"
-      var level = "NaN"
-      var level_not = "NaN"
-      var alert_flag = false
-      var dynamodb = new AWS.DynamoDB();
-      var docClient = new AWS.DynamoDB.DocumentClient();
-      
-      // Funtion to query the data from the DB
-      function queryData() {
-
-        var params = {
-            TableName : db,
-            KeyConditionExpression: "#id = :id",
-            ExpressionAttributeNames:{ "#id": "id_number" },
-            ExpressionAttributeValues: { ":id": clientID }
-        };
-
-        docClient.query(params, function(err, data) {
-            if (err) {
-                console.log(JSON.stringify(err, undefined, 2));
-                window.location.href = login;
-            } else {
-                network = data.Items[0].network
-                state = data.Items[0].thing_status
-                thermal = data.Items[0].thermal_alert
-                phase = data.Items[0].phase_alert
-                level = data.Items[0].level_alert
-                thermal_not = data.Items[0].thermal_not
-                phase_not = data.Items[0].phase_not
-                level_not = data.Items[0].level_not
-                // console.log(data.Items)
-            }
-            if (data.Items[0].manual_on === "01" ) { document.getElementById('label').innerHTML = 'Encendido manual' }
-            if (data.Items[0].remote_on === "01" ) { document.getElementById('label').innerHTML = 'Encendido remoto'; }
-            if (data.Items[0].manual_off === "01" ) {document.getElementById('label').innerHTML = 'Apagado manual';}
-            if (thermal_not === "00" && phase_not === "00"&& level_not === "00" && thermal === "00" && phase === "00"&& level === "00") {
-              if (data.Items[0].remote_off === "01") { document.getElementById('label').innerHTML = 'Apagado remoto';}
-            }
-        });
-    }
-      
-    </script>
   </head>
 
     <!-- Barra de logo e iconos -->
@@ -227,8 +167,64 @@
     
   </footer>
 
-    <script>
+      <script src="./js/standard.js"></script>
+      <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+      <script src="./js/sweetalert.min.js"></script>
+      <script type="text/javascript">
 
-      </script>
+        // Initialize the Amazon Cognito credentials provider
+        AWS.config.region = 'eu-central-1'; // Select the AWS region
+        AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: 'eu-central-1:00abeafd-83d3-4ccb-9ba5-c5fc5b31af03',
+        });
+          
+          // Set init variables
+          var state = "NaN"
+          var network = "NaN"
+          var thermal = "NaN"
+          var thermal_not = "NaN"
+          var phase = "NaN"
+          var phase_not = "NaN"
+          var level = "NaN"
+          var level_not = "NaN"
+          var alert_flag = false
+          var dynamodb = new AWS.DynamoDB();
+          var docClient = new AWS.DynamoDB.DocumentClient();
+          
+          // Funtion to query the data from the DB
+          function queryData() {
+    
+            var params = {
+                TableName : db,
+                KeyConditionExpression: "#id = :id",
+                ExpressionAttributeNames:{ "#id": "id_number" },
+                ExpressionAttributeValues: { ":id": clientID }
+            };
+    
+            docClient.query(params, function(err, data) {
+                if (err) {
+                    console.log(JSON.stringify(err, undefined, 2));
+                    window.location.href = login;
+                } else {
+                    network = data.Items[0].network
+                    state = data.Items[0].thing_status
+                    thermal = data.Items[0].thermal_alert
+                    phase = data.Items[0].phase_alert
+                    level = data.Items[0].level_alert
+                    thermal_not = data.Items[0].thermal_not
+                    phase_not = data.Items[0].phase_not
+                    level_not = data.Items[0].level_not
+                    // console.log(data.Items)
+                }
+                if (data.Items[0].manual_on === "01" ) { document.getElementById('label').innerHTML = 'Encendido manual' }
+                if (data.Items[0].remote_on === "01" ) { document.getElementById('label').innerHTML = 'Encendido remoto'; }
+                if (data.Items[0].manual_off === "01" ) {document.getElementById('label').innerHTML = 'Apagado manual';}
+                if (thermal_not === "00" && phase_not === "00"&& level_not === "00" && thermal === "00" && phase === "00"&& level === "00") {
+                  if (data.Items[0].remote_off === "01") { document.getElementById('label').innerHTML = 'Apagado remoto';}
+                }
+            });
+        }
+          
+        </script>
   </body>
 </html>
