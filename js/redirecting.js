@@ -4,6 +4,7 @@
 const token = window.location.href;
 const api = "https://vnfl2aee1k.execute-api.eu-central-1.amazonaws.com/default/login";
 const oauth = "https://auth.tei.com.ve/oauth2/userInfo";
+const rUrl = token.split("redirecting")[1];
 
 // Get the licence of the client
 async function getLicense() {
@@ -38,9 +39,9 @@ async function getLicense() {
   console.log(license);
 
   if (license === '"standard"') {
-    window.location.href = "../standard.html";
+    window.location.href = "../standard" + rUrl;
   } else if (license === '"basic"') {
-    window.location.href = "../basic.html";
+    window.location.href = "../basic" + rUrl;
   } else {
     window.location.href = "https://tei.com.ve";
   }
