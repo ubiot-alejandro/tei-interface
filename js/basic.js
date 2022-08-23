@@ -172,7 +172,7 @@ function handleError(evt) {
 }
 
 // Funtion to redirect to the LOGIN page
-function redirectTo() {
+function redirectToLogin() {
   window.location.href = login;
 }
 
