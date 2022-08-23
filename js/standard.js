@@ -1,5 +1,5 @@
 const db = "tei-db";
-const login = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid&redirect_uri=https://www.tei.com.ve/redirecting";
+const login = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid+https://tei.logo.actions/login&redirect_uri=https://www.tei.com.ve/redirecting";
 const on_api = "https://vdawi12xzl.execute-api.eu-central-1.amazonaws.com/default/on-function";
 const off_api = "https://8hf8zi8mvd.execute-api.eu-central-1.amazonaws.com/default/off-function";
 const oauth = "https://auth.tei.com.ve/oauth2/userInfo";
@@ -142,15 +142,15 @@ function getId() {
 
 // Funtion to update the notifications on the GUI according with the DB; including sounds
 function updateImage() {
-  var music = new Audio("../audio/notif.mp3");
-  var connection = new Audio("../audio/init.mp3");
-  var imageon = document.getElementById("derecha");
-  var imageoff = document.getElementById("izquierda");
-  var image1 = document.getElementById("derecha1");
-  var image2 = document.getElementById("derecha2");
-  var thermal_icon = document.getElementById("thermal");
-  var phase_icon = document.getElementById("phase");
-  var level_icon = document.getElementById("level");
+  let music = new Audio("../audio/notif.mp3");
+  let connection = new Audio("../audio/init.mp3");
+  let imageon = document.getElementById("derecha");
+  let imageoff = document.getElementById("izquierda");
+  let image1 = document.getElementById("derecha1");
+  let image2 = document.getElementById("derecha2");
+  let thermal_icon = document.getElementById("thermal");
+  let phase_icon = document.getElementById("phase");
+  let level_icon = document.getElementById("level");
 
   queryData(); // To update the data each time
 
