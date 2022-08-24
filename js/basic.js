@@ -15,9 +15,10 @@ const token = window.location.href
 
 // API + Lambda Python + HTTP
 function on() {
+  let url = on_api + "?id=" + clientID;
   let auth = token.split("&")[1].split("=")[1];
 
-  fetch(on_api, {
+  fetch(url, {
     mode: "cors",
     method: "GET",
     headers: {
@@ -32,9 +33,10 @@ function on() {
 }
 
 function off() {
+  let url = off_api + "?id=" + clientID;
   let auth = token.split("&")[1].split("=")[1];
 
-  fetch(off_api, {
+  fetch(url, {
     mode: "cors",
     method: "GET",
     headers: {
