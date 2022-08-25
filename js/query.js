@@ -38,8 +38,8 @@ function QueryData() {
     }
     document.getElementById("label").innerHTML = "No disponible";
 
-    // Logguer
-    logguer = document.querySelector("#logguer");
+    // Logger
+    logger = document.querySelector("#logger");
     now = Date.now();
     last_date = new Date(date);
     // let diff = Math.abs(last_date.getTime() - now);
@@ -54,8 +54,8 @@ function QueryData() {
       } else {
         stateV = "Motor apagado.";
       }
-      logguer.textContent += `\n ${data.Items[0].date_time}: ${stateV} `;
-      logguer.scrollTop = logguer.scrollHeight;
+      logger.textContent += `\n ${data.Items[0].date_time}: ${stateV} `;
+      logger.scrollTop = logger.scrollHeight;
     }
   });
 }
