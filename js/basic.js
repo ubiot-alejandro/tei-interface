@@ -1,7 +1,10 @@
 const db = "tei-db";
-const login = "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid+https://tei.logo.actions/login&redirect_uri=https://www.tei.com.ve/redirecting";
-const on_api = "https://vnfl2aee1k.execute-api.eu-central-1.amazonaws.com/default/control/http/on";
-const off_api = "https://vnfl2aee1k.execute-api.eu-central-1.amazonaws.com/default/control/http/off";
+const login =
+  "https://auth.tei.com.ve/login?client_id=7g3i7fpuuotl1d7jjevu29pilq&response_type=token&scope=email+https://tei.logo.actions/logo.off+https://tei.logo.actions/logo.on+openid+https://tei.logo.actions/login&redirect_uri=https://www.tei.com.ve/redirecting";
+const on_api =
+  "https://vnfl2aee1k.execute-api.eu-central-1.amazonaws.com/default/control/http/on";
+const off_api =
+  "https://vnfl2aee1k.execute-api.eu-central-1.amazonaws.com/default/control/http/off";
 const oauth = "https://auth.tei.com.ve/oauth2/userInfo";
 
 // Variables to play notifications sounds
