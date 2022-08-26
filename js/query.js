@@ -1,3 +1,4 @@
+"use strict";
 // Initialize the Amazon Cognito credentials provider
 AWS.config.region = "eu-central-1"; // Select the AWS region
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -5,22 +6,23 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 });
 
 // Set init variables
-var state = "NaN";
-var network = "NaN";
-var thermal = "NaN";
-var thermal_not = "NaN";
-var phase = "NaN";
-var phase_not = "NaN";
-var level = "NaN";
-var level_not = "NaN";
-var alert_flag = false;
-var dynamodb = new AWS.DynamoDB();
-var docClient = new AWS.DynamoDB.DocumentClient();
+let state = "NaN";
+let network = "NaN";
+let thermal = "NaN";
+let thermal_not = "NaN";
+let phase = "NaN";
+let phase_not = "NaN";
+let level = "NaN";
+let level_not = "NaN";
+let alert_flag = false;
+let dynamodb = new AWS.DynamoDB();
+let docClient = new AWS.DynamoDB.DocumentClient();
 let date = "";
+let minutes = "";
 
 // Funtion to query the data from the DB
 function QueryData() {
-  var params = {
+  let params = {
     TableName: db,
     KeyConditionExpression: "#id = :id",
     ExpressionAttributeNames: { "#id": "id_number" },
@@ -34,17 +36,16 @@ function QueryData() {
     } else {
       network = data.Items[0].network;
       state = data.Items[0].thing_status;
-      // console.log(data.Items[0])
     }
     document.getElementById("label").innerHTML = "No disponible";
 
     // Logger
-    logger = document.querySelector("#logger");
-    now = Date.now();
-    last_date = new Date(date);
-    // let diff = Math.abs(last_date.getTime() - now);
-    // var minutes = Math.floor((diff/1000)/60);
-    console.log(last_date.getTime());
+    const logger = document.querySelector("#logger");
+    const logger_label = document.querySelector("#logger_label");
+    let now = Date.now();
+    let last_date = new Date(date).getTime();
+    let diff = now - last_date;
+    minutes = Math.floor(diff / 1000 / 60);
 
     if (date !== data.Items[0].date_time) {
       date = data.Items[0].date_time;
@@ -56,6 +57,11 @@ function QueryData() {
       }
       logger.textContent += `\n ${data.Items[0].date_time}: ${stateV} `;
       logger.scrollTop = logger.scrollHeight;
+    }
+    if (minutes) {
+      logger_label.textContent = `Ultima actividad hace ${minutes} min.`;
+    } else {
+      logger_label.textContent = `Ultima actividad hace menos de un min.`;
     }
   });
 }
