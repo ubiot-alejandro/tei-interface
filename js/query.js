@@ -18,7 +18,9 @@ let alert_flag = false;
 let dynamodb = new AWS.DynamoDB();
 let docClient = new AWS.DynamoDB.DocumentClient();
 let date = "";
-let minutes = "";
+let minutes = 0;
+let hours = 0;
+let mins = 0;
 
 // Funtion to query the data from the DB
 function QueryData() {
@@ -46,6 +48,13 @@ function QueryData() {
     let last_date = new Date(date).getTime();
     let diff = now - last_date;
     minutes = Math.floor(diff / 1000 / 60);
+    if (minutes > 60) {
+      hours = Math.floor(minutes / 60);
+      mins = Math.floor(((minutes / 60) % 1) * 60);
+    } else {
+      hours = 0;
+      mins = minutes;
+    }
 
     if (date !== data.Items[0].date_time) {
       date = data.Items[0].date_time;
@@ -59,7 +68,7 @@ function QueryData() {
       logger.scrollTop = logger.scrollHeight;
     }
     if (minutes) {
-      logger_label.textContent = `Ultima actividad hace ${minutes} min.`;
+      logger_label.textContent = `Ultima actividad hace ${hours} hr y ${mins} min.`;
     } else {
       logger_label.textContent = `Ultima actividad hace menos de un min.`;
     }
