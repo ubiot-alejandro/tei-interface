@@ -127,11 +127,25 @@
 </div>
 
 <div
-  style=" display: flex; flex-direction: column;; justify-content: center; align-items: center; border: 1px solid rgb(201, 201, 201); width: 70%; height: 200px; text-align: center; margin: 0 auto 20px auto; border-radius: 5px; ">
+  style=" display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid rgb(201, 201, 201); width: 70%; height: 200px; text-align: center; margin: 0 auto 20px auto; border-radius: 5px; ">
   <textarea id="logger" style="outline: none; width: 80%; height: 80%; border: none; border-radius: 5px; resize: none;"
     readonly></textarea>
-  <label id="logger_label" style="width: 90%; text-align: right;">Ultima actividad hace...</label>
+  <div style="width: 90% ;display: flex; justify-content: space-between; font-weight: bold;">
+    <label style="width: 90%; text-align: center;">Tiempo de trabajo ayer:</label>
+    <label style="width: 90%; text-align: center;">Tiempo de trabajo hoy:</label>
+    <label style="width: 90%; text-align: center;">Tiempo de trabajo actual:</label>
+  </div>
+  <div style="width: 90% ;display: flex; justify-content: space-between ;">
+    <label id="logger_yesterday" style="width: 90%; text-align: center;">...</label>
+    <label id="logger_today" style="width: 90%; text-align: center;">...</label>
+    <label id="logger_current" style="width: 90%; text-align: center;">...</label>
+  </div>
+
+  <button id="push" onclick="push()"><b>Test</b></button>
+
 </div>
+
+
 
 <hgroup>
   <h5 class="alertas-titulo">Alertas de seguridad:</h5><br>
@@ -186,6 +200,13 @@
 <script src="./js/sweetalert.min.js"></script>
 <script src="./js/basic.js"></script>
 <script src="./js/query.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DH6J2J0ZSL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-DH6J2J0ZSL');
+</script>
 
 </body>
 

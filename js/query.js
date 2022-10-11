@@ -8,6 +8,7 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 // Set init variables
 let state = "NaN";
 let network = "NaN";
+let source = "NaN";
 let thermal = "NaN";
 let thermal_not = "NaN";
 let phase = "NaN";
@@ -38,12 +39,17 @@ function QueryData() {
     } else {
       network = data.Items[0].network;
       state = data.Items[0].thing_status;
+      source = data.Items[0].source_shelly;
     }
-    document.getElementById("label").innerHTML = "No disponible";
+    if (source == "init") {
+      document.getElementById("label").innerHTML = "Falla electrica";
+    } else {
+      document.getElementById("label").innerHTML = "No disponible";
+    }
 
     // Logger
     const logger = document.querySelector("#logger");
-    const logger_label = document.querySelector("#logger_label");
+    const logger_current = document.querySelector("#logger_current");
     let now = Date.now();
     let last_date = new Date(date).getTime();
     let diff = now - last_date;
@@ -68,9 +74,13 @@ function QueryData() {
       logger.scrollTop = logger.scrollHeight;
     }
     if (minutes) {
-      logger_label.textContent = `Ultima actividad hace ${hours} hr y ${mins} min.`;
+      if (hours === 0) {
+        logger_current.textContent = `${mins} min.`;
+      } else {
+        logger_current.textContent = `${hours} hr y ${mins} min.`;
+      }
     } else {
-      logger_label.textContent = `Ultima actividad hace menos de un min.`;
+      logger_current.textContent = `Menos de un min.`;
     }
   });
 }
